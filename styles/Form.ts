@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components"
 
 export const sharedStyles = css`
   background-color: #eee;
@@ -8,7 +8,7 @@ export const sharedStyles = css`
   margin: 10px 0 20px;
   padding: 20px;
   box-sizing: border-box;
-`;
+`
 
 export const StyledFormWrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const StyledFormWrapper = styled.div`
   @media (min-width: 992px) {
     width: 35vw;
   }
-`;
+`
 
 export const StyledForm = styled.form`
   width: 100%;
@@ -31,13 +31,13 @@ export const StyledForm = styled.form`
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-`;
+`
 
 export const StyledInput = styled.input`
   display: block;
   width: 100%;
   ${sharedStyles}
-`;
+`
 
 export const StyledTextArea = styled.textarea`
   background-color: #eee;
@@ -45,7 +45,7 @@ export const StyledTextArea = styled.textarea`
   min-height: 100px;
   resize: none;
   ${sharedStyles};
-`;
+`
 export const StyledButton = styled.button`
   display: block;
   background-color: #db2777;
@@ -60,7 +60,7 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: #be185d;
   }
-`;
+`
 
 export const StyledFieldset = styled.fieldset`
   border: 1px solid #ddd;
@@ -79,9 +79,9 @@ export const StyledFieldset = styled.fieldset`
   input {
     margin-right: 0.5rem;
   }
-`;
+`
 
 export const StyledError = styled.div`
   color: red;
   font-weight: 600;
-`;
+`
