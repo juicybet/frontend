@@ -4,10 +4,10 @@ import {
   StyledError,
   StyledFieldset,
   StyledForm,
-  StyledFormWrapper,
+  FormWrapper,
   StyledInput,
   StyledTextArea,
-} from "../styles/Form"
+} from "./Form.style"
 
 const initialState = {
   name: "",
@@ -59,7 +59,7 @@ export const Form = () => {
 
   return (
     <>
-      <StyledFormWrapper>
+      <FormWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <h2>Testing Form</h2>
           <label htmlFor="name">Name</label>
@@ -88,7 +88,7 @@ export const Form = () => {
           {error && <ErrorDiv />}
           <StyledButton type="submit">submit</StyledButton>
         </StyledForm>
-      </StyledFormWrapper>
+      </FormWrapper>
     </>
   )
 }

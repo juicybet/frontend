@@ -10,7 +10,7 @@ export const sharedStyles = css`
   box-sizing: border-box;
 `
 
-export const StyledFormWrapper = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,7 +1,14 @@
+import { useState } from "react"
 import Head from "next/head"
-import { Form } from "../components/Form"
+import { Form, Header, Sidebar } from "../components"
 
 export default function Home() {
+  const [IsSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((IsSidebarOpen) => !IsSidebarOpen)
+  }
+
   return (
     <div>
       <Head>
@@ -11,7 +18,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Form />
+        <Header toggleSidebar={toggleSidebar} />
+        <Sidebar isSidebarOpen={IsSidebarOpen} />
       </main>
     </div>
   )
