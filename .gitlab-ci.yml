@@ -7,7 +7,7 @@ cache:
 stages:
   - publish
 
-build:
+pages:
   stage: publish
   script:
     - yarn
