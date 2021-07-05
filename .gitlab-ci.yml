@@ -1,26 +1,15 @@
 image: node:latest
 
-cache:
-  paths:
-    - node_modules/
-    - public/
-
 stages:
-  - build
   - publish
 
 build:
-  stage: build
+  stage: publish
   script:
     - yarn
     - yarn export
     - rm -rf public
     - mv out public
-
-pages:
-  stage: publish
-  script:
-    - cd
   artifacts:
     paths:
       - public
