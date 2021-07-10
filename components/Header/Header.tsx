@@ -1,6 +1,5 @@
 import { Header as StyledHeader, LogoContainer, MenuButton } from "./Header.style"
 import Image from "next/image"
-import { Menu as MenuIcon } from "react-feather"
 import { getLogoProps, getTitle } from "../../data/theme"
 import { useState } from "react"
 import { Hamburger } from "../Utils/Hamburger"

@@ -13,7 +13,7 @@ export const Menu = ({ title, subtitles, isOpen, setIsOpen }: MenuProps) => {
       <MenuItem onClick={() => setIsOpen(!isOpen)} selected={isOpen}>
         {title}
         <Rotatable angle={isOpen ? 90 : 0}>
-          <ChevronRight size="18" />
+          <ChevronRight size="20" />
         </Rotatable>
       </MenuItem>
 
