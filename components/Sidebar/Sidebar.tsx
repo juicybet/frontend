@@ -1,20 +1,23 @@
-import React from "react"
 import { SidebarWrapper } from "./Sidebar.style"
 import { Menu } from "./Menu"
-import { menuData } from "../../data/menuData"
+import { menuItems } from "../../data/menuItems"
+import { useState } from "react"
 
-export const Sidebar = ({ isSidebarOpen }: any) => {
+export const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
+  const [data, setData] = useState(menuItems)
+
+  const toggleMenu = (index: number, state: boolean) => {
+    const newData = [...data]
+    if (state) data.forEach((m) => (m.isOpen = false))
+    newData[index].isOpen = state
+    setData(newData)
+  }
+
   return (
-    <div>
-      <SidebarWrapper open={isSidebarOpen}>
-        {menuData?.map(({ id, title, subtitles }) => (
-          <div key={id} style={{ marginTop: "2rem" }}>
-            <div>
-              <Menu title={title} subtitles={subtitles} />
-            </div>
-          </div>
-        ))}
-      </SidebarWrapper>
-    </div>
+    <SidebarWrapper isOpen={isOpen}>
+      {data.map((props, i) => (
+        <Menu key={i} {...props} setIsOpen={(state) => toggleMenu(i, state)} />
+      ))}
+    </SidebarWrapper>
   )
 }

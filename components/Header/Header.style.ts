@@ -1,37 +1,28 @@
 import styled from "styled-components"
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 6rem;
-`
-
-export const Nav = styled.header`
+export const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   display: block;
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   z-index: 1;
-  font-family: "Quicksand", sans-serif;
 `
-export const Toggle = styled.button`
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 3px;
-  outline: 0;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  height: 7.5rem;
+  width: 22rem;
+  line-height: 7.5rem;
   cursor: pointer;
 `
 
-export const Brand = styled.div`
-  display: flex;
-  align-items: center;
-  justify-contents: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ec133a;
+export const MenuButton = styled.button`
+  padding: 0.5rem 1.25rem 0 1.75rem;
+  background: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
 `

@@ -1,30 +1,26 @@
-import React from "react"
-import { Nav, HeaderWrapper, Toggle, Brand } from "./Header.style"
-import { Container } from "../Utils/Utility.style"
-import { MdMenu, MdAccountBalanceWallet } from "react-icons/md"
+import { Header as StyledHeader, LogoContainer, MenuButton } from "./Header.style"
 import Image from "next/image"
+import { Menu as MenuIcon } from "react-feather"
+import { getLogoProps, getTitle } from "../../data/theme"
+import { useState } from "react"
+import { Hamburger } from "../Utils/Hamburger"
 
-export const Header = ({ toggleSidebar }: any) => {
+export const Header = ({ toggleSidebar: _toggleSidebar }: any) => {
+  const [isActive, setIsActive] = useState(true)
+
+  const toggleSidebar = () => {
+    _toggleSidebar()
+    setIsActive((v) => !v)
+  }
+
   return (
-    <div>
-      <Nav>
-        <Container>
-          <HeaderWrapper>
-            <Toggle onClick={toggleSidebar}>
-              <MdMenu color="#333" size={24} />
-            </Toggle>
-            <Brand>
-              <div>
-                <Image src="/logo.svg" alt="Juicy bet Logo" width={60} height={60} />
-              </div>
-              <div className="p-top-1-half">
-                <Image src="/jelly.svg" alt="Juicy bet Name" width={70} height={80} />
-              </div>
-            </Brand>
-            <MdAccountBalanceWallet color="#333" size={24} />
-          </HeaderWrapper>
-        </Container>
-      </Nav>
-    </div>
+    <StyledHeader>
+      <LogoContainer onClick={toggleSidebar}>
+        <MenuButton>
+          <Hamburger isActive={isActive} />
+        </MenuButton>
+        <Image alt={getTitle()} {...getLogoProps()} />
+      </LogoContainer>
+    </StyledHeader>
   )
 }
