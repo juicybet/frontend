@@ -2,9 +2,20 @@ import { useState } from "react"
 import Head from "next/head"
 import { Header, Sidebar } from "../components"
 import { BackgroundWrapper } from "../components/Utils/Utility.style"
-import { getTitle, getFavicon } from "../data/theme"
+import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
+import { GetServerSideProps } from "next"
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  return {
+    props: {
+      theme: setThemeForHost(req.headers.host!),
+    },
+  }
+}
+
+export default function Home({ theme }: { theme: ThemeType }) {
+  setTheme(theme)
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   const toggleSidebar = () => {

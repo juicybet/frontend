@@ -2,6 +2,7 @@ import { MenuItemData } from "../../data/menuItems"
 import { MenuItem, Submenu, SubmenuItem } from "./Sidebar.style"
 import { Rotatable } from "../Utils/Utility.style"
 import { ChevronRight } from "react-feather"
+import { getThemeColor } from "../../data/theme"
 
 export type MenuProps = MenuItemData & {
   setIsOpen(state: boolean): void
@@ -10,7 +11,7 @@ export type MenuProps = MenuItemData & {
 export const Menu = ({ title, subtitles, isOpen, setIsOpen }: MenuProps) => {
   return (
     <>
-      <MenuItem onClick={() => setIsOpen(!isOpen)} selected={isOpen}>
+      <MenuItem onClick={() => setIsOpen(!isOpen)} selected={isOpen} color={getThemeColor()}>
         {title}
         <Rotatable angle={isOpen ? 90 : 0}>
           <ChevronRight size="20" />
@@ -19,7 +20,9 @@ export const Menu = ({ title, subtitles, isOpen, setIsOpen }: MenuProps) => {
 
       <Submenu isOpen={isOpen}>
         {subtitles.map((item, index) => (
-          <SubmenuItem key={index}>{item}</SubmenuItem>
+          <SubmenuItem key={index} color={getThemeColor()}>
+            {item}
+          </SubmenuItem>
         ))}
       </Submenu>
     </>

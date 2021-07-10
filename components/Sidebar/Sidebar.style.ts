@@ -1,7 +1,4 @@
 import styled, { css } from "styled-components"
-import { getThemeColor } from "../../data/theme"
-
-const themeColor = getThemeColor()
 
 export const SidebarWrapper = styled.div<{ isOpen: Boolean }>`
   position: fixed;
@@ -26,7 +23,7 @@ export const SidebarWrapper = styled.div<{ isOpen: Boolean }>`
       transform: translateX(0);
     `}
 `
-export const MenuItem = styled.div<{ selected: boolean }>`
+export const MenuItem = styled.div<{ selected: boolean; color: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +41,9 @@ export const MenuItem = styled.div<{ selected: boolean }>`
 
   &:hover,
   &:focus {
-    color: ${themeColor};
+    ${({ color }) => css`
+      color: ${color};
+    `}
   }
 
   &:before {
@@ -53,23 +52,26 @@ export const MenuItem = styled.div<{ selected: boolean }>`
     margin-left: -4.75rem;
     height: 4rem;
     width: 0.75rem;
-    background-color: ${themeColor};
     border-top-right-radius: 0.625rem;
     border-bottom-right-radius: 0.625rem;
 
     transition: 0.2s;
 
-    ${(props) =>
-      props.selected &&
+    ${({ color }) => css`
+      background-color: ${color};
+    `}
+
+    ${({ selected }) =>
+      selected &&
       css`
         margin-left: -4rem;
       `}
   }
 
-  ${({ selected }) =>
+  ${({ selected, color }) =>
     selected &&
     css`
-      color: ${themeColor};
+      color: ${color};
     `}
 `
 
@@ -88,7 +90,7 @@ export const Submenu = styled.div<{ isOpen: Boolean }>`
     `}
 `
 
-export const SubmenuItem = styled.div`
+export const SubmenuItem = styled.div<{ color: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,6 +104,8 @@ export const SubmenuItem = styled.div`
 
   &:hover,
   &:focus {
-    color: ${themeColor};
+    ${({ color }) => css`
+      color: ${color};
+    `}
   }
 `

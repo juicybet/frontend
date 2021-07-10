@@ -1,6 +1,6 @@
 import { Header as StyledHeader, LogoContainer, MenuButton } from "./Header.style"
 import Image from "next/image"
-import { getLogoProps, getTitle } from "../../data/theme"
+import { getLogoProps, getThemeColor, getTitle } from "../../data/theme"
 import { useState } from "react"
 import { Hamburger } from "../Utils/Hamburger"
 
@@ -16,7 +16,7 @@ export const Header = ({ toggleSidebar: _toggleSidebar }: any) => {
     <StyledHeader>
       <LogoContainer onClick={toggleSidebar}>
         <MenuButton>
-          <Hamburger isActive={isActive} />
+          <Hamburger isActive={isActive} color={getThemeColor()} />
         </MenuButton>
         <Image alt={getTitle()} {...getLogoProps()} />
       </LogoContainer>

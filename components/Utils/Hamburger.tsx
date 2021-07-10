@@ -1,7 +1,4 @@
 import styled, { css } from "styled-components"
-import { getThemeColor } from "../../data/theme"
-
-const themeColor = getThemeColor()
 
 /*!
  * Hamburgers
@@ -35,7 +32,7 @@ const HamburgerBox = styled.span`
   position: relative;
 `
 
-const HamburgerInner = styled.span<{ isActive: boolean }>`
+const HamburgerInner = styled.span<{ isActive: boolean; color: string }>`
   display: block;
   top: 50%;
   margin-top: -2px;
@@ -45,17 +42,20 @@ const HamburgerInner = styled.span<{ isActive: boolean }>`
   &:after {
     width: 40px;
     height: 4px;
-    background-color: ${themeColor};
+    ${({ color }) => css`
+      background-color: ${color};
+    `}
+
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
 
-    ${({ isActive }) =>
+    ${({ isActive, color }) =>
       isActive &&
       css`
-        background-color: ${themeColor};
+        background-color: ${color};
       `}
   }
 
@@ -84,11 +84,11 @@ const HamburgerInner = styled.span<{ isActive: boolean }>`
   }
 `
 
-export const Hamburger = ({ isActive }: { isActive: boolean }) => {
+export const Hamburger = ({ isActive, color }: { isActive: boolean; color: string }) => {
   return (
     <HamburgerContainer isActive={isActive}>
       <HamburgerBox>
-        <HamburgerInner isActive={isActive}></HamburgerInner>
+        <HamburgerInner isActive={isActive} color={color}></HamburgerInner>
       </HamburgerBox>
     </HamburgerContainer>
   )

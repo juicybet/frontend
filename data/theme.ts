@@ -7,17 +7,27 @@ export enum ThemeType {
   Juicy = "juicy",
 }
 
+let theme = ThemeType.Juicy
+
+export function setThemeForHost(url: string) {
+  const getTheme = () => {
+    if (url.indexOf("jelly.bet") >= 0) return ThemeType.Jelly
+    if (url.indexOf("salad.bet") >= 0) return ThemeType.Salad
+    if (url.indexOf("recipe.bet") >= 0) return ThemeType.Recipe
+    if (url.indexOf("donut.bet") >= 0) return ThemeType.Donut
+
+    return ThemeType.Juicy
+  }
+
+  return (theme = getTheme())
+}
+
 export function getTheme() {
-  if (typeof window === "undefined") return ThemeType.Juicy
+  return theme
+}
 
-  const { host } = window.location
-
-  if (host.indexOf("jelly.bet") >= 0) return ThemeType.Jelly
-  if (host.indexOf("salad.bet") >= 0) return ThemeType.Salad
-  if (host.indexOf("recipe.bet") >= 0) return ThemeType.Recipe
-  if (host.indexOf("donut.bet") >= 0) return ThemeType.Donut
-
-  return ThemeType.Juicy
+export function setTheme(t: ThemeType) {
+  theme = t
 }
 
 export function getFavicon() {

@@ -1,10 +1,10 @@
 import { SidebarWrapper } from "./Sidebar.style"
 import { Menu } from "./Menu"
-import { menuItems } from "../../data/menuItems"
+import { getMenuItems } from "../../data/menuItems"
 import { useState } from "react"
 
 export const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
-  const [data, setData] = useState(menuItems)
+  const [data, setData] = useState(getMenuItems())
 
   const toggleMenu = (index: number, state: boolean) => {
     const newData = [...data]
