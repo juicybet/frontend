@@ -12,7 +12,7 @@ export const SidebarWrapper = styled.div<{ isOpen: Boolean }>`
   padding: 1rem 2.5rem 1rem 4rem;
   overflow: auto;
 
-  transition: 0.3s;
+  transition: 0.2s;
   z-index: 2;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
   color: #7e7e7e;
@@ -36,6 +36,8 @@ export const MenuItem = styled.div<{ selected: boolean }>`
   font-size: 1.25rem;
   font-weight: 700;
 
+  transition: 0.2s;
+
   &:first-child {
     margin-top: 2rem;
   }
@@ -55,7 +57,7 @@ export const MenuItem = styled.div<{ selected: boolean }>`
     border-top-right-radius: 0.625rem;
     border-bottom-right-radius: 0.625rem;
 
-    transition: 0.3s;
+    transition: 0.2s;
 
     ${(props) =>
       props.selected &&
@@ -95,6 +97,8 @@ export const SubmenuItem = styled.div`
 
   font-size: 1.125rem;
   font-weight: 500;
+
+  transition: 0.2s;
 
   &:hover,
   &:focus {

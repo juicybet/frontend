@@ -41,8 +41,8 @@ export function getLogoProps() {
   const theme = getTheme()
   const widths = {
     [ThemeType.Jelly]: 121,
-    [ThemeType.Recipe]: 153,
-    [ThemeType.Salad]: 165,
+    [ThemeType.Recipe]: 165,
+    [ThemeType.Salad]: 153,
     [ThemeType.Donut]: 161,
     [ThemeType.Juicy]: 212,
   }

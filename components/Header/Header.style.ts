@@ -16,15 +16,12 @@ export const LogoContainer = styled.div`
   height: 7.5rem;
   width: 22rem;
   line-height: 7.5rem;
-  padding: 0 2rem;
   cursor: pointer;
 `
 
 export const MenuButton = styled.button`
-  padding-top: 0.75rem;
-  flex: auto;
+  padding: 0.5rem 1.25rem 0 1.75rem;
   background: white;
-  text-align: right;
   border: 0;
   outline: 0;
   cursor: pointer;

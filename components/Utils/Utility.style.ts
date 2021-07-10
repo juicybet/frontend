@@ -22,5 +22,5 @@ export const Rotatable = styled.div<{ angle: number }>`
   ${(props) => css`
     transform: rotate(${props.angle}deg);
   `}}
-  transition: 0.3s;
+  transition: 0.2s;
 `

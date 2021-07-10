@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Head from "next/head"
-import { Form, Header, Sidebar } from "../components"
+import { Header, Sidebar } from "../components"
 import { BackgroundWrapper } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon } from "../data/theme"
 
