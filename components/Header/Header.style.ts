@@ -4,7 +4,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 12vh;
+  height: 6rem;
 `
 
 export const Nav = styled.header`

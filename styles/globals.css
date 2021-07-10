@@ -4,8 +4,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -15,4 +13,35 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.p-top-1 {
+  padding-top: 1rem;
+}
+.p-top-1-half {
+  padding-top: 1.5rem;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.pos-absolute-l {
+  position: absolute;
+  left: 0;
 }

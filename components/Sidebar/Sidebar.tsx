@@ -1,24 +1,19 @@
 import React from "react"
 import { SidebarWrapper } from "./Sidebar.style"
-import { useRouter } from "next/dist/client/router"
-import Link from "next/link"
+import { Menu } from "./Menu"
+import { menuData } from "../../data/menuData"
 
 export const Sidebar = ({ isSidebarOpen }: any) => {
   return (
     <div>
       <SidebarWrapper open={isSidebarOpen}>
-        <Link href="/" passHref>
-          <h2>Juicy Bet</h2>
-        </Link>
-        <Link href="/" passHref>
-          <h2>Salad Bet</h2>
-        </Link>
-        <Link href="/" passHref>
-          <h2>Receipe Bet</h2>
-        </Link>
-        <Link href="/" passHref>
-          <h2>Info</h2>
-        </Link>
+        {menuData?.map(({ id, title, subtitles }) => (
+          <div key={id} style={{ marginTop: "2rem" }}>
+            <div>
+              <Menu title={title} subtitles={subtitles} />
+            </div>
+          </div>
+        ))}
       </SidebarWrapper>
     </div>
   )

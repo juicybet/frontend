@@ -1,13 +1,8 @@
 import React from "react"
 import { Nav, HeaderWrapper, Toggle, Brand } from "./Header.style"
-import { Container } from "../Utils/Container.style"
-import { MdMenu, MdPerson } from "react-icons/md"
+import { Container } from "../Utils/Utility.style"
+import { MdMenu, MdAccountBalanceWallet } from "react-icons/md"
 import Image from "next/image"
-
-// interface ToggleProps {
-//   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
-//   toggleSidebar: () => Boolean
-// }
 
 export const Header = ({ toggleSidebar }: any) => {
   return (
@@ -19,10 +14,14 @@ export const Header = ({ toggleSidebar }: any) => {
               <MdMenu color="#333" size={24} />
             </Toggle>
             <Brand>
-              <Image src="/logo.svg" alt="Juicy bet Logo" width={70} height={60} />
-              Jelly
+              <div>
+                <Image src="/logo.svg" alt="Juicy bet Logo" width={60} height={60} />
+              </div>
+              <div className="p-top-1-half">
+                <Image src="/jelly.svg" alt="Juicy bet Name" width={70} height={80} />
+              </div>
             </Brand>
-            <MdPerson color="#333" size={24} />
+            <MdAccountBalanceWallet color="#333" size={24} />
           </HeaderWrapper>
         </Container>
       </Nav>
