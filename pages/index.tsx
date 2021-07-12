@@ -1,9 +1,11 @@
 import { useState } from "react"
 import Head from "next/head"
 import { Header, Sidebar } from "../components"
-import { BackgroundWrapper } from "../components/Utils/Utility.style"
+import { BackgroundWrapper, ContentWrapper } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
 import { GetServerSideProps } from "next"
+import { Acceptbet, Createbet } from "../components/Bet/Bet"
+import { MainContent } from "../components/Bet/Bet.style"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
@@ -34,6 +36,12 @@ export default function Home({ theme }: { theme: ThemeType }) {
       <Sidebar isOpen={isSidebarOpen} />
       <main>
         <BackgroundWrapper />
+        <ContentWrapper>
+          <MainContent>
+            <Createbet />
+            <Acceptbet />
+          </MainContent>
+        </ContentWrapper>
       </main>
     </>
   )
