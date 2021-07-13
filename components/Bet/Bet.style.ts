@@ -51,7 +51,7 @@ export const LowerCardSection = styled.div`
   position: absolute;
   width: 100%;
   height: 14rem;
-  bottom: 9%;
+  bottom: 11%;
 `
 
 export const UpperCardSection = styled.div`
@@ -59,4 +59,81 @@ export const UpperCardSection = styled.div`
   width: 100%;
   height: 14rem;
   top: 9%;
+`
+
+export const PillsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 3rem;
+`
+
+export const CardPils = styled.button`
+  padding: 5px 10px;
+  border-radius: 1rem;
+  color: #929292;
+  background: #ffffff;
+  border: 2px solid #eaeaea;
+`
+export const SliderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+`
+export const CoinWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 5rem;
+  border: 2px solid #eaeaea;
+  border-radius: 2rem;
+  height: 4rem;
+  padding: 0.8rem;
+`
+export const ValueWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+`
+
+export const ValueInBnc = styled.span`
+  color: #494f6d;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+`
+
+export const ValueInDollar = styled.span`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #929292;
+`
+
+export const BetSelctionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
+`
+export const RadioButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+  width: 100%;
+`
+export const RadioLebels = styled.label`
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.45rem;
+  color: #929292;
 `
