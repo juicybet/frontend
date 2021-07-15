@@ -47,31 +47,3 @@ ul {
   position: absolute;
   left: 0;
 }
-.slider {
-  -webkit-appearance: none;
-  width: 70%;
-  height: 1rem;
-  border-radius: 0.6rem;
-  background: #eaeaea;
-}
-
-.slider::-webkit-slider {
-  background: #ff624e;
-}
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: #ff624e;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: #ff624e;
-  cursor: pointer;
-}

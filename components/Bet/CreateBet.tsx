@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Radio from "../Radio/Radio"
+import { Slider } from "../Slider/Slider"
 import {
   BetSelctionWrapper,
   Cardbutton,
@@ -37,7 +38,7 @@ export const CreateBet = () => {
           ))}
         </PillsWrapper>
         <SliderWrapper>
-          <input type="range" name="" id="" className="slider" step="25" min="25" />
+          <Slider />
         </SliderWrapper>
         <CoinWrapper>
           <ValueWrapper>
