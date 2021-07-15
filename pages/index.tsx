@@ -4,7 +4,7 @@ import { Header, Sidebar } from "../components"
 import { BackgroundWrapper, ContentWrapper } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
 import { GetServerSideProps } from "next"
-import { Acceptbet, Createbet } from "../components/Bet/Bet"
+import { AcceptBet, CreateBet } from "../components/Bet"
 import { MainContent } from "../components/Bet/Bet.style"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
@@ -38,8 +38,8 @@ export default function Home({ theme }: { theme: ThemeType }) {
         <BackgroundWrapper />
         <ContentWrapper>
           <MainContent>
-            <Createbet />
-            <Acceptbet />
+            <CreateBet />
+            <AcceptBet />
           </MainContent>
         </ContentWrapper>
       </main>

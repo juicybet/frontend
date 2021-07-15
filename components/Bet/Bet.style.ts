@@ -97,7 +97,7 @@ export const ValueWrapper = styled.div`
   align-items: left;
 `
 
-export const ValueInBnc = styled.span`
+export const ValueInCrypto = styled.span`
   color: #494f6d;
   font-family: Quicksand;
   font-style: normal;
