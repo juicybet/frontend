@@ -12,17 +12,17 @@ const LabelWrapper = styled.label`
   position: relative;
 `
 
-const Label = styled.span`
+const Label = styled.div`
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 1.5rem;
-  color: #929292;
+  color: var(--light-gray);
 `
 
 const ReplacedInput = styled.span`
   display: inline-block;
   position: relative;
-  border: 2px solid #eaeaea;
+  border: 2px solid var(--secondary-gray);
   width: 1.6rem;
   height: 1.6rem;
   left: 0;
@@ -34,7 +34,7 @@ const ReplacedInput = styled.span`
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: #929292;
+    background-color: var(--light-gray);
     opacity: 0;
     left: 50%;
     top: 50%;
@@ -42,7 +42,7 @@ const ReplacedInput = styled.span`
     transition: all 180ms;
   }
   &:checked + ${Label} {
-    color: #ff624e;
+    color: var(--primary-pink);
   }
 `
 
@@ -51,19 +51,19 @@ const HiddenInput = styled.input`
   visibility: hidden;
   display: none;
   &:checked + ${ReplacedInput} {
-    border: 2px solid #ff624e;
+    border: 2px solid var(--primary-pink);
     &::after {
       width: 1rem;
       height: 1rem;
       opacity: 1;
       left: 14%;
       top: 14%;
-      background-color: #ff624e;
+      background-color: var(--primary-pink);
     }
  
 `
 
-const Radio = ({ name, children }: any) => (
+export const Radio = ({ name, children }: any) => (
   <RadioElementWrapper>
     <LabelWrapper>
       <HiddenInput name={name} type="radio" />
@@ -73,4 +73,26 @@ const Radio = ({ name, children }: any) => (
   </RadioElementWrapper>
 )
 
-export default Radio
+const PlacedBetRadioWrapper = styled.div`
+  display: grid;
+  grid-template-columns: -webkit-min-content auto;
+  grid-template-columns: min-content auto;
+  cursor: pointer;
+  position: relative;
+`
+
+const Wrapper = styled.label`
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+`
+
+export const PlacedBetRadio = ({ name, children }: any) => (
+  <PlacedBetRadioWrapper>
+    <Wrapper>
+      <HiddenInput name={name} type="radio" />
+      <ReplacedInput />
+    </Wrapper>
+    {children}
+  </PlacedBetRadioWrapper>
+)

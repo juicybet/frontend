@@ -15,7 +15,7 @@ const RangeInput = styled.input`
   -webkit-appearance: none;
   height: 1rem;
   border-radius: 0.6rem;
-  background: #ff624e;
+  background: var(--primary-pink);
   width: 65%;
   &::after {
     content: "";
@@ -24,7 +24,7 @@ const RangeInput = styled.input`
     height: 1rem;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-color: #eaeaea;
+    background-color: var(--secondary-gray);
     position: absolute;
     right: 14%;
   }
@@ -40,22 +40,22 @@ const RangeInput = styled.input`
     height: 2rem;
     border: 2px solid #ffffff;
     border-radius: 50%;
-    background: #ff624e;
+    background: var(--primary-pink);
     cursor: pointer;
-    box-shadow: ${makeLongShadow("#EAEAEA", "-8px")};
+    box-shadow: ${makeLongShadow("var(--secondary-gray)", "-8px")};
     z-index: 10;
   }
 
   &::-moz-range-thumb {
     width: 2rem;
     height: 2rem;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--primary-white);
     border-radius: 50%;
-    background: #ff624e;
+    background: var(--primary-pink);
     cursor: pointer;
   }
 `
 
 export const Slider = () => {
-  return <RangeInput type="range" step="25" min="25" />
+  return <RangeInput type="range" step="1" min="25" />
 }

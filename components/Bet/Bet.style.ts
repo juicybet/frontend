@@ -12,9 +12,9 @@ export const MainContent = styled.div`
 export const ContentCard = styled.div`
   width: 25rem;
   height: 35rem;
-  background-color: #ffffff;
+  background-color: var(--primary-white);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   position: relative;
 `
 
@@ -26,9 +26,11 @@ export const Cardbutton = styled.button`
   line-height: 1.5rem;
   font-family: Quicksand;
   font-weight: bold;
-  color: #ffffff;
-  background: #ff624e;
+  color: var(--primary-white);
+  background: var(--primary-pink);
   border-width: 0;
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -39,15 +41,14 @@ export const CardHeader = styled.span`
   font-style: normal;
   font-weight: bold;
   font-size: 1.125rem;
-  line-height: 1.3rem;
-  color: #494f6d;
+  color: var(--dark-gray);
   position: absolute;
   left: 5%;
-  top: 5%;
+  top: 3%;
 `
 
 export const LowerCardSection = styled.div`
-  border-top: 1px solid #efefef;
+  border-top: 1px solid var(--border-gray);
   position: absolute;
   width: 100%;
   height: 14rem;
@@ -58,7 +59,15 @@ export const UpperCardSection = styled.div`
   position: absolute;
   width: 100%;
   height: 14rem;
-  top: 9%;
+  top: 10%;
+  border-top: 1px solid var(--border-gray);
+`
+export const MiddleCardSection = styled.div`
+  position: absolute;
+  width: 100%;
+  // height: 14rem;
+  top: 10%;
+  border-top: 1px solid var(--border-gray);
 `
 
 export const PillsWrapper = styled.div`
@@ -71,9 +80,9 @@ export const PillsWrapper = styled.div`
 export const CardPils = styled.button`
   padding: 5px 10px;
   border-radius: 1rem;
-  color: #929292;
-  background: #ffffff;
-  border: 2px solid #eaeaea;
+  color: var(--light-gray);
+  background: var(--primary-white);
+  border: 2px solid var(--secondary-gray);
 `
 export const SliderWrapper = styled.div`
   display: flex;
@@ -86,33 +95,44 @@ export const CoinWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 2rem 5rem;
-  border: 2px solid #eaeaea;
+  border: 2px solid var(--secondary-gray);
   border-radius: 2rem;
   height: 4rem;
   padding: 0.8rem;
 `
-export const ValueWrapper = styled.div`
+export const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
 `
 
-export const ValueInCrypto = styled.span`
-  color: #494f6d;
-  font-family: Quicksand;
+export const cardSpanPrimary = css`
   font-style: normal;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+`
+export const cardSpanSecondary = css`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: var(--light-gray);
+`
+
+export const ValueInCrypto = styled.span`
+  ${cardSpanPrimary}
   font-size: 1.25rem;
-  line-height: 1.5rem;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
 `
 
 export const ValueInDollar = styled.span`
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  color: #929292;
+  ${cardSpanSecondary}
 `
 
 export const BetSelctionWrapper = styled.div`
@@ -130,10 +150,35 @@ export const RadioButtonWrapper = styled.div`
   width: 100%;
 `
 export const RadioLebels = styled.label`
-  font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.45rem;
-  color: #929292;
+  color: var(--light-gray);
+`
+
+export const flexCenter = css`
+  display: flex;
+  align-items: center;
+`
+
+export const PlacedBetsWrapper = styled.div`
+  ${flexCenter}
+  height: 5rem;
+  gap: 2rem;
+`
+export const PlacedBetdetails = styled.div`
+  ${flexCenter}
+  gap: 1rem;
+`
+export const WalletAddress = styled.span`
+  ${cardSpanPrimary}
+  color: var(--light-gray);
+  font-size: 1rem;
+`
+
+export const TimeOfBet = styled.span`
+  ${cardSpanSecondary}
+  display: flex;
+  justify-content: flex-end;
 `

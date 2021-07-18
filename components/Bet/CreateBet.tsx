@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Radio from "../Radio/Radio"
+import { Radio } from "../Radio/Radio"
 import { Slider } from "../Slider/Slider"
 import {
   BetSelctionWrapper,
@@ -15,16 +15,16 @@ import {
   UpperCardSection,
   ValueInCrypto,
   ValueInDollar,
-  ValueWrapper,
+  ColumnWrapper,
 } from "./Bet.style"
 
 export const CreateBet = () => {
   return (
     <ContentCard>
-      <CardHeader>Bet which fruit will turn into jelly</CardHeader>
+      <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
       <UpperCardSection>
         <BetSelctionWrapper>
-          <Image src="\images\demo image.png" width="200" height="100" alt="" />
+          <Image src="/images/demo-image.png" width="200" height="100" alt="" />
           <RadioButtonWrapper>
             <Radio name="bet">Watermelon</Radio>
             <Radio name="bet">Strawbery</Radio>
@@ -41,14 +41,14 @@ export const CreateBet = () => {
           <Slider />
         </SliderWrapper>
         <CoinWrapper>
-          <ValueWrapper>
+          <ColumnWrapper>
             <ValueInCrypto>0.123021</ValueInCrypto>
             <ValueInDollar>$43.62</ValueInDollar>
-          </ValueWrapper>
-          <Image src="\images\Bitmap.png" width="40" height="40" alt="" />
+          </ColumnWrapper>
+          <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
         </CoinWrapper>
       </LowerCardSection>
-      <Cardbutton>create a bet</Cardbutton>
+      <Cardbutton>Create a Bet</Cardbutton>
     </ContentCard>
   )
 }
