@@ -8,9 +8,10 @@ export const BackgroundWrapper = styled.div`
   opacity: 0.04;
   background-image: url(${getBackground()});
   background-size: 20rem 20rem;
+  z-index: -1;
 `
 export const ContentWrapper = styled.div`
-  margin-top: 6rem;
+  margin-top: 7.5rem;
 `
 
 export const RectangleWrapper = styled.div`

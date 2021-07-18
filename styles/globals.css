@@ -1,22 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
 
+:root {
+  --primary-pink: #fb2261;
+  --primary-white: #ffffff;
+  --dark-gray: #494f6d;
+  --border-gray: #efefef;
+  --light-gray: #929292;
+  --secondary-gray: #eaeaea;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  color: #494f6d;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-
 .p-top-1 {
   padding-top: 1rem;
 }
@@ -46,4 +54,21 @@ ul {
 .pos-absolute-l {
   position: absolute;
   left: 0;
+}
+.radioWrapper {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.placedBetsWrapper {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  gap: 2rem;
+}
+
+.placedBetdetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
