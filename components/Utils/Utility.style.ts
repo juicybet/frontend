@@ -34,6 +34,12 @@ export const FlexWrapperCentered = styled.div`
   align-items: center;
   justify-content: center;
 `
+export const FlexColWrapperCentered = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 export const FlexWrapperCol = styled.div`
   display: flex;
   flex-direction: column;

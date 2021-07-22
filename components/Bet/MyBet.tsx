@@ -9,16 +9,7 @@ import {
 } from "../Utils/Utility.style"
 import { FullCardSection, PrimaryCard, CardHeader } from "../Card/Card"
 import styled from "styled-components"
-
-const SectionContentWrapper = styled.div`
-  padding: 1rem;
-  border-bottom: 1px solid var(--border-gray);
-`
-const PlacedBetsWrapper = styled(FlexWrapperCentered)`
-  height: 4rem;
-  width: 100%;
-  justify-content: space-between;
-`
+import { PlacedBetsWrapper, SectionContentWrapper } from "./Bet.style"
 
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
   gap: 1rem;
