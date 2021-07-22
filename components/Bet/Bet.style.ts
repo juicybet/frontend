@@ -18,24 +18,6 @@ export const ContentCard = styled.div`
   position: relative;
 `
 
-export const Cardbutton = styled.button`
-  width: 100%;
-  height: 4rem;
-  padding: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  font-family: Quicksand;
-  font-weight: bold;
-  color: var(--primary-white);
-  background: var(--primary-pink);
-  border-width: 0;
-  border-bottom-left-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-`
-
 export const CardHeader = styled.span`
   font-family: Quicksand;
   font-style: normal;
@@ -52,7 +34,7 @@ export const LowerCardSection = styled.div`
   position: absolute;
   width: 100%;
   height: 14rem;
-  bottom: 11%;
+  bottom: 14%;
 `
 
 export const UpperCardSection = styled.div`
@@ -94,11 +76,11 @@ export const CoinWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem 5rem;
   border: 2px solid var(--secondary-gray);
   border-radius: 2rem;
   height: 4rem;
   padding: 0.8rem;
+  margin: 2rem 5rem;
 `
 export const ColumnWrapper = styled.div`
   display: flex;
@@ -162,10 +144,22 @@ export const flexCenter = css`
   align-items: center;
 `
 
+export const RadioWrapper = styled.div`
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--border-gray);
+`
+export const NonRadioWrapper = styled.div`
+  position: relative;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-gray);
+`
+
 export const PlacedBetsWrapper = styled.div`
   ${flexCenter}
   height: 5rem;
-  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+  // gap: 2rem;
 `
 export const PlacedBetdetails = styled.div`
   ${flexCenter}

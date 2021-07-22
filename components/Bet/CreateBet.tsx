@@ -1,9 +1,10 @@
 import Image from "next/image"
+import { FullButton } from "../Button/FullButton"
+import { PrimaryCard } from "../Card/Card"
 import { Radio } from "../Radio/Radio"
 import { Slider } from "../Slider/Slider"
 import {
   BetSelctionWrapper,
-  Cardbutton,
   CardHeader,
   CardPils,
   CoinWrapper,
@@ -20,7 +21,7 @@ import {
 
 export const CreateBet = () => {
   return (
-    <ContentCard>
+    <PrimaryCard>
       <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
       <UpperCardSection>
         <BetSelctionWrapper>
@@ -48,7 +49,7 @@ export const CreateBet = () => {
           <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
         </CoinWrapper>
       </LowerCardSection>
-      <Cardbutton>Create a Bet</Cardbutton>
-    </ContentCard>
+      <FullButton>Create a Bet </FullButton>
+    </PrimaryCard>
   )
 }

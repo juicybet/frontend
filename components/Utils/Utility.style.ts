@@ -10,6 +10,15 @@ export const BackgroundWrapper = styled.div`
   background-size: 20rem 20rem;
   z-index: -1;
 `
+export const DivBackgroundWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  background-image: url("images/Recatangle.png");
+  background-size: 20rem 20rem;
+  z-index: -1;
+`
 export const ContentWrapper = styled.div`
   margin-top: 7.5rem;
 `

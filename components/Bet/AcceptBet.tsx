@@ -1,7 +1,6 @@
 import { PlacedBetRadio } from "../Radio/Radio"
 import Image from "next/image"
 import {
-  Cardbutton,
   CardHeader,
   ContentCard,
   MiddleCardSection,
@@ -12,15 +11,18 @@ import {
   ColumnWrapper,
   WalletAddress,
   TimeOfBet,
+  RadioWrapper,
 } from "./Bet.style"
 import { ExternalLink } from "react-feather"
+import { FullButton } from "../Button/FullButton"
+import { PrimaryCard } from "../Card/Card"
 
 export const AcceptBet = () => {
   return (
-    <ContentCard>
+    <PrimaryCard>
       <CardHeader>Or accept an existing bet!</CardHeader>
       <MiddleCardSection>
-        <div className="radioWrapper">
+        <RadioWrapper>
           <PlacedBetRadio name="bet">
             <PlacedBetsWrapper>
               <PlacedBetdetails>
@@ -43,9 +45,9 @@ export const AcceptBet = () => {
               </div>
             </PlacedBetsWrapper>
           </PlacedBetRadio>
-        </div>
+        </RadioWrapper>
       </MiddleCardSection>
-      <Cardbutton>Accept a Bet</Cardbutton>
-    </ContentCard>
+      <FullButton>Accept a Bet</FullButton>
+    </PrimaryCard>
   )
 }
