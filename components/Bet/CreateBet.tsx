@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { FullButton } from "../Button/FullButton"
+import { FullButton } from "../Button"
 import { PrimaryCard } from "../Card/Card"
 import { Radio } from "../Radio/Radio"
 import { Slider } from "../Slider/Slider"

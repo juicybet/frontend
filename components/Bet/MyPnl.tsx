@@ -66,9 +66,9 @@ export const MyPnl = () => {
               })}
             >
               <ProgressBarChildren>
-                <span>Won</span>
-                <strong>75/100</strong>
-                <span>(75%)</span>
+                <SpanLabel size={".9rem"}>Won</SpanLabel>
+                <SpanInfoPrimary>75/100</SpanInfoPrimary>
+                <SpanLabel size={".8rem"}>(75%)</SpanLabel>
               </ProgressBarChildren>
             </CircularProgressbarWithChildren>
           </ProgressBarWrapper>
@@ -101,7 +101,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--primary-green)"} />
             <BreakDownDetail>
-              <SpanLabel size={"18px"}>Won :</SpanLabel>
+              <SpanLabel size={"1.125rem"}>Won :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>75 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>(75%)</SpanInfoSecondary>
@@ -118,7 +118,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--primary-red)"} />
             <BreakDownDetail>
-              <SpanLabel size={"18px"}>Lost :</SpanLabel>
+              <SpanLabel size={"1.125rem"}>Lost :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>25 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>(25%)</SpanInfoSecondary>
@@ -135,7 +135,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--dark-gray)"} />
             <BreakDownDetail>
-              <SpanLabel size={"18px"}>Entered :</SpanLabel>
+              <SpanLabel size={"1.125rem"}>Entered :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>100 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>total</SpanInfoSecondary>

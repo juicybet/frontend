@@ -14,7 +14,7 @@ import {
   RadioWrapper,
 } from "./Bet.style"
 import { ExternalLink } from "react-feather"
-import { FullButton } from "../Button/FullButton"
+import { FullButton } from "../Button"
 import { PrimaryCard } from "../Card/Card"
 
 export const AcceptBet = () => {

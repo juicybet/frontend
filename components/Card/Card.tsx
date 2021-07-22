@@ -37,6 +37,11 @@ export const BottomCardSection = styled.div<{ height: string; bottom: string }>`
   bottom: ${(props) => props.bottom};
 `
 
+export const FullCardSection = styled.div<{ top: string }>`
+  ${CardSection}
+  top: ${(props) => props.top};
+`
+
 export const PrimaryCard = ({ children }: any) => {
   return <PrimaryCardWrapper>{children}</PrimaryCardWrapper>
 }

@@ -13,7 +13,8 @@ export const Button = styled.button`
   border-width: 0;
   border-radius: 5rem;
 `
-export const ButtonWrapper = styled.div`
+
+export const FullButtonWrapper = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -23,8 +24,8 @@ export const ButtonWrapper = styled.div`
 
 export const FullButton = ({ children }: any) => {
   return (
-    <ButtonWrapper>
+    <FullButtonWrapper>
       <Button>{children}</Button>
-    </ButtonWrapper>
+    </FullButtonWrapper>
   )
 }
