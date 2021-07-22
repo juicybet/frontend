@@ -34,3 +34,37 @@ export const Rotatable = styled.div<{ angle: number }>`
   `}}
   transition: 0.2s;
 `
+
+export const FlexWrapperRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+export const FlexWrapperCentered = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export const FlexWrapperCol = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+export const SpanInfoPrimary = styled(FlexWrapperCentered)`
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--dark-gray);
+  gap: 0.4rem;
+`
+export const SpanInfoSecondary = styled(FlexWrapperRow)`
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--light-gray);
+  align-items: left;
+`
+export const SpanLabel = styled.span<{ size: string }>`
+  font-style: normal;
+  font-weight: bold;
+  font-size: ${(props) => props.size};
+  color: var(--light-gray);
+`

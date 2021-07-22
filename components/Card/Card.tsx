@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const PrimaryCardWrapper = styled.div`
   width: 25rem;
@@ -7,6 +7,7 @@ export const PrimaryCardWrapper = styled.div`
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 1.25rem;
   position: relative;
+  overflow: hidden;
 `
 export const CardHeader = styled.span`
   font-style: normal;
@@ -16,6 +17,24 @@ export const CardHeader = styled.span`
   position: absolute;
   left: 5%;
   top: 3%;
+`
+
+const CardSection = css`
+  position: absolute;
+  width: 100%;
+  border-top: 1px solid var(--border-gray);
+`
+
+export const TopCardSection = styled.div<{ height: string; top: string }>`
+  ${CardSection}
+  height: ${(props) => props.height};
+  top: ${(props) => props.top};
+`
+
+export const BottomCardSection = styled.div<{ height: string; bottom: string }>`
+  ${CardSection}
+  height: ${(props) => props.height};
+  bottom: ${(props) => props.bottom};
 `
 
 export const PrimaryCard = ({ children }: any) => {

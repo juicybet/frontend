@@ -1,8 +1,6 @@
-import { PlacedBetRadio } from "../Radio/Radio"
 import Image from "next/image"
 import {
   CardHeader,
-  ContentCard,
   MiddleCardSection,
   PlacedBetdetails,
   PlacedBetsWrapper,
@@ -11,11 +9,9 @@ import {
   ColumnWrapper,
   WalletAddress,
   TimeOfBet,
-  RadioWrapper,
   NonRadioWrapper,
 } from "./Bet.style"
 import { ExternalLink } from "react-feather"
-import { FullButton } from "../Button/FullButton"
 import { DivBackgroundWrapper } from "../Utils/Utility.style"
 import { PrimaryCard } from "../Card/Card"
 

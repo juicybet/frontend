@@ -1,34 +1,61 @@
 import Image from "next/image"
-import { Radio } from "../Radio/Radio"
-import { Slider } from "../Slider/Slider"
-import {
-  BetSelctionWrapper,
-  CardHeader,
-  CardPils,
-  CoinWrapper,
-  ContentCard,
-  LowerCardSection,
-  PillsWrapper,
-  RadioButtonWrapper,
-  SliderWrapper,
-  UpperCardSection,
-  ValueInCrypto,
-  ValueInDollar,
-  ColumnWrapper,
-  flexCenter,
-} from "./Bet.style"
-import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar"
+import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
 import { SmallBlock } from "../Block"
-import { PrimaryCard } from "../Card/Card"
+import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { FlexWrapperCol, FlexWrapperRow, SpanInfoPrimary, SpanInfoSecondary, SpanLabel } from "../Utils/Utility.style"
+import styled, { css } from "styled-components"
+
+const SharedWrapperStyle = css`
+  width: 50%;
+  padding: 1.5rem;
+`
+
+const ProgressBarWrapper = styled(FlexWrapperRow)`
+  ${SharedWrapperStyle}
+  border-right: 1px solid var(--border-gray);
+`
+
+const NetProfitWrapper = styled(FlexWrapperCol)`
+  ${SharedWrapperStyle}
+`
+
+const ProgressBarChildren = styled(FlexWrapperCol)`
+  align-items: center;
+`
+
+const BlockWrapper = styled(FlexWrapperRow)`
+  gap: 1rem;
+  align-items: center;
+`
+const ProfitWrapper = styled(FlexWrapperCol)`
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+`
+
+const BetDetailWrapper = styled(FlexWrapperCol)`
+  padding: 1rem 1.5rem;
+`
+const BetBreakDown = styled(FlexWrapperRow)`
+  align-items: center;
+  gap: 1rem;
+`
+const BreakDownDetail = styled(FlexWrapperRow)`
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border-gray);
+  width: 100%;
+`
 
 export const MyPnl = () => {
   return (
     <PrimaryCard>
       <CardHeader>My PNL</CardHeader>
-      <UpperCardSection>
-        <div className="flexWrapper">
-          <div className="progressBar">
+      <TopCardSection height={"13rem"} top={"10%"}>
+        <FlexWrapperRow>
+          <ProgressBarWrapper>
             <CircularProgressbarWithChildren
               value={75}
               strokeWidth={10}
@@ -38,92 +65,92 @@ export const MyPnl = () => {
                 pathColor: "var(--primary-green)",
               })}
             >
-              <div style={{ fontSize: "1rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <ProgressBarChildren>
                 <span>Won</span>
                 <strong>75/100</strong>
                 <span>(75%)</span>
-              </div>
+              </ProgressBarChildren>
             </CircularProgressbarWithChildren>
-          </div>
-          <div className="netProfit">
-            <div className="BlockWrapper">
+          </ProgressBarWrapper>
+          <NetProfitWrapper>
+            <BlockWrapper>
               <SmallBlock color={"var(--primary-green)"} />
-              <span>Net Profit:</span>
-            </div>
-            <div className="ProfitWrapper">
-              <ColumnWrapper>
-                <ValueInCrypto>
+              <SpanLabel size={"18px"}>Net Profit:</SpanLabel>
+            </BlockWrapper>
+            <ProfitWrapper>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>
                   0.123021
                   <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                </ValueInCrypto>
-                <ValueInDollar>~ $43.62</ValueInDollar>
-              </ColumnWrapper>
-              <ColumnWrapper>
-                <ValueInCrypto>
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </FlexWrapperCol>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>
                   0.123021
                   <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                </ValueInCrypto>
-                <ValueInDollar>~ $3.67 per bet</ValueInDollar>
-              </ColumnWrapper>
-            </div>
-          </div>
-        </div>
-      </UpperCardSection>
-      <LowerCardSection>
-        <div className="BetDetailWrapper">
-          <div className="BetDetail">
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </FlexWrapperCol>
+            </ProfitWrapper>
+          </NetProfitWrapper>
+        </FlexWrapperRow>
+      </TopCardSection>
+      <BottomCardSection height={"min-content"} bottom={"-1%"}>
+        <BetDetailWrapper>
+          <BetBreakDown>
             <SmallBlock color={"var(--primary-green)"} />
-            <div className="BetInfo">
-              <span>Won :</span>
-              <ColumnWrapper>
-                <ValueInCrypto>75 bets</ValueInCrypto>
-                <ValueInDollar>(75%)</ValueInDollar>
-              </ColumnWrapper>
-              <ColumnWrapper>
-                <ValueInCrypto>
+            <BreakDownDetail>
+              <SpanLabel size={"18px"}>Won :</SpanLabel>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>75 bets</SpanInfoPrimary>
+                <SpanInfoSecondary>(75%)</SpanInfoSecondary>
+              </FlexWrapperCol>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>
                   0.123021
                   <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                </ValueInCrypto>
-                <ValueInDollar>~ $3.67 per bet</ValueInDollar>
-              </ColumnWrapper>
-            </div>
-          </div>
-          <div className="BetDetail">
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </FlexWrapperCol>
+            </BreakDownDetail>
+          </BetBreakDown>
+          <BetBreakDown>
             <SmallBlock color={"var(--primary-red)"} />
-            <div className="BetInfo">
-              <span>Lost :</span>
-              <ColumnWrapper>
-                <ValueInCrypto>25 bets</ValueInCrypto>
-                <ValueInDollar>(25%)</ValueInDollar>
-              </ColumnWrapper>
-              <ColumnWrapper>
-                <ValueInCrypto>
+            <BreakDownDetail>
+              <SpanLabel size={"18px"}>Lost :</SpanLabel>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>25 bets</SpanInfoPrimary>
+                <SpanInfoSecondary>(25%)</SpanInfoSecondary>
+              </FlexWrapperCol>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>
                   0.123021
                   <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                </ValueInCrypto>
-                <ValueInDollar>~ $3.67 per bet</ValueInDollar>
-              </ColumnWrapper>
-            </div>
-          </div>
-          <div className="BetDetail">
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </FlexWrapperCol>
+            </BreakDownDetail>
+          </BetBreakDown>
+          <BetBreakDown>
             <SmallBlock color={"var(--dark-gray)"} />
-            <div className="BetInfo">
-              <span>Entered:</span>
-              <ColumnWrapper>
-                <ValueInCrypto>100 bets</ValueInCrypto>
-                <ValueInDollar>total</ValueInDollar>
-              </ColumnWrapper>
-              <ColumnWrapper>
-                <ValueInCrypto>
+            <BreakDownDetail>
+              <SpanLabel size={"18px"}>Entered :</SpanLabel>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>100 bets</SpanInfoPrimary>
+                <SpanInfoSecondary>total</SpanInfoSecondary>
+              </FlexWrapperCol>
+              <FlexWrapperCol>
+                <SpanInfoPrimary>
                   0.123021
                   <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                </ValueInCrypto>
-                <ValueInDollar>~ $3.67 per bet</ValueInDollar>
-              </ColumnWrapper>
-            </div>
-          </div>
-        </div>
-      </LowerCardSection>
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </FlexWrapperCol>
+            </BreakDownDetail>
+          </BetBreakDown>
+        </BetDetailWrapper>
+      </BottomCardSection>
     </PrimaryCard>
   )
 }
