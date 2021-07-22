@@ -25,3 +25,52 @@ export const Rotatable = styled.div<{ angle: number }>`
   `}}
   transition: 0.2s;
 `
+export const FlexWrapperRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+export const FlexWrapperCentered = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export const FlexColWrapperCentered = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+export const FlexWrapperCol = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const spanPrimaryStyle = css`
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: bold;
+  gap: 0.4rem;
+`
+const spanSecondaryStyle = css`
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--light-gray);
+`
+export const SpanInfoPrimary = styled(FlexWrapperCentered)`
+  ${spanPrimaryStyle}
+  color: var(--dark-gray);
+`
+export const SpanInfoLight = styled(FlexWrapperCentered)`
+  ${spanPrimaryStyle}
+  color: var(--light-gray);
+`
+export const SpanInfoSecondary = styled(FlexWrapperRow)`
+  ${spanSecondaryStyle}
+`
+export const SpanInfoCentered = styled(FlexWrapperCentered)`
+  ${spanSecondaryStyle}
+`
+export const SpanLabel = styled.span<{ size: string }>`
+  ${spanSecondaryStyle}
+  font-size: ${(props) => props.size};
+`

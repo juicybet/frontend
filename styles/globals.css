@@ -7,6 +7,8 @@
   --border-gray: #efefef;
   --light-gray: #929292;
   --secondary-gray: #eaeaea;
+  --primary-green: #12cd72;
+  --primary-red: #f42525;
 }
 
 html,
@@ -54,21 +56,4 @@ ul {
 .pos-absolute-l {
   position: absolute;
   left: 0;
-}
-.radioWrapper {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-gray);
-}
-
-.placedBetsWrapper {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  gap: 2rem;
-}
-
-.placedBetdetails {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }

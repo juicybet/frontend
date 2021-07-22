@@ -1,51 +1,42 @@
 import { PlacedBetRadio } from "../Radio/Radio"
 import Image from "next/image"
-import {
-  Cardbutton,
-  CardHeader,
-  ContentCard,
-  MiddleCardSection,
-  PlacedBetdetails,
-  PlacedBetsWrapper,
-  ValueInCrypto,
-  ValueInDollar,
-  ColumnWrapper,
-  WalletAddress,
-  TimeOfBet,
-} from "./Bet.style"
+import { PlacedBetdetails, PlacedBetsWrapper, WalletAddress, SectionContentWrapper } from "./Bet.style"
 import { ExternalLink } from "react-feather"
+import { FullButton } from "../Button"
+import { PrimaryCard, CardHeader, FullCardSection } from "../Card/Card"
+import { FlexWrapperCol, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
 
 export const AcceptBet = () => {
   return (
-    <ContentCard>
+    <PrimaryCard>
       <CardHeader>Or accept an existing bet!</CardHeader>
-      <MiddleCardSection>
-        <div className="radioWrapper">
+      <FullCardSection top={"10%"}>
+        <SectionContentWrapper>
           <PlacedBetRadio name="bet">
             <PlacedBetsWrapper>
               <PlacedBetdetails>
                 <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-                <ColumnWrapper>
-                  <ValueInCrypto>
+                <FlexWrapperCol>
+                  <SpanInfoPrimary>
                     0.123021
                     <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
-                  </ValueInCrypto>
-                  <ValueInDollar>$43.62</ValueInDollar>
-                </ColumnWrapper>
+                  </SpanInfoPrimary>
+                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+                </FlexWrapperCol>
               </PlacedBetdetails>
               <div className="placedBetOwner">
-                <ColumnWrapper>
+                <FlexWrapperCol>
                   <WalletAddress>
                     by 0xF2…25 <ExternalLink size={15} />
                   </WalletAddress>
-                  <TimeOfBet>10 minutes ago</TimeOfBet>
-                </ColumnWrapper>
+                  <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
+                </FlexWrapperCol>
               </div>
             </PlacedBetsWrapper>
           </PlacedBetRadio>
-        </div>
-      </MiddleCardSection>
-      <Cardbutton>Accept a Bet</Cardbutton>
-    </ContentCard>
+        </SectionContentWrapper>
+      </FullCardSection>
+      <FullButton>Accept a Bet</FullButton>
+    </PrimaryCard>
   )
 }

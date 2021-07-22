@@ -16,7 +16,7 @@ export const getMenuItems = (): MenuItemData[] => {
     },
     {
       title: "Jelly.bet",
-      subtitles: ["Place a bet", "Transaction history", "My history", "My PNL"],
+      subtitles: ["Place a bet", "Transaction history", "My bet history", "My PNL"],
       isOpen: theme === ThemeType.Jelly,
     },
     {
