@@ -7,7 +7,9 @@ export const PrimaryCardWrapper = styled.div`
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 1.25rem;
   position: relative;
-  overflow: hidden;
+`
+export const NotificationCardWrapper = styled(PrimaryCardWrapper)`
+  height: 41.5rem;
 `
 export const CardHeader = styled.span`
   font-style: normal;
@@ -44,4 +46,8 @@ export const FullCardSection = styled.div<{ top: string }>`
 
 export const PrimaryCard = ({ children }: any) => {
   return <PrimaryCardWrapper>{children}</PrimaryCardWrapper>
+}
+
+export const NotificationCard = ({ children }: any) => {
+  return <NotificationCardWrapper>{children}</NotificationCardWrapper>
 }
