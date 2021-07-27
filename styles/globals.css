@@ -2,6 +2,7 @@
 
 :root {
   --primary-pink: #fb2261;
+  --secondary-pink: #c01a4a;
   --primary-white: #ffffff;
   --dark-gray: #494f6d;
   --border-gray: #efefef;
@@ -9,6 +10,7 @@
   --secondary-gray: #eaeaea;
   --primary-green: #12cd72;
   --primary-red: #f42525;
+  --bg-gray: #f2f2f2;
 }
 
 html,
