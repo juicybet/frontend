@@ -15,20 +15,23 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { Ribbon } from "../Ribbon"
+import { LoosingRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
   padding: 2rem;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)`
+const WatermelonWrapper = styled(FlexWrapperRow)<{ img: string }>`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
+  background-image: url(${(props) => props.img});
+  position: relative;
 `
 
 const StrawberryWrapper = styled(FlexWrapperCol)`
   ${SharedWrapperStyle}
+  position: relative;
 `
 
 export const LosingCard = () => {
@@ -37,11 +40,17 @@ export const LosingCard = () => {
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"14rem"} top={"10%"}>
         <FlexWrapperRow>
-          <WatermelonWrapper>
+          <WatermelonWrapper img={"/images/Rectangle.png"}>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
+            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
+              <Image src="/images/icon_lost.png" width="40" height="40" alt="" />
+            </div>
           </WatermelonWrapper>
           <StrawberryWrapper>
             <Image src="/images/strawberry.png" width="120" height="150" alt="" />
+            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
+              <Image src="/images/icon_won.png" width="40" height="40" alt="" />
+            </div>
           </StrawberryWrapper>
         </FlexWrapperRow>
       </TopCardSection>
@@ -53,9 +62,9 @@ export const LosingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <Ribbon>
+        <LoosingRibbon>
           <SpanInfoWhite>You loose</SpanInfoWhite>
-        </Ribbon>
+        </LoosingRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>

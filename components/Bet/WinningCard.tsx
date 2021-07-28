@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, NotificationCard } from "../Card/Card"
+import { CardHeader, BottomCardSection, TopCardSection, NotificationCard } from "../Card/Card"
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
@@ -17,20 +17,23 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { Ribbon } from "../Ribbon"
+import { WinningRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
   padding: 2rem;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)`
+const WatermelonWrapper = styled(FlexWrapperRow)<{ img: string }>`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
+  background-image: url(${(props) => props.img});
+  position: relative;
 `
 
 const StrawberryWrapper = styled(FlexWrapperCol)`
   ${SharedWrapperStyle}
+  position: relative;
 `
 
 const CoinWrapper = styled(FlexWrapperCentered)`
@@ -42,6 +45,11 @@ const CoinWrapper = styled(FlexWrapperCentered)`
   width: 100%;
   background-color: var(--primary-white);
 `
+const IconWrapper = styled.div`
+  position: absolute;
+  bottom: 10;
+  right: 10;
+`
 
 export const WinningCard = () => {
   return (
@@ -49,11 +57,17 @@ export const WinningCard = () => {
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"14rem"} top={"10%"}>
         <FlexWrapperRow>
-          <WatermelonWrapper>
+          <WatermelonWrapper img={"/images/Rectangle.png"}>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
+            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
+              <Image src="/images/icon_lost.png" width="40" height="40" alt="" />
+            </div>
           </WatermelonWrapper>
           <StrawberryWrapper>
             <Image src="/images/strawberry.png" width="120" height="150" alt="" />
+            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
+              <Image src="/images/icon_won.png" width="40" height="40" alt="" />
+            </div>
           </StrawberryWrapper>
         </FlexWrapperRow>
       </TopCardSection>
@@ -65,9 +79,9 @@ export const WinningCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <Ribbon>
+        <WinningRibbon>
           <SpanInfoWhite>You Win</SpanInfoWhite>
-        </Ribbon>
+        </WinningRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>

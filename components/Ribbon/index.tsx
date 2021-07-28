@@ -1,18 +1,22 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-const RibbonContentWrapper = styled.div`
+type RibbonProps = {
+  RibbonType?: "won" | "lost"
+}
+
+export const RibbonContentWrapper = styled.div<{ type: string }>`
   position: relative;
   width: 25rem;
   height: 4rem;
-  background: var(--primary-pink);
   display: flex;
+  background-color: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
 
   &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    border: 2rem solid var(--secondary-pink);
+    border: 2rem solid ${(props) => (props.type === "win" ? "var(--secondary-pink)" : "var(--darker-gray)")};
     z-index: -1;
     top: 30px;
   }
@@ -29,9 +33,9 @@ const RibbonContentWrapper = styled.div`
     border-bottom-right-radius: 4px;
   }
 `
-const RibbonLeftDecoration = styled.div`
+export const RibbonLeftDecoration = styled.div<{ type: string }>`
   width: 1%;
-  background: var(--primary-pink);
+  background: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
   z-index: 100;
   position: relative;
   &::before {
@@ -49,18 +53,18 @@ const RibbonLeftDecoration = styled.div`
     position: absolute;
     width: 7px;
     height: 12px;
-    background: #7b0527;
+    background: ${(props) => (props.type === "win" ? "var(--shadow-pink)" : "var(--shadow-gray)")};
     bottom: -12px;
     left: -7px;
     border-radius: 6px 0 0 6px;
     box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
   }
 `
-const RibbonRightDecoration = styled.div`
+export const RibbonRightDecoration = styled.div<{ type: string }>`
   width: 1%;
   height: inherit;
   margin-bottom: 0;
-  background: var(--primary-pink);
+  background: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
   z-index: 100;
   position: relative;
   &::before {
@@ -78,24 +82,31 @@ const RibbonRightDecoration = styled.div`
     position: absolute;
     width: 7px;
     height: 12px;
-    background: #7b0527;
+    background: ${(props) => (props.type === "win" ? "var(--shadow-pink)" : "var(--shadow-gray)")};
     bottom: -12px;
     right: -7px;
     border-radius: 0 6px 6px 0;
     box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
   }
 `
-const RibbonContent = styled.div`
+export const RibbonContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 98%;
 `
 
-export const Ribbon = ({ children }: any) => (
-  <RibbonContentWrapper>
-    <RibbonLeftDecoration />
+export const WinningRibbon = ({ children }: any) => (
+  <RibbonContentWrapper type="win">
+    <RibbonLeftDecoration type="win" />
     <RibbonContent>{children}</RibbonContent>
-    <RibbonRightDecoration />
+    <RibbonRightDecoration type="win" />
+  </RibbonContentWrapper>
+)
+export const LoosingRibbon = ({ children }: any) => (
+  <RibbonContentWrapper type="lost">
+    <RibbonLeftDecoration type="lost" />
+    <RibbonContent>{children}</RibbonContent>
+    <RibbonRightDecoration type="lost" />
   </RibbonContentWrapper>
 )
