@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, NotificationCard } from "../Card/Card"
+import { CardHeader, BottomCardSection, TopCardSection, InfoCardSmall } from "../Card/Card"
 import {
   BetInfoWrapper,
   FlexWrapperCol,
@@ -31,7 +31,7 @@ const StrawberryWrapper = styled(FlexWrapperCol)`
 
 export const LoadingCard = () => {
   return (
-    <NotificationCard>
+    <InfoCardSmall>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"14rem"} top={"10%"}>
         <FlexWrapperRow>
@@ -43,7 +43,7 @@ export const LoadingCard = () => {
           </StrawberryWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"23.5rem"} bottom={"0"}>
+      <BottomCardSection height={"13.5rem"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -53,17 +53,11 @@ export const LoadingCard = () => {
         </BetInfoWrapper>
         <RewardSectionWrapper>
           <RewardSection>
-            <SpanInfoflexEnd>
-              View on Bsc Secondary
-              <ExternalLink size={10} />
-            </SpanInfoflexEnd>
-            <RewardInfo>
-              <SpanInfoPrimary>Loading..</SpanInfoPrimary>
-            </RewardInfo>
+            <SpanInfoPrimary>Loading..</SpanInfoPrimary>
           </RewardSection>
         </RewardSectionWrapper>
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
-    </NotificationCard>
+    </InfoCardSmall>
   )
 }

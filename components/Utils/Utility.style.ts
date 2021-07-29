@@ -74,6 +74,7 @@ export const SpanInfoSecondary = styled(FlexWrapperRow)`
 export const SpanInfoCentered = styled(FlexWrapperCentered)`
   ${spanSecondaryStyle}
 `
+
 export const SpanInfoflexEnd = styled(FlexWrapperCentered)`
   justify-content: flex-end;
   ${spanSecondaryStyle};
@@ -95,11 +96,11 @@ export const RewardSection = styled.div`
   background-color: var(--bg-gray);
   border-radius: 1rem;
 `
-export const RewardInfo = styled(FlexWrapperCol)`
+export const RewardInfo = styled(FlexWrapperCol)<{ height: string; width: string }>`
   align-items: flex-start;
   gap: 1rem;
-  height: 8rem;
-  width: 16rem;
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
 `
 
 export const ModalWrapper = styled.div`
