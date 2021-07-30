@@ -56,8 +56,12 @@ export const CreateBet = () => {
         <BetSelctionWrapper>
           <Image src="/images/demo-image.png" width="200" height="100" alt="" />
           <RadioButtonWrapper>
-            <Radio name="bet">Watermelon</Radio>
-            <Radio name="bet">Strawbery</Radio>
+            <Radio name="bet" variant="jelly">
+              Watermelon
+            </Radio>
+            <Radio name="bet" variant="jelly">
+              Strawbery
+            </Radio>
           </RadioButtonWrapper>
         </BetSelctionWrapper>
       </TopCardSection>
@@ -78,7 +82,7 @@ export const CreateBet = () => {
           <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
         </CoinWrapper>
       </BottomCardSection>
-      <FullButton>Create a Bet </FullButton>
+      <FullButton type="jelly">Create a Bet </FullButton>
     </PrimaryCard>
   )
 }

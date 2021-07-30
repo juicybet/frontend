@@ -10,11 +10,13 @@ import {
 } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
 import { GetServerSideProps } from "next"
-import { AcceptBet, CreateBet } from "../components/JellyBet"
+// import { AcceptBet, CreateBet } from "../"
 import { MainContent } from "../components/JellyBet/Bet.style"
 import { WinningCard } from "../components/JellyBet/WinningCard"
 import { LosingCard } from "../components/JellyBet/LosingCard"
 import { LoadingCard } from "../components/JellyBet/LoadingCard"
+import { CreateBet } from "../components/DonutBet/createBet"
+import { AcceptBet } from "../components/DonutBet/AcceptBet"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
@@ -79,6 +81,7 @@ export default function Home({ theme }: { theme: ThemeType }) {
             <AcceptBet />
           </MainContent>
         </ContentWrapper>
+
         <ModalDemonStrator />
         {showLoadingModal && (
           <ModalWrapper>

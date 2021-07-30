@@ -22,6 +22,7 @@ export const CardHeader = styled.span`
   position: absolute;
   left: 5%;
   top: 3%;
+  right: 5%;
 `
 
 const CardSection = css`
