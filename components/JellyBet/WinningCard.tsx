@@ -79,7 +79,7 @@ export const WinningCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <WinningRibbon>
+        <WinningRibbon bet={"jelly"}>
           <SpanInfoWhite>You Win</SpanInfoWhite>
         </WinningRibbon>
         <RewardSectionWrapper>

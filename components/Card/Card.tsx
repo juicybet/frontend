@@ -7,7 +7,6 @@ export const PrimaryCardWrapper = styled.div`
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 1.25rem;
   position: relative;
-  overflow: hidden;
 `
 export const InfoCardWrapper = styled(PrimaryCardWrapper)`
   height: 41.5rem;

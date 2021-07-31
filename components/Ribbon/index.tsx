@@ -1,22 +1,18 @@
 import styled, { css } from "styled-components"
 
-type RibbonProps = {
-  RibbonType?: "won" | "lost"
-}
-
-export const RibbonContentWrapper = styled.div<{ type: string }>`
+export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;
   width: 25rem;
   height: 4rem;
   display: flex;
-  background-color: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
+  background-color: ${(props) => props.colorOne};
 
   &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    border: 2rem solid ${(props) => (props.type === "win" ? "var(--secondary-pink)" : "var(--darker-gray)")};
+    border: 2rem solid ${(props) => props.colorTwo};
     z-index: -1;
     top: 30px;
   }
@@ -33,9 +29,9 @@ export const RibbonContentWrapper = styled.div<{ type: string }>`
     border-bottom-right-radius: 4px;
   }
 `
-export const RibbonLeftDecoration = styled.div<{ type: string }>`
+export const RibbonLeftDecoration = styled.div<{ colorOne: string; colorTwo: string }>`
   width: 1%;
-  background: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
+  background: ${(props) => props.colorOne};
   z-index: 100;
   position: relative;
   &::before {
@@ -53,18 +49,18 @@ export const RibbonLeftDecoration = styled.div<{ type: string }>`
     position: absolute;
     width: 7px;
     height: 12px;
-    background: ${(props) => (props.type === "win" ? "var(--shadow-pink)" : "var(--shadow-gray)")};
+    background: ${(props) => props.colorTwo};
     bottom: -12px;
     left: -7px;
     border-radius: 6px 0 0 6px;
     box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
   }
 `
-export const RibbonRightDecoration = styled.div<{ type: string }>`
+export const RibbonRightDecoration = styled.div<{ colorOne: string; colorTwo: string }>`
   width: 1%;
   height: inherit;
   margin-bottom: 0;
-  background: ${(props) => (props.type === "win" ? "var(--primary-pink)" : "var(--dark-gray)")};
+  background: ${(props) => props.colorOne};
   z-index: 100;
   position: relative;
   &::before {
@@ -82,7 +78,7 @@ export const RibbonRightDecoration = styled.div<{ type: string }>`
     position: absolute;
     width: 7px;
     height: 12px;
-    background: ${(props) => (props.type === "win" ? "var(--shadow-pink)" : "var(--shadow-gray)")};
+    background: ${(props) => props.colorTwo};
     bottom: -12px;
     right: -7px;
     border-radius: 0 6px 6px 0;
@@ -96,17 +92,28 @@ export const RibbonContent = styled.div`
   width: 98%;
 `
 
-export const WinningRibbon = ({ children }: any) => (
-  <RibbonContentWrapper type="win">
-    <RibbonLeftDecoration type="win" />
-    <RibbonContent>{children}</RibbonContent>
-    <RibbonRightDecoration type="win" />
-  </RibbonContentWrapper>
+export const WinningRibbon = ({ children, bet }: any) => (
+  <>
+    {bet === "jelly" && (
+      <RibbonContentWrapper colorOne="var(--primary-pink)" colorTwo="var(--secondary-pink)">
+        <RibbonLeftDecoration colorOne="var(--primary-pink)" colorTwo="var(--shadow-pink)" />
+        <RibbonContent>{children}</RibbonContent>
+        <RibbonRightDecoration colorOne="var(--primary-pink)" colorTwo="var(--shadow-pink)" />
+      </RibbonContentWrapper>
+    )}
+    {bet === "donut" && (
+      <RibbonContentWrapper colorOne="var(--primary-purple)" colorTwo="var(--secondary-purple)">
+        <RibbonLeftDecoration colorOne="var(--primary-purple)" colorTwo="var(--shadow-purple)" />
+        <RibbonContent>{children}</RibbonContent>
+        <RibbonRightDecoration colorOne="var(--primary-purple)" colorTwo="var(--shadow-purple)" />
+      </RibbonContentWrapper>
+    )}
+  </>
 )
 export const LoosingRibbon = ({ children }: any) => (
-  <RibbonContentWrapper type="lost">
-    <RibbonLeftDecoration type="lost" />
+  <RibbonContentWrapper colorOne="var(--dark-gray)" colorTwo="var(--darker-gray)">
+    <RibbonLeftDecoration colorOne="var(--dark-gray)" colorTwo="var(--shadow-gray)" />
     <RibbonContent>{children}</RibbonContent>
-    <RibbonRightDecoration type="lost" />
+    <RibbonRightDecoration colorOne="var(--dark-gray)" colorTwo="var(--shadow-gray)" />
   </RibbonContentWrapper>
 )
