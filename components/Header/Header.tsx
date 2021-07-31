@@ -1,6 +1,6 @@
 import { Header as StyledHeader, LogoContainer, MenuButton } from "./Header.style"
 import Image from "next/image"
-import { getLogoProps, getThemeColor, getTitle } from "../../data/theme"
+import { getLogoProps, getThemeColor, getTitle } from "../../core/site"
 import { useState } from "react"
 import { Hamburger } from "../Utils/Hamburger"
 

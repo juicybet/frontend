@@ -1,15 +1,15 @@
-import { MenuItemData } from "../../data/menuItems"
+import { MenuItemData } from "../../core/menuItems"
 import { MenuItem, Submenu, SubmenuItem } from "./Sidebar.style"
 import { Rotatable } from "../Utils/Utility.style"
 import { ChevronRight } from "react-feather"
-import { getThemeColor } from "../../data/theme"
+import { getSite, getThemeColor, linkTo } from "../../core/site"
 import Link from "next/link"
 
 export type MenuProps = MenuItemData & {
   setIsOpen(state: boolean): void
 }
 
-export const Menu = ({ title, subtitles, isOpen, setIsOpen }: MenuProps) => {
+export const Menu = ({ title, links, site, isOpen, setIsOpen }: MenuProps) => {
   return (
     <>
       <MenuItem onClick={() => setIsOpen(!isOpen)} selected={isOpen} color={getThemeColor()}>
@@ -20,9 +20,9 @@ export const Menu = ({ title, subtitles, isOpen, setIsOpen }: MenuProps) => {
       </MenuItem>
 
       <Submenu isOpen={isOpen}>
-        {subtitles.map((item, index) => (
+        {links.map((item, index) => (
           <SubmenuItem key={index} color={getThemeColor()}>
-            <Link href={`/${item.split(" ").join("_")}`}>{item}</Link>
+            <Link href={linkTo(site, item.url)}>{item.title}</Link>
           </SubmenuItem>
         ))}
       </Submenu>
