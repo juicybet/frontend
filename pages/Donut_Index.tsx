@@ -13,11 +13,9 @@ import { GetServerSideProps } from "next"
 // import { AcceptBet, CreateBet } from "../"
 import { MainContent } from "../components/JellyBet/Bet.style"
 import { WinningCard } from "../components/JellyBet/WinningCard"
-import { LosingCard } from "../components/JellyBet/LosingCard"
-import { LoadingCard } from "../components/JellyBet/LoadingCard"
+import { LosingCard } from "../components/DonutBet/LosingCard"
+import { LoadingCard } from "../components/DonutBet/LoadingCard"
 import { CreateBet } from "../components/DonutBet/createBet"
-import { AcceptBet } from "../components/DonutBet/AcceptBet"
-import { MyBet } from "../components/JellyBet/MyBet"
 import { BetHistory } from "../components/DonutBet/BetHistory"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
