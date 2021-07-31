@@ -10,11 +10,14 @@ import {
 } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
 import { GetServerSideProps } from "next"
-import { AcceptBet, CreateBet } from "../components/JellyBet"
+// import { AcceptBet, CreateBet } from "../"
 import { MainContent } from "../components/JellyBet/Bet.style"
-import { WinningCard } from "../components/JellyBet/WinningCard"
-import { LosingCard } from "../components/JellyBet/LosingCard"
-import { LoadingCard } from "../components/JellyBet/LoadingCard"
+import { WinningCard } from "../components/DonutBet/WinningCard"
+import { WaitingCard } from "../components/DonutBet/WaitingCard"
+import { LosingCard } from "../components/DonutBet/LosingCard"
+import { LoadingCard } from "../components/DonutBet/LoadingCard"
+import { CreateBet } from "../components/DonutBet/createBet"
+import { BetHistory } from "../components/DonutBet/BetHistory"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
@@ -33,6 +36,7 @@ export default function Home({ theme }: { theme: ThemeType }) {
   const [showLoadingModal, setShowLoadingModal] = useState(false)
   const [showWinningModal, setShowWinningModal] = useState(false)
   const [showLostModal, setShowLostModal] = useState(false)
+  const [showWaitingModal, setShowWaitingModal] = useState(false)
 
   // temp code
 
@@ -48,6 +52,7 @@ export default function Home({ theme }: { theme: ThemeType }) {
         <button onClick={() => setShowLoadingModal(true)}>loading</button>
         <button onClick={() => setShowWinningModal(true)}>Won</button>
         <button onClick={() => setShowLostModal(true)}>lose</button>
+        <button onClick={() => setShowWaitingModal(true)}>Wait</button>
       </div>
     )
   }
@@ -76,9 +81,10 @@ export default function Home({ theme }: { theme: ThemeType }) {
         <ContentWrapper>
           <MainContent>
             <CreateBet />
-            <AcceptBet />
+            <BetHistory />
           </MainContent>
         </ContentWrapper>
+
         <ModalDemonStrator />
         {showLoadingModal && (
           <ModalWrapper>
@@ -101,6 +107,14 @@ export default function Home({ theme }: { theme: ThemeType }) {
             <ModalOverlay onClick={() => setShowLostModal(false)} />
             <ModalContentWrapper>
               <LosingCard />
+            </ModalContentWrapper>
+          </ModalWrapper>
+        )}
+        {showWaitingModal && (
+          <ModalWrapper>
+            <ModalOverlay onClick={() => setShowWaitingModal(false)} />
+            <ModalContentWrapper>
+              <WaitingCard />
             </ModalContentWrapper>
           </ModalWrapper>
         )}

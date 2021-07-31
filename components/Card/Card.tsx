@@ -8,8 +8,11 @@ export const PrimaryCardWrapper = styled.div`
   border-radius: 1.25rem;
   position: relative;
 `
-export const NotificationCardWrapper = styled(PrimaryCardWrapper)`
+export const InfoCardWrapper = styled(PrimaryCardWrapper)`
   height: 41.5rem;
+`
+export const InfoCardWrapperSmall = styled(PrimaryCardWrapper)`
+  height: 30rem;
 `
 export const CardHeader = styled.span`
   font-style: normal;
@@ -19,6 +22,7 @@ export const CardHeader = styled.span`
   position: absolute;
   left: 5%;
   top: 3%;
+  right: 5%;
 `
 
 const CardSection = css`
@@ -48,6 +52,9 @@ export const PrimaryCard = ({ children }: any) => {
   return <PrimaryCardWrapper>{children}</PrimaryCardWrapper>
 }
 
-export const NotificationCard = ({ children }: any) => {
-  return <NotificationCardWrapper>{children}</NotificationCardWrapper>
+export const InfoCard = ({ children }: any) => {
+  return <InfoCardWrapper>{children}</InfoCardWrapper>
+}
+export const InfoCardSmall = ({ children }: any) => {
+  return <InfoCardWrapperSmall>{children}</InfoCardWrapperSmall>
 }

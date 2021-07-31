@@ -11,11 +11,11 @@ const makeLongShadow = (color: any, size: any) => {
   return shadow
 }
 
-const RangeInput = styled.input`
+const RangeInput = styled.input<{ color: string }>`
   -webkit-appearance: none;
   height: 1rem;
   border-radius: 0.6rem;
-  background: var(--primary-pink);
+  background: ${(props) => props.color};
   width: 65%;
   &::after {
     content: "";
@@ -40,7 +40,7 @@ const RangeInput = styled.input`
     height: 2rem;
     border: 2px solid #ffffff;
     border-radius: 50%;
-    background: var(--primary-pink);
+    background: ${(props) => props.color};
     cursor: pointer;
     box-shadow: ${makeLongShadow("var(--secondary-gray)", "-8px")};
     z-index: 10;
@@ -51,11 +51,14 @@ const RangeInput = styled.input`
     height: 2rem;
     border: 2px solid var(--primary-white);
     border-radius: 50%;
-    background: var(--primary-pink);
+    background: ${(props) => props.color};
     cursor: pointer;
   }
 `
 
-export const Slider = () => {
-  return <RangeInput type="range" step="1" min="25" />
+export const Slider = (props?: any) => {
+  if (props.type === "donut") {
+    return <RangeInput type="range" step="1" min="25" color={"var(--primary-purple)"} />
+  }
+  return <RangeInput type="range" step="1" min="25" color={"var(--primary-pink)"} />
 }

@@ -4,10 +4,10 @@ import { Header, Sidebar } from "../components"
 import { BackgroundWrapper, ContentWrapper } from "../components/Utils/Utility.style"
 import { getTitle, getFavicon, setThemeForHost, ThemeType, setTheme } from "../data/theme"
 import { GetServerSideProps } from "next"
-import { AcceptBet, CreateBet } from "../components/Bet"
-import { MainContent } from "../components/Bet/Bet.style"
-import { MyPnl } from "../components/Bet/MyPnl"
-import { MyBet } from "../components/Bet/MyBet"
+import { AcceptBet, CreateBet } from "../components/JellyBet"
+import { MainContent } from "../components/JellyBet/Bet.style"
+import { MyPnl } from "../components/JellyBet/MyPnl"
+import { MyBet } from "../components/JellyBet/MyBet"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
