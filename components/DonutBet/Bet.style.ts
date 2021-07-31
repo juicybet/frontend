@@ -11,7 +11,7 @@ export const MainContent = styled.div`
 `
 
 export const SectionContentWrapper = styled.div`
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem;
   border-bottom: 1px solid var(--border-gray);
 `
 export const PlacedBetsWrapper = styled(FlexWrapperCentered)`

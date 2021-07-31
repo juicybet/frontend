@@ -17,6 +17,8 @@ import { LosingCard } from "../components/JellyBet/LosingCard"
 import { LoadingCard } from "../components/JellyBet/LoadingCard"
 import { CreateBet } from "../components/DonutBet/createBet"
 import { AcceptBet } from "../components/DonutBet/AcceptBet"
+import { MyBet } from "../components/JellyBet/MyBet"
+import { BetHistory } from "../components/DonutBet/BetHistory"
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
@@ -78,7 +80,7 @@ export default function Home({ theme }: { theme: ThemeType }) {
         <ContentWrapper>
           <MainContent>
             <CreateBet />
-            <AcceptBet />
+            <BetHistory />
           </MainContent>
         </ContentWrapper>
 
