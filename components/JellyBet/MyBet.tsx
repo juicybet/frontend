@@ -22,8 +22,8 @@ export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
 `
 
-export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
-  background-image: url(${(props) => props.img});
+export const RectangleWrapper = styled(SectionContentWrapper)`
+  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
@@ -85,7 +85,7 @@ export const MyBet = () => {
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </SectionContentWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
@@ -106,7 +106,7 @@ export const MyBet = () => {
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />

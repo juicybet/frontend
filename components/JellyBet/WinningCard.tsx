@@ -24,10 +24,10 @@ const SharedWrapperStyle = css`
   padding: 32px;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)<{ img: string }>`
+const WatermelonWrapper = styled(FlexWrapperRow)`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
-  background-image: url(${(props) => props.img});
+  background-image: url(/images/stripes_pattern.png);
   position: relative;
 `
 
@@ -57,7 +57,7 @@ export const WinningCard = () => {
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
-          <WatermelonWrapper img={"/images/Rectangle.png"}>
+          <WatermelonWrapper>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />

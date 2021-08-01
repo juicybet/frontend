@@ -17,9 +17,9 @@ import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { LoosingRibbon } from "../Ribbon"
 
-const DonutWrapper = styled(FlexWrapperRow)<{ img: string }>`
+const DonutWrapper = styled(FlexWrapperRow)`
   border-right: 1px solid var(--border-gray);
-  background-image: url(${(props) => props.img});
+  background-image: url(/images/stripes_pattern.png);
   position: relative;
   width: 45%;
   padding: 32px;
@@ -44,7 +44,7 @@ export const LosingCard = () => {
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
-          <DonutWrapper img={"/images/Rectangle.png"}>
+          <DonutWrapper>
             <Image src="/images/donuts/8.png" width="128" height="128" alt="" />
           </DonutWrapper>
           <DonutDetailWrapper>

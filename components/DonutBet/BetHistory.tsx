@@ -22,8 +22,8 @@ export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
 `
 
-export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
-  background-image: url(${(props) => props.img});
+export const RectangleWrapper = styled(SectionContentWrapper)`
+  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
@@ -44,7 +44,7 @@ export const BetHistory = () => {
     <PrimaryCard>
       <CardHeader>Bet History</CardHeader>
       <FullCardSection top={"10%"}>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -88,7 +88,7 @@ export const BetHistory = () => {
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </SectionContentWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -110,7 +110,7 @@ export const BetHistory = () => {
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -132,7 +132,7 @@ export const BetHistory = () => {
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
