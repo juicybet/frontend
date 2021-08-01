@@ -79,7 +79,7 @@ export const CreateBet = () => {
             <SpanInfoPrimary>0.123021</SpanInfoPrimary>
             <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
           </FlexWrapperCol>
-          <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
+          <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
         </CoinWrapper>
       </BottomCardSection>
       <FullButton type="jelly">Create a Bet </FullButton>

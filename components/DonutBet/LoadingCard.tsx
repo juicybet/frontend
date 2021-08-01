@@ -36,7 +36,7 @@ export const LoadingCard = () => {
       <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper>
-            <Image src="/images/donut_7.png" width="140" height="140" alt="" />
+            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
           </DonutWrapper>
         </FlexWrapperRow>
       </TopCardSection>

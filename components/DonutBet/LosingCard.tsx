@@ -45,7 +45,7 @@ export const LosingCard = () => {
       <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper img={"/images/Rectangle.png"}>
-            <Image src="/images/donut_8.png" width="140" height="140" alt="" />
+            <Image src="/images/donuts/8.png" width="128" height="128" alt="" />
           </DonutWrapper>
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
@@ -60,7 +60,7 @@ export const LosingCard = () => {
               </SpanInfoPrimary>
             </LabelWrapper>
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_lost.png" width="30" height="30" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </div>
           </DonutDetailWrapper>
         </FlexWrapperRow>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_won</title>
+    <defs>
+        <circle id="path-1" cx="18" cy="18" r="18"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Jelly---Bet-Result-(Lost)" transform="translate(-876.000000, -538.000000)">
+            <g id="Group-9" transform="translate(476.000000, 268.000000)">
+                <g id="Group-2" transform="translate(34.000000, 0.000000)">
+                    <g id="Group-7" transform="translate(-0.500000, 64.500000)">
+                        <g id="Path-3" transform="translate(161.000000, 0.000000)">
+                            <g id="Group-8" transform="translate(208.000000, 208.000000)">
+                                <g id="Oval">
+                                    <circle stroke="#FFFFFF" stroke-width="3" stroke-linejoin="square" fill="#12CD72" fill-rule="evenodd" cx="18" cy="18" r="16.5"></circle>
+                                    <circle stroke="#12CD72" stroke-width="2" cx="18" cy="18" r="19"></circle>
+                                </g>
+                                <path d="M15.3100587,24 C14.8779648,24 14.4496282,23.8346771 14.1227397,23.5040313 L10.4931507,19.8180822 C9.83561644,19.1530333 9.83561644,18.0746771 10.4931507,17.4096282 C11.1469276,16.7408219 12.2140117,16.7408219 12.8677886,17.4096282 L15.3100587,19.8857143 L22.5880235,12.4987867 C23.2455577,11.8337378 24.3088845,11.8337378 24.9626614,12.4987867 C25.6201957,13.1638356 25.6201957,14.2421918 24.9626614,14.9072407 L16.4973777,23.5040313 C16.1704892,23.8346771 15.7383953,24 15.3100587,24 Z" id="icon" fill="#FFFFFF" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

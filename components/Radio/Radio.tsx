@@ -13,8 +13,7 @@ const LabelWrapper = styled.label`
 `
 
 const Label = styled.div`
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 24px;
   color: var(--light-gray);
 `

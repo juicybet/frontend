@@ -47,13 +47,13 @@ export const FlexWrapperCol = styled.div`
 const spanPrimaryStyle = css`
   font-size: 20px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   gap: 6.4px;
 `
 const spanSecondaryStyle = css`
   font-size: 12px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--light-gray);
 `
 export const SpanInfoPrimary = styled(FlexWrapperCentered)`

@@ -29,8 +29,7 @@ export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
 export const CancelButton = styled.button`
   width: 112px;
   height: 40px;
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-pink);
   background: var(--primary-white);
   border: 2px solid var(--primary-pink);
@@ -49,11 +48,11 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_1.png" width="50" height="50" alt="" />
+              <Image src="/images/donuts/1.png" width="64" height="64" alt="Donut 1" />
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -63,7 +62,7 @@ export const BetHistory = () => {
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
@@ -71,11 +70,11 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_2.png" width="50" height="50" alt="" />
+              <Image src="/images/donuts/2.png" width="64" height="64" alt="Donut 2" />
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -85,7 +84,7 @@ export const BetHistory = () => {
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </FlexWrapperCol>
-              <Image src="/images/icon_won.png" width="25" height="25" alt="" />
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </SectionContentWrapper>
@@ -93,11 +92,11 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_4.png" width="50" height="50" alt="" />
+              <Image src="/images/donuts/4.png" width="64" height="64" alt="Donut 4" />
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -107,7 +106,7 @@ export const BetHistory = () => {
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
@@ -115,11 +114,11 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_3.png" width="50" height="50" alt="" />
+              <Image src="/images/donuts/3.png" width="64" height="64" alt="Donut 3" />
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -129,7 +128,7 @@ export const BetHistory = () => {
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
@@ -137,11 +136,11 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_5.png" width="50" height="50" alt="" />
+              <Image src="/images/donuts/5.png" width="64" height="64" alt="Donut 5" />
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -151,7 +150,7 @@ export const BetHistory = () => {
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>

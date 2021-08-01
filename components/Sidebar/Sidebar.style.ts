@@ -97,7 +97,6 @@ export const SubmenuItem = styled.div<{ color: string }>`
   margin-top: 16px;
   cursor: pointer;
 
-  font-size: 18px;
   font-weight: 500;
 
   transition: 0.2s;

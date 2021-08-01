@@ -16,8 +16,7 @@ export const InfoCardWrapperSmall = styled(PrimaryCardWrapper)`
 `
 export const CardHeader = styled.span`
   font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
   color: var(--dark-gray);
   position: absolute;
   left: 5%;

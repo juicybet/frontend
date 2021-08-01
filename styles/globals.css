@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500,600,700&display=swap");
 
 :root {
   --primary-pink: #fb2261;
@@ -20,10 +20,14 @@
 }
 
 html,
-body {
+body,
+button,
+input {
   padding: 0;
   margin: 0;
   font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 a {

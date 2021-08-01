@@ -62,7 +62,7 @@ export const WaitingCard = () => {
       <TopCardSection height={"256px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper>
-            <Image src="/images/donut_7.png" width="140" height="140" alt="" />
+            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
           </DonutWrapper>
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
@@ -77,7 +77,7 @@ export const WaitingCard = () => {
               </SpanInfoPrimary>
             </LabelWrapperGrid>
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_won.png" width="30" height="30" alt="" />
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </div>
           </DonutDetailWrapper>
         </FlexWrapperRow>
@@ -105,7 +105,7 @@ export const WaitingCard = () => {
                   <SpanInfoPrimary>0.123021</SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
                 </FlexWrapperCol>
-                <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
+                <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
           </RewardSection>

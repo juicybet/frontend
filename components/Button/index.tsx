@@ -2,12 +2,9 @@ import styled from "styled-components"
 
 export const Button = styled.button<{ color: string }>`
   width: 100%;
-  height: 64px;
+  height: 56px;
   padding: 16px;
-  font-size: 20px;
-  line-height: 16px;
-  font-family: Quicksand;
-  font-weight: bold;
+  font-size: 18px;
   color: var(--primary-white);
   background: ${(props) => props.color};
   border-width: 0;

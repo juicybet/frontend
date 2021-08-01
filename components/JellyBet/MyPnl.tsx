@@ -44,7 +44,7 @@ const BetBreakDown = styled(FlexWrapperRow)`
 const BreakDownDetail = styled(FlexWrapperRow)`
   align-items: center;
   justify-content: space-between;
-  padding: 1.128px 0;
+  padding: 29px 0;
   border-bottom: 1px solid var(--border-gray);
   width: 100%;
 `
@@ -81,14 +81,14 @@ export const MyPnl = () => {
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -109,7 +109,7 @@ export const MyPnl = () => {
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -126,7 +126,7 @@ export const MyPnl = () => {
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>
@@ -143,7 +143,7 @@ export const MyPnl = () => {
               <FlexWrapperCol>
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
               </FlexWrapperCol>

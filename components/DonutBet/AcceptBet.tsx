@@ -19,7 +19,7 @@ export const AcceptBet = () => {
                 <FlexWrapperCol>
                   <SpanInfoPrimary>
                     0.123021
-                    <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                   </SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
                 </FlexWrapperCol>

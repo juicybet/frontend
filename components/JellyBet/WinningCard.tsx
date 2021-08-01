@@ -60,13 +60,13 @@ export const WinningCard = () => {
           <WatermelonWrapper img={"/images/Rectangle.png"}>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_lost.png" width="40" height="40" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </div>
           </WatermelonWrapper>
           <StrawberryWrapper>
             <Image src="/images/strawberry.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_won.png" width="40" height="40" alt="" />
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </div>
           </StrawberryWrapper>
         </FlexWrapperRow>
@@ -95,7 +95,7 @@ export const WinningCard = () => {
                   <SpanInfoPrimary>0.123021</SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
                 </FlexWrapperCol>
-                <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
+                <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
           </RewardSection>
