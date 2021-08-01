@@ -39,12 +39,12 @@ export function setSite(t: SiteType) {
 }
 
 export function getFavicon() {
-  return `/images/favicons/${getSite()}_favicon.ico`
+  return `/images/favicons/${getSite()}.ico`
 }
 
 export function getBackground() {
   // todo: change this when we have more backgrounds
-  return `/images/jelly_background.png`
+  return `/images/backgrounds/jelly.png`
 }
 
 export function getTitle() {
@@ -87,22 +87,10 @@ export function getLogoProps() {
     [SiteType.Juicy]: 212,
   }
   return {
-    src: `/images/${theme}_logo.png`,
+    src: `/images/logo/${theme}.png`,
     height: 120,
     width: widths[theme],
   }
-}
-
-export const themeColors = {
-  [SiteType.Jelly]: "#FB2261",
-  [SiteType.Recipe]: "#AD631A",
-  [SiteType.Salad]: "#41A13B",
-  [SiteType.Donut]: "#D32B9A",
-  [SiteType.Juicy]: "#FC9917",
-}
-
-export function getThemeColor() {
-  return themeColors[getSite()]
 }
 
 export function linkTo(site: SiteType, url = "") {

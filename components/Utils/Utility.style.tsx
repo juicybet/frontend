@@ -1,5 +1,17 @@
 import styled, { css } from "styled-components"
 import { getBackground } from "../../core/site"
+import {
+  flexbox,
+  FlexboxProps,
+  space,
+  SpaceProps,
+  layout,
+  LayoutProps,
+  color,
+  ColorProps,
+  typography,
+  TypographyProps,
+} from "styled-system"
 
 export const BackgroundWrapper = styled.div`
   position: absolute;
@@ -25,10 +37,30 @@ export const Rotatable = styled.div<{ angle: number }>`
   `}}
   transition: 0.2s;
 `
-export const FlexWrapperRow = styled.div`
+
+export const Box = styled.div<SpaceProps & LayoutProps>`
+  ${space}
+  ${layout}
+`
+
+export const Text = styled(Box)<ColorProps & TypographyProps>`
+  ${typography}
+  ${color}
+`
+
+export const Flex = styled(Box)<FlexboxProps>`
   display: flex;
+  ${flexbox}
+`
+
+export const FlexRow = styled(Flex)`
   flex-direction: row;
 `
+
+export const FlexColumn = styled(Flex)`
+  flex-direction: column;
+`
+
 export const FlexWrapperCentered = styled.div`
   display: flex;
   align-items: center;
@@ -40,20 +72,16 @@ export const FlexColWrapperCentered = styled.div`
   align-items: center;
   justify-content: center;
 `
-export const FlexWrapperCol = styled.div`
-  display: flex;
-  flex-direction: column;
-`
 const spanPrimaryStyle = css`
   font-size: 20px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   gap: 6.4px;
 `
 const spanSecondaryStyle = css`
   font-size: 12px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--light-gray);
 `
 export const SpanInfoPrimary = styled(FlexWrapperCentered)`
@@ -68,7 +96,7 @@ export const SpanInfoWhite = styled(FlexWrapperCentered)`
   ${spanPrimaryStyle}
   color: var(--primary-white);
 `
-export const SpanInfoSecondary = styled(FlexWrapperRow)`
+export const SpanInfoSecondary = styled(FlexRow)`
   ${spanSecondaryStyle}
 `
 export const SpanInfoCentered = styled(FlexWrapperCentered)`
@@ -87,7 +115,7 @@ export const BetInfoWrapper = styled(FlexWrapperCentered)`
   height: 64px;
   gap: 16px;
 `
-export const RewardSectionWrapper = styled(FlexWrapperCol)`
+export const RewardSectionWrapper = styled(FlexColumn)`
   justify-content: flex-start;
   padding: 16px;
 `
@@ -96,7 +124,7 @@ export const RewardSection = styled.div`
   background-color: var(--bg-gray);
   border-radius: 16px;
 `
-export const RewardInfo = styled(FlexWrapperCol)<{ height: string; width: string }>`
+export const RewardInfo = styled(FlexColumn)<{ height: string; width: string }>`
   align-items: flex-start;
   gap: 16px;
   height: ${(props) => props.height};

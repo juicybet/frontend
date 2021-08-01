@@ -3,8 +3,9 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, InfoCard } from "../Card/Card"
 import {
   BetInfoWrapper,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -15,17 +16,17 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { LoosingRibbon } from "../Ribbon"
+import { LosingRibbon } from "../Ribbon"
 
-const DonutWrapper = styled(FlexWrapperRow)<{ img: string }>`
+const DonutWrapper = styled(FlexRow)`
   border-right: 1px solid var(--border-gray);
-  background-image: url(${(props) => props.img});
+  background-image: url(/images/stripes_pattern.png);
   position: relative;
   width: 45%;
   padding: 32px;
 `
 
-const DonutDetailWrapper = styled(FlexWrapperCol)`
+const DonutDetailWrapper = styled(FlexColumn)`
   position: relative;
   padding: 48px 48px 0 16px;
   width: 60%;
@@ -43,9 +44,9 @@ export const LosingCard = () => {
     <PrimaryCard>
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
-          <DonutWrapper img={"/images/Rectangle.png"}>
-            <Image src="/images/donut_8.png" width="140" height="140" alt="" />
+        <Flex flexDirection="row">
+          <DonutWrapper>
+            <Image src="/images/donuts/8.png" width="128" height="128" alt="" />
           </DonutWrapper>
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
@@ -60,10 +61,10 @@ export const LosingCard = () => {
               </SpanInfoPrimary>
             </LabelWrapper>
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_lost.png" width="30" height="30" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </div>
           </DonutDetailWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"360px"} bottom={"0"}>
         <BetInfoWrapper>
@@ -73,9 +74,9 @@ export const LosingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <LoosingRibbon>
+        <LosingRibbon>
           <SpanInfoWhite>You loose</SpanInfoWhite>
-        </LoosingRibbon>
+        </LosingRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>

@@ -1,21 +1,17 @@
+import React from "react"
 import styled from "styled-components"
+import { currentTheme } from "../../core/theme"
 
-const RadioElementWrapper = styled.div`
-  display: inline-block;
-`
-const LabelWrapper = styled.label`
+const Label = styled.label`
   display: grid;
   grid-template-columns: -webkit-min-content auto;
   grid-template-columns: min-content auto;
   grid-gap: 8px;
   cursor: pointer;
   position: relative;
-`
 
-const Label = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 24px;
+  font-weight: 600;
+  line-height: 30px;
   color: var(--light-gray);
 `
 
@@ -23,8 +19,8 @@ const ReplacedInput = styled.span<{ color?: string }>`
   display: inline-block;
   position: relative;
   border: 2px solid var(--secondary-gray);
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   left: 0;
   border-radius: 50%;
   vertical-align: middle;
@@ -36,13 +32,10 @@ const ReplacedInput = styled.span<{ color?: string }>`
     border-radius: 50%;
     background-color: var(--light-gray);
     opacity: 0;
-    left: 50%;
-    top: 50%;
+    margin: 50%;
+    transform: translate(-50%, -50%);
     position: absolute;
-    transition: all 180ms;
-  }
-  &:checked + ${Label} {
-    color: ${(props) => props.color};
+    transition: all 0.2s;
   }
 `
 
@@ -50,36 +43,27 @@ const HiddenInput = styled.input<{ color?: string }>`
   position: absolute;
   visibility: hidden;
   display: none;
+
+  &:checked ~ span {
+    color: ${(props) => props.color};
+  }
+
   &:checked + ${ReplacedInput} {
     border: 2px solid ${(props) => props.color};
     &::after {
       width: 16px;
       height: 16px;
       opacity: 1;
-      left: 14%;
-      top: 14%;
       background-color: ${(props) => props.color};
     }
 `
 
-export const Radio = ({ name, children, variant }: any) => (
-  <RadioElementWrapper>
-    <LabelWrapper>
-      {variant === "donut" && (
-        <>
-          <HiddenInput name={name} type="radio" color="var(--primary-purple)" />
-          <ReplacedInput color="var(--primary-purple)" />
-        </>
-      )}
-      {variant === "jelly" && (
-        <>
-          <HiddenInput name={name} type="radio" color="var(--primary-pink)" />
-          <ReplacedInput color="var(--primary-pink)" />
-        </>
-      )}
-      <Label>{children}</Label>
-    </LabelWrapper>
-  </RadioElementWrapper>
+export const Radio = ({ name, children }: { name: string; children: string | JSX.Element }) => (
+  <Label>
+    <HiddenInput name={name} type="radio" color={currentTheme().primary} />
+    <ReplacedInput color={currentTheme().primary} />
+    <span>{children}</span>
+  </Label>
 )
 
 const PlacedBetRadioWrapper = styled.div`

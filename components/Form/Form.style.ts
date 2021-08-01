@@ -83,5 +83,5 @@ export const StyledFieldset = styled.fieldset`
 
 export const StyledError = styled.div`
   color: red;
-  font-weight: 600;
+  font-weight: 500;
 `

@@ -1,7 +1,9 @@
 import Image from "next/image"
 import {
   FlexWrapperCentered,
-  FlexWrapperCol,
+  Flex,
+  FlexRow,
+  FlexColumn,
   SpanInfoCentered,
   SpanInfoLight,
   SpanInfoPrimary,
@@ -22,21 +24,20 @@ export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
 `
 
-export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
-  background-image: url(${(props) => props.img});
+export const RectangleWrapper = styled(SectionContentWrapper)`
+  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
   width: 112px;
   height: 40px;
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-pink);
   background: var(--primary-white);
   border: 2px solid var(--primary-pink);
   border-radius: 32px;
 `
-const ButtonWrapper = styled(FlexWrapperCol)`
+const ButtonWrapper = styled(FlexColumn)`
   gap: 8px;
 `
 
@@ -49,13 +50,13 @@ export const MyBet = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
               <ButtonWrapper>
@@ -69,61 +70,61 @@ export const MyBet = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_won.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </SectionContentWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <SpanInfoLight>Cancelled</SpanInfoLight>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>

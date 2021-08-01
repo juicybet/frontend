@@ -4,8 +4,9 @@ import { CardHeader, BottomCardSection, TopCardSection, InfoCard } from "../Card
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -24,13 +25,13 @@ const SharedWrapperStyle = css`
   padding: 32px;
 `
 
-const DonutWrapper = styled(FlexWrapperRow)`
+const DonutWrapper = styled(FlexRow)`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
   position: relative;
 `
 
-const DonutDetailWrapper = styled(FlexWrapperCol)`
+const DonutDetailWrapper = styled(FlexColumn)`
   position: relative;
   padding: 48px 48px 0 16px;
   width: 60%;
@@ -60,9 +61,9 @@ export const WinningCard = () => {
     <InfoCard>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"256px"} top={"10%"}>
-        <FlexWrapperRow>
+        <Flex flexDirection="row">
           <DonutWrapper>
-            <Image src="/images/donut_7.png" width="140" height="140" alt="" />
+            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
           </DonutWrapper>
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
@@ -77,10 +78,10 @@ export const WinningCard = () => {
               </SpanInfoPrimary>
             </LabelWrapperGrid>
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_won.png" width="30" height="30" alt="" />
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </div>
           </DonutDetailWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"416px"} bottom={"0"}>
         <BetInfoWrapper>
@@ -105,11 +106,11 @@ export const WinningCard = () => {
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
-                <FlexWrapperCol>
+                <Flex flexDirection="column">
                   <SpanInfoPrimary>0.123021</SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </FlexWrapperCol>
-                <Image src="/images/Bitmap.png" width="40" height="40" alt="" />
+                </Flex>
+                <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
           </RewardSection>

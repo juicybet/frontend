@@ -1,13 +1,11 @@
 import styled from "styled-components"
+import { currentTheme } from "../../core/theme"
 
 export const Button = styled.button<{ color: string }>`
   width: 100%;
-  height: 64px;
+  height: 56px;
   padding: 16px;
-  font-size: 20px;
-  line-height: 16px;
-  font-family: Quicksand;
-  font-weight: bold;
+  font-size: 18px;
   color: var(--primary-white);
   background: ${(props) => props.color};
   border-width: 0;
@@ -22,11 +20,10 @@ export const FullButtonWrapper = styled.div`
   padding: 16px;
 `
 
-export const FullButton = ({ children, type }: any) => {
+export const FullButton = ({ children }: any) => {
   return (
     <FullButtonWrapper>
-      {type === "donut" && <Button color={"var(--primary-purple)"}>{children}</Button>}
-      {type === "jelly" && <Button color={"var(--primary-pink)"}>{children}</Button>}
+      <Button color={currentTheme().primary}>{children}</Button>
     </FullButtonWrapper>
   )
 }

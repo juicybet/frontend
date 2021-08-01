@@ -4,7 +4,7 @@ import { PlacedBetdetails, PlacedBetsWrapper, WalletAddress, SectionContentWrapp
 import { ExternalLink } from "react-feather"
 import { FullButton } from "../Button"
 import { PrimaryCard, CardHeader, FullCardSection } from "../Card/Card"
-import { FlexWrapperCol, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
+import { Flex, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
 
 export const AcceptBet = () => {
   return (
@@ -16,27 +16,27 @@ export const AcceptBet = () => {
             <PlacedBetsWrapper>
               <PlacedBetdetails>
                 <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
-                <FlexWrapperCol>
+                <Flex flexDirection="column">
                   <SpanInfoPrimary>
                     0.123021
-                    <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                   </SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </FlexWrapperCol>
+                </Flex>
               </PlacedBetdetails>
               <div className="placedBetOwner">
-                <FlexWrapperCol>
+                <Flex flexDirection="column">
                   <WalletAddress>
                     by 0xF2…25 <ExternalLink size={15} />
                   </WalletAddress>
                   <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-                </FlexWrapperCol>
+                </Flex>
               </div>
             </PlacedBetsWrapper>
           </PlacedBetRadio>
         </SectionContentWrapper>
       </FullCardSection>
-      <FullButton type="jelly">Accept a Bet</FullButton>
+      <FullButton>Accept a Bet</FullButton>
     </PrimaryCard>
   )
 }

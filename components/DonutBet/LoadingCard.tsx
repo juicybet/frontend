@@ -3,30 +3,20 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, BottomCardSection, TopCardSection, InfoCardSmall } from "../Card/Card"
 import {
   BetInfoWrapper,
-  FlexWrapperCol,
-  FlexWrapperRow,
-  RewardInfo,
+  Flex,
+  FlexRow,
   RewardSection,
   RewardSectionWrapper,
-  SpanInfoflexEnd,
   SpanInfoPrimary,
   SpanLabel,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 
-const SharedWrapperStyle = css`
+const DonutWrapper = styled(FlexRow)`
   width: 50%;
   padding: 32px;
-`
-
-const DonutWrapper = styled(FlexWrapperRow)`
-  ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
-`
-
-const StrawberryWrapper = styled(FlexWrapperCol)`
-  ${SharedWrapperStyle}
 `
 
 export const LoadingCard = () => {
@@ -34,11 +24,11 @@ export const LoadingCard = () => {
     <InfoCardSmall>
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
+        <Flex flexDirection="row">
           <DonutWrapper>
-            <Image src="/images/donut_7.png" width="140" height="140" alt="" />
+            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
           </DonutWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"232px"} bottom={"0"}>
         <BetInfoWrapper>

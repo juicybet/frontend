@@ -1,7 +1,7 @@
 import Image from "next/image"
 import {
   FlexWrapperCentered,
-  FlexWrapperCol,
+  Flex,
   SpanInfoCentered,
   SpanInfoLight,
   SpanInfoPrimary,
@@ -22,22 +22,18 @@ export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
 `
 
-export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
-  background-image: url(${(props) => props.img});
+export const RectangleWrapper = styled(SectionContentWrapper)`
+  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
   width: 112px;
   height: 40px;
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-pink);
   background: var(--primary-white);
   border: 2px solid var(--primary-pink);
   border-radius: 32px;
-`
-const ButtonWrapper = styled(FlexWrapperCol)`
-  gap: 8px;
 `
 
 export const BetHistory = () => {
@@ -45,25 +41,25 @@ export const BetHistory = () => {
     <PrimaryCard>
       <CardHeader>Bet History</CardHeader>
       <FullCardSection top={"10%"}>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_1.png" width="50" height="50" alt="" />
-              <FlexWrapperCol>
+              <Image src="/images/donuts/1.png" width="64" height="64" alt="Donut 1" />
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
@@ -71,87 +67,87 @@ export const BetHistory = () => {
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_2.png" width="50" height="50" alt="" />
-              <FlexWrapperCol>
+              <Image src="/images/donuts/2.png" width="64" height="64" alt="Donut 2" />
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_won.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </SectionContentWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_4.png" width="50" height="50" alt="" />
-              <FlexWrapperCol>
+              <Image src="/images/donuts/4.png" width="64" height="64" alt="Donut 4" />
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_3.png" width="50" height="50" alt="" />
-              <FlexWrapperCol>
+              <Image src="/images/donuts/3.png" width="64" height="64" alt="Donut 3" />
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>
-        <RectangleWrapper img={"/images/Rectangle.png"}>
+        <RectangleWrapper>
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
-              <Image src="/images/donut_5.png" width="50" height="50" alt="" />
-              <FlexWrapperCol>
+              <Image src="/images/donuts/5.png" width="64" height="64" alt="Donut 5" />
+              <Flex flexDirection="column">
                 <SpanInfoPrimary>
                   0.123021
-                  <Image src="/images/Bitmap.png" width="25" height="25" alt="" />
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
                 </SpanInfoPrimary>
                 <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-              </FlexWrapperCol>
+              </Flex>
             </PlacedBetdetails>
             <PlacedBetdetails>
-              <FlexWrapperCol>
+              <Flex flexDirection="column">
                 <WalletAddress>v/s 0xF2…25</WalletAddress>
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
-              </FlexWrapperCol>
-              <Image src="/images/icon_lost.png" width="25" height="25" alt="" />
+              </Flex>
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
         </RectangleWrapper>

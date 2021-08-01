@@ -3,8 +3,9 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, InfoCard } from "../Card/Card"
 import {
   BetInfoWrapper,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -15,21 +16,21 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { LoosingRibbon } from "../Ribbon"
+import { LosingRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
   padding: 32px;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)<{ img: string }>`
+const WatermelonWrapper = styled(FlexRow)`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
-  background-image: url(${(props) => props.img});
+  background-image: url(/images/stripes_pattern.png);
   position: relative;
 `
 
-const StrawberryWrapper = styled(FlexWrapperCol)`
+const StrawberryWrapper = styled(FlexColumn)`
   ${SharedWrapperStyle}
   position: relative;
 `
@@ -39,20 +40,20 @@ export const LosingCard = () => {
     <InfoCard>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
-          <WatermelonWrapper img={"/images/Rectangle.png"}>
+        <Flex flexDirection="row">
+          <WatermelonWrapper>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_lost.png" width="40" height="40" alt="" />
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </div>
           </WatermelonWrapper>
           <StrawberryWrapper>
             <Image src="/images/strawberry.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icon_won.png" width="40" height="40" alt="" />
+              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </div>
           </StrawberryWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"384px"} bottom={"0"}>
         <BetInfoWrapper>
@@ -62,9 +63,9 @@ export const LosingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <LoosingRibbon>
+        <LosingRibbon>
           <SpanInfoWhite>You loose</SpanInfoWhite>
-        </LoosingRibbon>
+        </LosingRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>
