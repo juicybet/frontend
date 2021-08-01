@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { getBackground } from "../../data/theme"
+import { getBackground } from "../../core/site"
 
 export const BackgroundWrapper = styled.div`
   position: absolute;

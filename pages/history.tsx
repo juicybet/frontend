@@ -1,10 +1,9 @@
 import { useState } from "react"
 import { Header, Sidebar } from "../components"
-import { SiteType, setSite, SiteParams } from "../core/site"
-import { Meta } from "../components/Utils/Meta"
+import { SiteType, SiteParams, setSite } from "../core/site"
 import { setEnvironment } from "../core/environment"
-import { Home as JellyHome } from "../components/Jelly/Home"
-import { Home as DonutHome } from "../components/Donut/Home"
+import { Meta } from "../components/Utils/Meta"
+import { History as JellyHistory } from "../components/Jelly/History"
 
 export { getServerSideProps } from "../core/site"
 
@@ -18,13 +17,11 @@ export default function Home({ site, env }: SiteParams) {
     setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)
   }
 
-  const HomeComponent = (() => {
+  const HistoryComponent = (() => {
     switch (site) {
-      case SiteType.Donut:
-        return DonutHome
-      default:
       case SiteType.Jelly:
-        return JellyHome
+      default:
+        return JellyHistory
     }
   })()
 
@@ -33,7 +30,7 @@ export default function Home({ site, env }: SiteParams) {
       <Meta />
       <Header toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} />
-      <HomeComponent />
+      <HistoryComponent />
     </>
   )
 }

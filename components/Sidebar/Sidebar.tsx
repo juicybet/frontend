@@ -1,6 +1,6 @@
 import { SidebarWrapper } from "./Sidebar.style"
 import { Menu } from "./Menu"
-import { getMenuItems } from "../../data/menuItems"
+import { getMenuItems } from "../../core/menuItems"
 import { useState } from "react"
 
 export const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
