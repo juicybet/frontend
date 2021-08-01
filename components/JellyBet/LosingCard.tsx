@@ -16,7 +16,7 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { LoosingRibbon } from "../Ribbon"
+import { LosingRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
@@ -63,9 +63,9 @@ export const LosingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <LoosingRibbon>
+        <LosingRibbon>
           <SpanInfoWhite>You loose</SpanInfoWhite>
-        </LoosingRibbon>
+        </LosingRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>

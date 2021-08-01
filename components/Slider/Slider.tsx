@@ -1,54 +1,35 @@
 import React from "react"
-import styled from "styled-components"
+import { useState } from "react"
+import styled, { css } from "styled-components"
+import { currentTheme } from "../../core/theme"
 
-const makeLongShadow = (color: any, size: any) => {
-  let i = 1
-  let shadow = `${i}px 0 0 ${size} ${color}`
-
-  for (; i < 250; i++) {
-    shadow = `${shadow}, ${i}px 0 0 ${size} ${color}`
-  }
-  return shadow
-}
-
-const RangeInput = styled.input<{ color: string }>`
+const RangeInput = styled.input.attrs({
+  type: "range",
+})<{ color: string }>`
   -webkit-appearance: none;
   height: 16px;
   border-radius: 10px;
-  background: ${(props) => props.color};
-  width: 65%;
-  &::after {
-    content: "";
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: var(--secondary-gray);
-    position: absolute;
-    right: 14%;
-  }
-
-  &::-webkit-slider-runnable-track {
-    overflow: hidden;
-  }
+  background: transparent;
+  width: 256px;
+  z-index: 1;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
+    position: relative;
     appearance: none;
-    width: 32px;
-    height: 32px;
-    border: 2px solid #ffffff;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-white);
     border-radius: 50%;
     background: ${(props) => props.color};
     cursor: pointer;
-    box-shadow: ${makeLongShadow("var(--secondary-gray)", "-8px")};
-    z-index: 10;
   }
 
   &::-moz-range-thumb {
-    width: 32px;
-    height: 32px;
+    box-sizing: border-box;
+    position: relative;
+    width: 30px;
+    height: 30px;
     border: 2px solid var(--primary-white);
     border-radius: 50%;
     background: ${(props) => props.color};
@@ -56,9 +37,69 @@ const RangeInput = styled.input<{ color: string }>`
   }
 `
 
-export const Slider = (props?: any) => {
-  if (props.type === "donut") {
-    return <RangeInput type="range" step="1" min="25" color={"var(--primary-purple)"} />
+const RangeInputTrack = styled.div<{ value: number }>`
+  position: absolute;
+  height: 16px;
+  width: 256px;
+  border-radius: 10px;
+  background: var(--secondary-gray);
+
+  &:before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    display: block;
+    height: 16px;
+    ${(props) => css`
+      width: ${Math.max(30, (props.value * 256) / 100) + "px"};
+      background: ${props.color};
+    `};
   }
-  return <RangeInput type="range" step="1" min="25" color={"var(--primary-pink)"} />
+`
+
+const IconMinus = styled.div`
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: white;
+  z-index: 1;
+  border-radius: 10px;
+  top: 50%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+`
+
+const IconPlus = styled(IconMinus)`
+  left: 96%;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    margin-top: -4px;
+    margin-left: 4px;
+    border-radius: 10px;
+    height: 10px;
+    width: 2px;
+    background: white;
+  }
+`
+
+export const Slider = () => {
+  const [value, setValue] = useState(1)
+  return (
+    <>
+      <RangeInputTrack value={value} color={currentTheme().primary}>
+        <IconMinus />
+        <IconPlus />
+      </RangeInputTrack>
+      <RangeInput
+        step="1"
+        min="1"
+        max="100"
+        color={currentTheme().primary}
+        value={value}
+        onChange={(e) => setValue(+e.target.value)}
+      />
+    </>
+  )
 }

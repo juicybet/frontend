@@ -93,18 +93,6 @@ export function getLogoProps() {
   }
 }
 
-export const themeColors = {
-  [SiteType.Jelly]: "#FB2261",
-  [SiteType.Recipe]: "#AD631A",
-  [SiteType.Salad]: "#41A13B",
-  [SiteType.Donut]: "#D32B9A",
-  [SiteType.Juicy]: "#FC9917",
-}
-
-export function getThemeColor() {
-  return themeColors[getSite()]
-}
-
 export function linkTo(site: SiteType, url = "") {
   if (url.startsWith("https://")) return url
 

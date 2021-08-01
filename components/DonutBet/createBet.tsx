@@ -39,12 +39,8 @@ export const CreateBet = () => {
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
       <TopCardSection height={"224px"} top={"12%"}>
         <Flex alignItems="center" justifyContent="center" m={4}>
-          <Radio name="bet" variant="donut">
-            6
-          </Radio>
-          <Radio name="bet" variant="donut">
-            7
-          </Radio>
+          <Radio name="bet">6</Radio>
+          <Radio name="bet">7</Radio>
         </Flex>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>
@@ -54,7 +50,7 @@ export const CreateBet = () => {
           ))}
         </Flex>
         <SliderWrapper>
-          <Slider type="donut" />
+          <Slider />
         </SliderWrapper>
         <CoinWrapper>
           <Flex flexDirection="column">
@@ -64,7 +60,7 @@ export const CreateBet = () => {
           <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
         </CoinWrapper>
       </BottomCardSection>
-      <FullButton type="donut">Create a Bet </FullButton>
+      <FullButton>Create a Bet </FullButton>
     </PrimaryCard>
   )
 }

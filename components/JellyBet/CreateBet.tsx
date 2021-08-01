@@ -12,10 +12,6 @@ import {
   Flex,
 } from "../Utils/Utility.style"
 
-export const BetSelctionWrapper = styled(FlexColWrapperCentered)`
-  margin: 32px;
-`
-
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   margin: 32px;
@@ -23,8 +19,9 @@ export const RadioButtonWrapper = styled(FlexWrapperCentered)`
 `
 
 export const CardPils = styled.button`
-  padding: 5px 10px;
+  padding: 4px 12px;
   border-radius: 16px;
+  font-size: 14px;
   color: var(--light-gray);
   background: var(--primary-white);
   border: 2px solid var(--secondary-gray);
@@ -48,21 +45,17 @@ export const CreateBet = () => {
     <PrimaryCard>
       <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <Flex alignItems="center" justifyContent="center" m={4}>
+        <Flex alignItems="center" justifyContent="center" flexDirection="column" m={4}>
           <Image src="/images/demo-image.png" width="200" height="100" alt="" />
           <RadioButtonWrapper>
-            <Radio name="bet" variant="jelly">
-              Watermelon
-            </Radio>
-            <Radio name="bet" variant="jelly">
-              Strawberry
-            </Radio>
+            <Radio name="bet">Watermelon</Radio>
+            <Radio name="bet">Strawberry</Radio>
           </RadioButtonWrapper>
         </Flex>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>
         <Flex alignItems="center" justifyContent="space-between" mx={5} my={4}>
-          {["25%", "50%", "75%", "max"].map((item, index) => (
+          {["25%", "50%", "75%", "Max"].map((item, index) => (
             <CardPils key={index}>{item}</CardPils>
           ))}
         </Flex>
@@ -77,7 +70,7 @@ export const CreateBet = () => {
           <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
         </CoinWrapper>
       </BottomCardSection>
-      <FullButton type="jelly">Create a Bet </FullButton>
+      <FullButton>Create a Bet </FullButton>
     </PrimaryCard>
   )
 }

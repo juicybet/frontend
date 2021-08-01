@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { currentTheme } from "../../core/theme"
 
 export const Button = styled.button<{ color: string }>`
   width: 100%;
@@ -19,11 +20,10 @@ export const FullButtonWrapper = styled.div`
   padding: 16px;
 `
 
-export const FullButton = ({ children, type }: any) => {
+export const FullButton = ({ children }: any) => {
   return (
     <FullButtonWrapper>
-      {type === "donut" && <Button color={"var(--primary-purple)"}>{children}</Button>}
-      {type === "jelly" && <Button color={"var(--primary-pink)"}>{children}</Button>}
+      <Button color={currentTheme().primary}>{children}</Button>
     </FullButtonWrapper>
   )
 }

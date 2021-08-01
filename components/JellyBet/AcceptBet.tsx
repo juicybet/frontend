@@ -36,7 +36,7 @@ export const AcceptBet = () => {
           </PlacedBetRadio>
         </SectionContentWrapper>
       </FullCardSection>
-      <FullButton type="jelly">Accept a Bet</FullButton>
+      <FullButton>Accept a Bet</FullButton>
     </PrimaryCard>
   )
 }

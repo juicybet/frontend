@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import { currentTheme } from "../../core/theme"
 
 export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;
@@ -93,24 +94,14 @@ export const RibbonContent = styled.div`
 `
 
 export const WinningRibbon = ({ children, bet }: any) => (
-  <>
-    {bet === "jelly" && (
-      <RibbonContentWrapper colorOne="var(--primary-pink)" colorTwo="var(--secondary-pink)">
-        <RibbonLeftDecoration colorOne="var(--primary-pink)" colorTwo="var(--shadow-pink)" />
-        <RibbonContent>{children}</RibbonContent>
-        <RibbonRightDecoration colorOne="var(--primary-pink)" colorTwo="var(--shadow-pink)" />
-      </RibbonContentWrapper>
-    )}
-    {bet === "donut" && (
-      <RibbonContentWrapper colorOne="var(--primary-purple)" colorTwo="var(--secondary-purple)">
-        <RibbonLeftDecoration colorOne="var(--primary-purple)" colorTwo="var(--shadow-purple)" />
-        <RibbonContent>{children}</RibbonContent>
-        <RibbonRightDecoration colorOne="var(--primary-purple)" colorTwo="var(--shadow-purple)" />
-      </RibbonContentWrapper>
-    )}
-  </>
+  <RibbonContentWrapper colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDark}>
+    <RibbonLeftDecoration colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDarker} />
+    <RibbonContent>{children}</RibbonContent>
+    <RibbonRightDecoration colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDarker} />
+  </RibbonContentWrapper>
 )
-export const LoosingRibbon = ({ children }: any) => (
+
+export const LosingRibbon = ({ children }: any) => (
   <RibbonContentWrapper colorOne="var(--dark-gray)" colorTwo="var(--darker-gray)">
     <RibbonLeftDecoration colorOne="var(--dark-gray)" colorTwo="var(--shadow-gray)" />
     <RibbonContent>{children}</RibbonContent>

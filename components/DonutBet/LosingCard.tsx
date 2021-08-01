@@ -16,7 +16,7 @@ import {
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-import { LoosingRibbon } from "../Ribbon"
+import { LosingRibbon } from "../Ribbon"
 
 const DonutWrapper = styled(FlexRow)`
   border-right: 1px solid var(--border-gray);
@@ -74,9 +74,9 @@ export const LosingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <LoosingRibbon>
+        <LosingRibbon>
           <SpanInfoWhite>You loose</SpanInfoWhite>
-        </LoosingRibbon>
+        </LosingRibbon>
         <RewardSectionWrapper>
           <RewardSection>
             <SpanInfoflexEnd>
