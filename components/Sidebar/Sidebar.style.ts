@@ -2,11 +2,11 @@ import styled, { css } from "styled-components"
 
 export const SidebarWrapper = styled.div<{ isOpen: Boolean }>`
   position: fixed;
-  top: calc(7.5rem + 1px);
+  top: 121px;
   left: 0;
-  width: 22rem;
-  height: calc(100vh - 7.5rem);
-  padding: 1rem 2.5rem 1rem 4rem;
+  width: 352px;
+  height: calc(100vh - 120px);
+  padding: 16px 40px 16px 64px;
   overflow: auto;
 
   transition: 0.2s;
@@ -27,16 +27,16 @@ export const MenuItem = styled.div<{ selected: boolean; color: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
+  margin: 32px 0;
   cursor: pointer;
 
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 700;
 
   transition: 0.2s;
 
   &:first-child {
-    margin-top: 2rem;
+    margin-top: 32px;
   }
 
   &:hover,
@@ -49,11 +49,11 @@ export const MenuItem = styled.div<{ selected: boolean; color: string }>`
   &:before {
     content: "";
     position: absolute;
-    margin-left: -4.75rem;
-    height: 4rem;
-    width: 0.75rem;
-    border-top-right-radius: 0.625rem;
-    border-bottom-right-radius: 0.625rem;
+    margin-left: -76px;
+    height: 64px;
+    width: 12px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     transition: 0.2s;
 
@@ -64,7 +64,7 @@ export const MenuItem = styled.div<{ selected: boolean; color: string }>`
     ${({ selected }) =>
       selected &&
       css`
-        margin-left: -4rem;
+        margin-left: -64px;
       `}
   }
 
@@ -85,7 +85,7 @@ export const Submenu = styled.div<{ isOpen: Boolean }>`
   ${({ isOpen }) =>
     isOpen &&
     css`
-      margin-bottom: 3rem;
+      margin-bottom: 48px;
       max-height: 200px;
     `}
 `
@@ -94,10 +94,10 @@ export const SubmenuItem = styled.div<{ color: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 16px;
   cursor: pointer;
 
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 500;
 
   transition: 0.2s;

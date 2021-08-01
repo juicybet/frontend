@@ -21,7 +21,7 @@ import { WinningRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
-  padding: 2rem;
+  padding: 32px;
 `
 
 const DonutWrapper = styled(FlexWrapperRow)`
@@ -32,17 +32,17 @@ const DonutWrapper = styled(FlexWrapperRow)`
 
 const DonutDetailWrapper = styled(FlexWrapperCol)`
   position: relative;
-  padding: 3rem 3rem 0 1rem;
+  padding: 48px 48px 0 16px;
   width: 60%;
-  gap: 0.5rem;
+  gap: 8px;
 `
 
 const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   border: 2px solid var(--secondary-gray);
-  border-radius: 2rem;
-  height: 4rem;
-  padding: 0.8rem;
+  border-radius: 32px;
+  height: 64px;
+  padding: 12px;
   width: 100%;
   background-color: var(--primary-white);
 `
@@ -53,13 +53,13 @@ const LabelWrapperGrid = styled.div`
   grid-template-columns: min-content auto;
 `
 const LabelWrapper = styled(FlexWrapperCentered)`
-  padding: 1rem 1rem 0;
+  padding: 16px 16px 0;
 `
 export const WinningCard = () => {
   return (
     <InfoCard>
       <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"16rem"} top={"10%"}>
+      <TopCardSection height={"256px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper>
             <Image src="/images/donut_7.png" width="140" height="140" alt="" />
@@ -67,11 +67,11 @@ export const WinningCard = () => {
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
             <LabelWrapperGrid>
-              <SpanLabel size={"1rem"}>Number: </SpanLabel>
+              <SpanLabel size={"16px"}>Number: </SpanLabel>
               <SpanInfoPrimary>123021</SpanInfoPrimary>
             </LabelWrapperGrid>
             <LabelWrapperGrid>
-              <SpanLabel size={"1rem"}>Hash:</SpanLabel>
+              <SpanLabel size={"16px"}>Hash:</SpanLabel>
               <SpanInfoPrimary>
                 35f…af7 <ExternalLink size={18} />
               </SpanInfoPrimary>
@@ -82,7 +82,7 @@ export const WinningCard = () => {
           </DonutDetailWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"26rem"} bottom={"0"}>
+      <BottomCardSection height={"416px"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -102,7 +102,7 @@ export const WinningCard = () => {
               View on Bsc Secondary
               <ExternalLink size={10} />
             </SpanInfoflexEnd>
-            <RewardInfo height={"8rem"} width={"16rem"}>
+            <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
                 <FlexWrapperCol>

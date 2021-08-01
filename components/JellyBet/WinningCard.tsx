@@ -21,7 +21,7 @@ import { WinningRibbon } from "../Ribbon"
 
 const SharedWrapperStyle = css`
   width: 50%;
-  padding: 2rem;
+  padding: 32px;
 `
 
 const WatermelonWrapper = styled(FlexWrapperRow)<{ img: string }>`
@@ -39,9 +39,9 @@ const StrawberryWrapper = styled(FlexWrapperCol)`
 const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   border: 2px solid var(--secondary-gray);
-  border-radius: 2rem;
-  height: 4rem;
-  padding: 0.8rem;
+  border-radius: 32px;
+  height: 64px;
+  padding: 12px;
   width: 100%;
   background-color: var(--primary-white);
 `
@@ -55,7 +55,7 @@ export const WinningCard = () => {
   return (
     <InfoCard>
       <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"14rem"} top={"10%"}>
+      <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <WatermelonWrapper img={"/images/Rectangle.png"}>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
@@ -71,7 +71,7 @@ export const WinningCard = () => {
           </StrawberryWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"24rem"} bottom={"0"}>
+      <BottomCardSection height={"384px"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -88,7 +88,7 @@ export const WinningCard = () => {
               View on Bsc Secondary
               <ExternalLink size={10} />
             </SpanInfoflexEnd>
-            <RewardInfo height={"8rem"} width={"16rem"}>
+            <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
                 <FlexWrapperCol>

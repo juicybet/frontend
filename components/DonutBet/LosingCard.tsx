@@ -22,14 +22,14 @@ const DonutWrapper = styled(FlexWrapperRow)<{ img: string }>`
   background-image: url(${(props) => props.img});
   position: relative;
   width: 45%;
-  padding: 2rem;
+  padding: 32px;
 `
 
 const DonutDetailWrapper = styled(FlexWrapperCol)`
   position: relative;
-  padding: 3rem 3rem 0 1rem;
+  padding: 48px 48px 0 16px;
   width: 60%;
-  gap: 0.5rem;
+  gap: 8px;
 `
 
 const LabelWrapper = styled.label`
@@ -42,7 +42,7 @@ export const LosingCard = () => {
   return (
     <PrimaryCard>
       <CardHeader>Bet #252 result</CardHeader>
-      <TopCardSection height={"14rem"} top={"10%"}>
+      <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper img={"/images/Rectangle.png"}>
             <Image src="/images/donut_8.png" width="140" height="140" alt="" />
@@ -50,11 +50,11 @@ export const LosingCard = () => {
           <DonutDetailWrapper>
             <SpanLabel size={"20px"}>Block Details :</SpanLabel>
             <LabelWrapper>
-              <SpanLabel size={"1rem"}>Number: </SpanLabel>
+              <SpanLabel size={"16px"}>Number: </SpanLabel>
               <SpanInfoPrimary>123021</SpanInfoPrimary>
             </LabelWrapper>
             <LabelWrapper>
-              <SpanLabel size={"1rem"}>Hash:</SpanLabel>
+              <SpanLabel size={"16px"}>Hash:</SpanLabel>
               <SpanInfoPrimary>
                 35f…af7 <ExternalLink size={18} />
               </SpanInfoPrimary>
@@ -65,7 +65,7 @@ export const LosingCard = () => {
           </DonutDetailWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"22.5rem"} bottom={"0"}>
+      <BottomCardSection height={"360px"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -82,7 +82,7 @@ export const LosingCard = () => {
               View on Bsc Secondary
               <ExternalLink size={10} />
             </SpanInfoflexEnd>
-            <RewardInfo height={"6rem"} width={"16rem"}>
+            <RewardInfo height={"96px"} width={"256px"}>
               <SpanInfoPrimary>No Reward For you</SpanInfoPrimary>
               <SpanInfoPrimary>(:</SpanInfoPrimary>
             </RewardInfo>

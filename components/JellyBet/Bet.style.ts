@@ -5,24 +5,24 @@ export const MainContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 55rem;
+  width: 880px;
   height: auto;
   margin: auto;
 `
 
 export const SectionContentWrapper = styled.div`
-  padding: 1rem 1rem 1rem 0;
+  padding: 16px 16px 16px 0;
   border-bottom: 1px solid var(--border-gray);
 `
 export const PlacedBetsWrapper = styled(FlexWrapperCentered)`
-  height: 4rem;
+  height: 64px;
   width: 100%;
   justify-content: space-between;
 `
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
-  gap: 1rem;
+  gap: 16px;
 `
 export const WalletAddress = styled(SpanInfoPrimary)`
   color: var(--light-gray);
-  font-size: 1rem;
+  font-size: 16px;
 `

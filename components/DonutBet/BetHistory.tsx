@@ -12,11 +12,11 @@ import styled from "styled-components"
 import { PlacedBetsWrapper, SectionContentWrapper } from "./Bet.style"
 
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
-  gap: 1rem;
+  gap: 16px;
 `
 export const WalletAddress = styled(SpanInfoPrimary)`
   color: var(--light-gray);
-  font-size: 1rem;
+  font-size: 16px;
 `
 export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
@@ -27,17 +27,17 @@ export const RectangleWrapper = styled(SectionContentWrapper)<{ img: string }>`
 `
 
 export const CancelButton = styled.button`
-  width: 7rem;
-  height: 2.5rem;
-  font-size: 1.125 rem;
+  width: 112px;
+  height: 40px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--primary-pink);
   background: var(--primary-white);
   border: 2px solid var(--primary-pink);
-  border-radius: 2rem;
+  border-radius: 32px;
 `
 const ButtonWrapper = styled(FlexWrapperCol)`
-  gap: 0.5rem;
+  gap: 8px;
 `
 
 export const BetHistory = () => {

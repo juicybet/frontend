@@ -13,14 +13,14 @@ export const Header = styled.header`
 
 export const LogoContainer = styled.div`
   display: flex;
-  height: 7.5rem;
-  width: 22rem;
-  line-height: 7.5rem;
+  height: 120px;
+  width: 352px;
+  line-height: 120px;
   cursor: pointer;
 `
 
 export const MenuButton = styled.button`
-  padding: 0.5rem 1.25rem 0 1.75rem;
+  padding: 8px 20px 0 28px;
   background: white;
   border: 0;
   outline: 0;

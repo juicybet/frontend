@@ -17,7 +17,7 @@ import { ExternalLink } from "react-feather"
 
 const SharedWrapperStyle = css`
   width: 50%;
-  padding: 2rem;
+  padding: 32px;
 `
 
 const WatermelonWrapper = styled(FlexWrapperRow)`
@@ -33,7 +33,7 @@ export const LoadingCard = () => {
   return (
     <InfoCardSmall>
       <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"14rem"} top={"10%"}>
+      <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <WatermelonWrapper>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
@@ -43,7 +43,7 @@ export const LoadingCard = () => {
           </StrawberryWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"13.5rem"} bottom={"0"}>
+      <BottomCardSection height={"216px"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>

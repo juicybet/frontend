@@ -7,15 +7,15 @@ const LabelWrapper = styled.label`
   display: grid;
   grid-template-columns: -webkit-min-content auto;
   grid-template-columns: min-content auto;
-  grid-gap: 0.5rem;
+  grid-gap: 8px;
   cursor: pointer;
   position: relative;
 `
 
 const Label = styled.div`
-  font-size: 1.3rem;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 1.5rem;
+  line-height: 24px;
   color: var(--light-gray);
 `
 
@@ -23,8 +23,8 @@ const ReplacedInput = styled.span<{ color?: string }>`
   display: inline-block;
   position: relative;
   border: 2px solid var(--secondary-gray);
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 24px;
+  height: 24px;
   left: 0;
   border-radius: 50%;
   vertical-align: middle;
@@ -53,14 +53,13 @@ const HiddenInput = styled.input<{ color?: string }>`
   &:checked + ${ReplacedInput} {
     border: 2px solid ${(props) => props.color};
     &::after {
-      width: 1rem;
-      height: 1rem;
+      width: 16px;
+      height: 16px;
       opacity: 1;
       left: 14%;
       top: 14%;
       background-color: ${(props) => props.color};
     }
- 
 `
 
 export const Radio = ({ name, children, variant }: any) => (
@@ -94,7 +93,7 @@ const PlacedBetRadioWrapper = styled.div`
 const Wrapper = styled.label`
   display: flex;
   align-items: center;
-  margin: 0 1rem;
+  margin: 0 16px;
 `
 
 export const PlacedBetRadio = ({ name, children }: any) => (

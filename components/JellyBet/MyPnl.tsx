@@ -8,7 +8,7 @@ import styled, { css } from "styled-components"
 
 const SharedWrapperStyle = css`
   width: 50%;
-  padding: 1.5rem;
+  padding: 24px;
 `
 
 const ProgressBarWrapper = styled(FlexWrapperRow)`
@@ -25,26 +25,26 @@ const ProgressBarChildren = styled(FlexWrapperCol)`
 `
 
 const BlockWrapper = styled(FlexWrapperRow)`
-  gap: 1rem;
+  gap: 16px;
   align-items: center;
 `
 const ProfitWrapper = styled(FlexWrapperCol)`
-  gap: 1rem;
-  padding: 1rem 1.5rem;
+  gap: 16px;
+  padding: 16px 24px;
   align-items: center;
 `
 
 const BetDetailWrapper = styled(FlexWrapperCol)`
-  padding: 1rem 1.5rem;
+  padding: 16px 24px;
 `
 const BetBreakDown = styled(FlexWrapperRow)`
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 `
 const BreakDownDetail = styled(FlexWrapperRow)`
   align-items: center;
   justify-content: space-between;
-  padding: 1.8rem 0;
+  padding: 1.128px 0;
   border-bottom: 1px solid var(--border-gray);
   width: 100%;
 `
@@ -53,7 +53,7 @@ export const MyPnl = () => {
   return (
     <PrimaryCard>
       <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"13rem"} top={"10%"}>
+      <TopCardSection height={"208px"} top={"10%"}>
         <FlexWrapperRow>
           <ProgressBarWrapper>
             <CircularProgressbarWithChildren
@@ -66,9 +66,9 @@ export const MyPnl = () => {
               })}
             >
               <ProgressBarChildren>
-                <SpanLabel size={".9rem"}>Won</SpanLabel>
+                <SpanLabel size={"14px"}>Won</SpanLabel>
                 <SpanInfoPrimary>75/100</SpanInfoPrimary>
-                <SpanLabel size={".8rem"}>(75%)</SpanLabel>
+                <SpanLabel size={"12px"}>(75%)</SpanLabel>
               </ProgressBarChildren>
             </CircularProgressbarWithChildren>
           </ProgressBarWrapper>
@@ -101,7 +101,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--primary-green)"} />
             <BreakDownDetail>
-              <SpanLabel size={"1.125rem"}>Won :</SpanLabel>
+              <SpanLabel size={"18px"}>Won :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>75 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>(75%)</SpanInfoSecondary>
@@ -118,7 +118,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--primary-red)"} />
             <BreakDownDetail>
-              <SpanLabel size={"1.125rem"}>Lost :</SpanLabel>
+              <SpanLabel size={"18px"}>Lost :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>25 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>(25%)</SpanInfoSecondary>
@@ -135,7 +135,7 @@ export const MyPnl = () => {
           <BetBreakDown>
             <SmallBlock color={"var(--dark-gray)"} />
             <BreakDownDetail>
-              <SpanLabel size={"1.125rem"}>Entered :</SpanLabel>
+              <SpanLabel size={"18px"}>Entered :</SpanLabel>
               <FlexWrapperCol>
                 <SpanInfoPrimary>100 bets</SpanInfoPrimary>
                 <SpanInfoSecondary>total</SpanInfoSecondary>

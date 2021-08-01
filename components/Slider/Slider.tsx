@@ -13,15 +13,15 @@ const makeLongShadow = (color: any, size: any) => {
 
 const RangeInput = styled.input<{ color: string }>`
   -webkit-appearance: none;
-  height: 1rem;
-  border-radius: 0.6rem;
+  height: 16px;
+  border-radius: 10px;
   background: ${(props) => props.color};
   width: 65%;
   &::after {
     content: "";
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     background-color: var(--secondary-gray);
@@ -36,8 +36,8 @@ const RangeInput = styled.input<{ color: string }>`
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     border: 2px solid #ffffff;
     border-radius: 50%;
     background: ${(props) => props.color};
@@ -47,8 +47,8 @@ const RangeInput = styled.input<{ color: string }>`
   }
 
   &::-moz-range-thumb {
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     border: 2px solid var(--primary-white);
     border-radius: 50%;
     background: ${(props) => props.color};

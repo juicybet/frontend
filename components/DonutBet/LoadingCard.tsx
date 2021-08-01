@@ -17,7 +17,7 @@ import { ExternalLink } from "react-feather"
 
 const SharedWrapperStyle = css`
   width: 50%;
-  padding: 2rem;
+  padding: 32px;
 `
 
 const DonutWrapper = styled(FlexWrapperRow)`
@@ -33,14 +33,14 @@ export const LoadingCard = () => {
   return (
     <InfoCardSmall>
       <CardHeader>Bet #252 result</CardHeader>
-      <TopCardSection height={"14rem"} top={"10%"}>
+      <TopCardSection height={"224px"} top={"10%"}>
         <FlexWrapperRow>
           <DonutWrapper>
             <Image src="/images/donut_7.png" width="140" height="140" alt="" />
           </DonutWrapper>
         </FlexWrapperRow>
       </TopCardSection>
-      <BottomCardSection height={"14.5rem"} bottom={"0"}>
+      <BottomCardSection height={"232px"} bottom={"0"}>
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
