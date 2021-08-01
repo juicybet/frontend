@@ -1,23 +1,23 @@
 import styled, { css } from "styled-components"
 
 export const PrimaryCardWrapper = styled.div`
-  width: 25rem;
-  height: 37rem;
+  width: 400px;
+  height: 592px;
   background-color: var(--primary-white);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 1.25rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
   position: relative;
 `
 export const InfoCardWrapper = styled(PrimaryCardWrapper)`
-  height: 41.5rem;
+  height: 664px;
 `
 export const InfoCardWrapperSmall = styled(PrimaryCardWrapper)`
-  height: 30rem;
+  height: 480px;
 `
 export const CardHeader = styled.span`
   font-style: normal;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 18px;
   color: var(--dark-gray);
   position: absolute;
   left: 5%;

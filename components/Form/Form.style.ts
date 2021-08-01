@@ -14,7 +14,7 @@ export const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 32px auto;
   width: 85vw;
   @media (min-width: 768px) {
     width: 60vw;
@@ -26,7 +26,7 @@ export const FormWrapper = styled.div`
 
 export const StyledForm = styled.form`
   width: 100%;
-  padding: 2.5rem;
+  padding: 40px;
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
@@ -50,11 +50,11 @@ export const StyledButton = styled.button`
   display: block;
   background-color: #db2777;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 14px;
   border: 0;
   border-radius: 5px;
-  height: 2.5rem;
-  padding: 0 1.5rem;
+  height: 40px;
+  padding: 0 24px;
   cursor: pointer;
   box-sizing: border-box;
   &:hover {
@@ -65,19 +65,19 @@ export const StyledButton = styled.button`
 export const StyledFieldset = styled.fieldset`
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 16px;
+  margin: 16px 0;
 
   legend {
-    padding: 0 1rem;
+    padding: 0 16px;
   }
 
   label {
-    padding-right: 1rem;
+    padding-right: 16px;
   }
 
   input {
-    margin-right: 0.5rem;
+    margin-right: 8px;
   }
 `
 

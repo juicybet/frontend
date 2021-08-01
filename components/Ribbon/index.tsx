@@ -2,8 +2,8 @@ import styled, { css } from "styled-components"
 
 export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;
-  width: 25rem;
-  height: 4rem;
+  width: 400px;
+  height: 64px;
   display: flex;
   background-color: ${(props) => props.colorOne};
 
@@ -12,7 +12,7 @@ export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: str
     content: "";
     position: absolute;
     top: 0;
-    border: 2rem solid ${(props) => props.colorTwo};
+    border: 32px solid ${(props) => props.colorTwo};
     z-index: -1;
     top: 30px;
   }

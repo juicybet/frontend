@@ -108,8 +108,6 @@ export function getThemeColor() {
 export function linkTo(site: SiteType, url = "") {
   if (url.startsWith("https://")) return url
 
-  console.log(getEnvironment())
-
   switch (getEnvironment()) {
     case EnvironmentType.Local:
     case EnvironmentType.Preview:

@@ -7,11 +7,11 @@ export const BackgroundWrapper = styled.div`
   height: 100%;
   opacity: 0.04;
   background-image: url(${getBackground()});
-  background-size: 20rem 20rem;
+  background-size: 320px 320px;
   z-index: -1;
 `
 export const ContentWrapper = styled.div`
-  margin-top: 7.5rem;
+  margin-top: 120px;
 `
 
 export const RectangleWrapper = styled.div`
@@ -45,13 +45,13 @@ export const FlexWrapperCol = styled.div`
   flex-direction: column;
 `
 const spanPrimaryStyle = css`
-  font-size: 1.25rem;
+  font-size: 20px;
   font-style: normal;
   font-weight: bold;
-  gap: 0.4rem;
+  gap: 6.4px;
 `
 const spanSecondaryStyle = css`
-  font-size: 0.75rem;
+  font-size: 12px;
   font-style: normal;
   font-weight: bold;
   color: var(--light-gray);
@@ -84,21 +84,21 @@ export const SpanLabel = styled.span<{ size: string }>`
   font-size: ${(props) => props.size};
 `
 export const BetInfoWrapper = styled(FlexWrapperCentered)`
-  height: 4rem;
-  gap: 1rem;
+  height: 64px;
+  gap: 16px;
 `
 export const RewardSectionWrapper = styled(FlexWrapperCol)`
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 16px;
 `
 export const RewardSection = styled.div`
-  padding: 1rem;
+  padding: 16px;
   background-color: var(--bg-gray);
-  border-radius: 1rem;
+  border-radius: 16px;
 `
 export const RewardInfo = styled(FlexWrapperCol)<{ height: string; width: string }>`
   align-items: flex-start;
-  gap: 1rem;
+  gap: 16px;
   height: ${(props) => props.height};
   width: ${(props) => props.width};
 `
@@ -115,7 +115,7 @@ export const ModalWrapper = styled.div`
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-  padding: 4rem;
+  padding: 64px;
 `
 
 export const ModalOverlay = styled.div`

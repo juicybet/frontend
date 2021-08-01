@@ -14,22 +14,22 @@ import {
 import Carousel from "styled-components-carousel"
 
 export const BetSelctionWrapper = styled(FlexWrapperCentered)`
-  margin: 2rem 2rem;
+  margin: 32px 32px;
 `
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
-  margin: 2rem;
+  margin: 32px;
   width: 100%;
 `
 
 export const PillsWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
-  margin: 1.5rem 3rem;
+  margin: 24px 48px;
 `
 export const CardPils = styled.button`
   padding: 5px 10px;
-  border-radius: 1rem;
+  border-radius: 16px;
   color: var(--light-gray);
   background: var(--primary-white);
   border: 2px solid var(--secondary-gray);
@@ -42,17 +42,17 @@ export const SliderWrapper = styled(FlexWrapperCentered)`
 export const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   border: 2px solid var(--secondary-gray);
-  border-radius: 2rem;
-  height: 4rem;
-  padding: 0.8rem;
-  margin: 2rem 5rem;
+  border-radius: 32px;
+  height: 64px;
+  padding: 12px;
+  margin: 32px 80px;
 `
 
 export const CreateBet = () => {
   return (
     <PrimaryCard>
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
-      <TopCardSection height={"14rem"} top={"12%"}>
+      <TopCardSection height={"224px"} top={"12%"}>
         <BetSelctionWrapper>
           <Radio name="bet" variant="donut">
             6
@@ -62,7 +62,7 @@ export const CreateBet = () => {
           </Radio>
         </BetSelctionWrapper>
       </TopCardSection>
-      <BottomCardSection height={"19rem"} bottom={"0%"}>
+      <BottomCardSection height={"304px"} bottom={"0%"}>
         <PillsWrapper>
           {["25%", "50%", "75%", "max"].map((item, index) => (
             <CardPils key={index}>{item}</CardPils>
