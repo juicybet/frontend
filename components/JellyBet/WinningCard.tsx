@@ -4,8 +4,9 @@ import { CardHeader, BottomCardSection, TopCardSection, InfoCard } from "../Card
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -24,14 +25,14 @@ const SharedWrapperStyle = css`
   padding: 32px;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)`
+const WatermelonWrapper = styled(FlexRow)`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
   background-image: url(/images/stripes_pattern.png);
   position: relative;
 `
 
-const StrawberryWrapper = styled(FlexWrapperCol)`
+const StrawberryWrapper = styled(FlexColumn)`
   ${SharedWrapperStyle}
   position: relative;
 `
@@ -56,7 +57,7 @@ export const WinningCard = () => {
     <InfoCard>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
+        <Flex flexDirection="row">
           <WatermelonWrapper>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
             <div style={{ position: "absolute", bottom: 10, right: 10 }}>
@@ -69,7 +70,7 @@ export const WinningCard = () => {
               <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </div>
           </StrawberryWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"384px"} bottom={"0"}>
         <BetInfoWrapper>
@@ -91,10 +92,10 @@ export const WinningCard = () => {
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
-                <FlexWrapperCol>
+                <Flex flexDirection="column">
                   <SpanInfoPrimary>0.123021</SpanInfoPrimary>
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </FlexWrapperCol>
+                </Flex>
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>

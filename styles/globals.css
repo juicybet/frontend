@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500,600,700&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap);
 
 :root {
   --primary-pink: #fb2261;
@@ -11,7 +11,7 @@
   --dark-gray: #494f6d;
   --darker-gray: #31364d;
   --shadow-gray: #1d202b;
-  --border-gray: #efefef;
+  --border-gray: #eaeaea;
   --light-gray: #929292;
   --secondary-gray: #eaeaea;
   --primary-green: #12cd72;

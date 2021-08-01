@@ -3,8 +3,9 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, InfoCard } from "../Card/Card"
 import {
   BetInfoWrapper,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -17,7 +18,7 @@ import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { LoosingRibbon } from "../Ribbon"
 
-const DonutWrapper = styled(FlexWrapperRow)`
+const DonutWrapper = styled(FlexRow)`
   border-right: 1px solid var(--border-gray);
   background-image: url(/images/stripes_pattern.png);
   position: relative;
@@ -25,7 +26,7 @@ const DonutWrapper = styled(FlexWrapperRow)`
   padding: 32px;
 `
 
-const DonutDetailWrapper = styled(FlexWrapperCol)`
+const DonutDetailWrapper = styled(FlexColumn)`
   position: relative;
   padding: 48px 48px 0 16px;
   width: 60%;
@@ -43,7 +44,7 @@ export const LosingCard = () => {
     <PrimaryCard>
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
+        <Flex flexDirection="row">
           <DonutWrapper>
             <Image src="/images/donuts/8.png" width="128" height="128" alt="" />
           </DonutWrapper>
@@ -63,7 +64,7 @@ export const LosingCard = () => {
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </div>
           </DonutDetailWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"360px"} bottom={"0"}>
         <BetInfoWrapper>

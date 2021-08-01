@@ -3,8 +3,9 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, BottomCardSection, TopCardSection, InfoCardSmall } from "../Card/Card"
 import {
   BetInfoWrapper,
-  FlexWrapperCol,
-  FlexWrapperRow,
+  Flex,
+  FlexRow,
+  FlexColumn,
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
@@ -20,12 +21,12 @@ const SharedWrapperStyle = css`
   padding: 32px;
 `
 
-const WatermelonWrapper = styled(FlexWrapperRow)`
+const WatermelonWrapper = styled(FlexRow)`
   ${SharedWrapperStyle}
   border-right: 1px solid var(--border-gray);
 `
 
-const StrawberryWrapper = styled(FlexWrapperCol)`
+const StrawberryWrapper = styled(FlexColumn)`
   ${SharedWrapperStyle}
 `
 
@@ -34,14 +35,14 @@ export const LoadingCard = () => {
     <InfoCardSmall>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <FlexWrapperRow>
+        <Flex flexDirection="row">
           <WatermelonWrapper>
             <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
           </WatermelonWrapper>
           <StrawberryWrapper>
             <Image src="/images/strawberry.png" width="120" height="150" alt="" />
           </StrawberryWrapper>
-        </FlexWrapperRow>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"216px"} bottom={"0"}>
         <BetInfoWrapper>

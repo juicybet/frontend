@@ -2,19 +2,18 @@ import Image from "next/image"
 import { FullButton } from "../Button"
 import { Radio } from "../Radio/Radio"
 import { Slider } from "../Slider/Slider"
-
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
 import styled from "styled-components"
 import {
   SpanInfoSecondary,
   FlexColWrapperCentered,
   FlexWrapperCentered,
-  FlexWrapperCol,
   SpanInfoPrimary,
+  Flex,
 } from "../Utils/Utility.style"
 
 export const BetSelctionWrapper = styled(FlexColWrapperCentered)`
-  margin: 32px 32px;
+  margin: 32px;
 `
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
@@ -23,10 +22,6 @@ export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   width: 100%;
 `
 
-export const PillsWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 24px 48px;
-`
 export const CardPils = styled.button`
   padding: 5px 10px;
   border-radius: 16px;
@@ -53,32 +48,32 @@ export const CreateBet = () => {
     <PrimaryCard>
       <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <BetSelctionWrapper>
+        <Flex alignItems="center" justifyContent="center" m={4}>
           <Image src="/images/demo-image.png" width="200" height="100" alt="" />
           <RadioButtonWrapper>
             <Radio name="bet" variant="jelly">
               Watermelon
             </Radio>
             <Radio name="bet" variant="jelly">
-              Strawbery
+              Strawberry
             </Radio>
           </RadioButtonWrapper>
-        </BetSelctionWrapper>
+        </Flex>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>
-        <PillsWrapper>
+        <Flex alignItems="center" justifyContent="space-between" mx={5} my={4}>
           {["25%", "50%", "75%", "max"].map((item, index) => (
             <CardPils key={index}>{item}</CardPils>
           ))}
-        </PillsWrapper>
+        </Flex>
         <SliderWrapper>
           <Slider />
         </SliderWrapper>
         <CoinWrapper>
-          <FlexWrapperCol>
+          <Flex flexDirection="column">
             <SpanInfoPrimary>0.123021</SpanInfoPrimary>
             <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-          </FlexWrapperCol>
+          </Flex>
           <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
         </CoinWrapper>
       </BottomCardSection>
