@@ -51,7 +51,7 @@ export const getMenuItems = (): MenuItemData[] => {
       title: "More",
       links: [
         link("Docs", "https://docs.juicy.bet"),
-        link("Source code", "https://gitlab.com/juicy.bet"),
+        link("Source code", "https://gitlab.com/juicybet"),
         link("Contracts", "https://docs.juicy.bet/contracts"),
         link("Contact us", "https://docs.juicy.bet/contact"),
       ],
