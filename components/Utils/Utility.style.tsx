@@ -88,6 +88,40 @@ export const SpanInfoPrimary = styled(FlexWrapperCentered)`
   ${spanPrimaryStyle}
   color: var(--dark-gray);
 `
+export const EtherInput = styled.input.attrs({ type: "number" })<{
+  focusColor: string
+  currency?: string
+}>`
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: var(--dark-gray);
+
+  border: 2px solid var(--secondary-gray);
+  border-radius: 32px;
+  height: 64px;
+  padding: 0px 54px 16px 16px;
+  margin: 32px 80px;
+  transition: 0.2s;
+
+  ${({ currency = "bnb" }) => css`
+    background: url(/images/icons/coins/${currency}.svg) no-repeat;
+    background-position: right 12px center;
+  `}
+
+  &:focus {
+    outline: none;
+    ${({ focusColor }) => css`
+      border-color: ${focusColor};
+    `}
+  }
+`
+export const EtherFiatValue = styled.div`
+  ${spanSecondaryStyle}
+  margin-top: 68px;
+  margin-left: 100px;
+  position: absolute;
+`
 export const SpanInfoLight = styled(FlexWrapperCentered)`
   ${spanPrimaryStyle}
   color: var(--light-gray);

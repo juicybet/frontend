@@ -1,7 +1,7 @@
 import React from "react"
-import { useState } from "react"
 import styled, { css } from "styled-components"
 import { currentTheme } from "../../core/theme"
+import { Flex } from "../Utils/Utility.style"
 
 const RangeInput = styled.input.attrs({
   type: "range",
@@ -51,7 +51,7 @@ const RangeInputTrack = styled.div<{ value: number }>`
     display: block;
     height: 16px;
     ${(props) => css`
-      width: ${Math.max(30, (props.value * 256) / 100) + "px"};
+      width: ${Math.max(30, props.value * 256) + "px"};
       background: ${props.color};
     `};
   }
@@ -84,22 +84,55 @@ const IconPlus = styled(IconMinus)`
   }
 `
 
-export const Slider = () => {
-  const [value, setValue] = useState(1)
+type SliderProps = {
+  min: number
+  max: number
+  value: number
+  setValue(value: number): void
+}
+
+const Pill = styled.button<{ hoverColor: string }>`
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  color: var(--light-gray);
+  background: var(--primary-white);
+  border: 2px solid var(--secondary-gray);
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    ${({ hoverColor }) => css`
+      color: ${hoverColor};
+      border-color: ${hoverColor};
+    `}}
+  }
+`
+
+export const Slider = ({ min, max, value, setValue }: SliderProps) => {
   return (
     <>
-      <RangeInputTrack value={value} color={currentTheme().primary}>
-        <IconMinus />
-        <IconPlus />
-      </RangeInputTrack>
-      <RangeInput
-        step="1"
-        min="1"
-        max="100"
-        color={currentTheme().primary}
-        value={value}
-        onChange={(e) => setValue(+e.target.value)}
-      />
+      <Flex alignItems="center" justifyContent="space-between" my={4} width={4} mx="auto">
+        {["25%", "50%", "75%", "Max"].map((item, index) => (
+          <Pill key={index} hoverColor={currentTheme().primary} onClick={() => setValue(((index + 1) / 4) * max)}>
+            {item}
+          </Pill>
+        ))}
+      </Flex>
+      <Flex alignItems="center" justifyContent="center" mx="auto">
+        <RangeInputTrack value={(value - min) / (max - min)} color={currentTheme().primary}>
+          <IconMinus />
+          <IconPlus />
+        </RangeInputTrack>
+        <RangeInput
+          step={(max - min) / 100}
+          min={min}
+          max={max}
+          color={currentTheme().primary}
+          value={value}
+          onChange={(e) => setValue(+e.target.value)}
+        />
+      </Flex>
     </>
   )
 }
