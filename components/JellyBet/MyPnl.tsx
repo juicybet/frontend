@@ -51,7 +51,7 @@ const BreakDownDetail = styled(FlexRow)`
 
 export const MyPnl = () => {
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"208px"} top={"10%"}>
         <Flex flexDirection="row">

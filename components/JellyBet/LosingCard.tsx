@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, InfoCard } from "../Card/Card"
+import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
 import {
   BetInfoWrapper,
   Flex,
@@ -37,7 +37,7 @@ const StrawberryWrapper = styled(FlexColumn)`
 
 export const LosingCard = () => {
   return (
-    <InfoCard>
+    <PrimaryCard width={"400px"} height={"664px"}>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
         <Flex flexDirection="row">
@@ -80,6 +80,6 @@ export const LosingCard = () => {
         </RewardSectionWrapper>
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
-    </InfoCard>
+    </PrimaryCard>
   )
 }

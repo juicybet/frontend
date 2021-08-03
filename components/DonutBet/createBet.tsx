@@ -21,7 +21,7 @@ export const CreateBet = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
       <TopCardSection height={"224px"} top={"12%"}>
         <Flex alignItems="center" justifyContent="center" m={4}>

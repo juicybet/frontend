@@ -38,7 +38,7 @@ export const CancelButton = styled.button`
 
 export const BetHistory = () => {
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Bet History</CardHeader>
       <FullCardSection top={"10%"}>
         <RectangleWrapper>

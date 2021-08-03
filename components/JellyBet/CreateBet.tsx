@@ -22,11 +22,33 @@ export const CreateBet = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
-        <Flex alignItems="center" justifyContent="center" flexDirection="column" m={4}>
-          <Image src="/images/demo-image.png" width="200" height="100" alt="" />
+        <Flex alignItems="center" justifyContent="center" flexDirection="column" mx={4} my={2}>
+          {/* <Image src="/images/demo-image.png" width="200" height="100" alt="" /> */}
+          <div className="flexWrapper">
+            <div className="elementWrapper">
+              <video
+                src="/videos/watermelon/idle_1.webm"
+                width="300"
+                height="200"
+                autoPlay
+                loop
+                className="videoElement"
+              ></video>
+            </div>
+            <div className="elementWrapper">
+              <video
+                src="/videos/strawberry/idle_1.webm"
+                width="300"
+                height="200"
+                autoPlay
+                loop
+                className="videoElement"
+              ></video>
+            </div>
+          </div>
           <RadioButtonWrapper>
             <Radio name="bet">Watermelon</Radio>
             <Radio name="bet">Strawberry</Radio>

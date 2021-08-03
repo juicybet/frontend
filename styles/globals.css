@@ -73,3 +73,20 @@ ul {
 .BetSelctionWrapper {
   display: flex;
 }
+
+.flexWrapper {
+  display: flex;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.elementWrapper {
+  overflow: hidden;
+  max-width: 50%;
+  height: 7rem;
+}
+
+.videoElement {
+  margin-top: -2rem;
+  margin-left: -4rem;
+}
