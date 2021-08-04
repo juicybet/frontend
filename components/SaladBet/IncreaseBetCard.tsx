@@ -29,7 +29,7 @@ const CaraouselWrapper = styled(FlexRow)`
   }
 `
 
-export const CreateBet = () => {
+export const IncreaseBetCard = () => {
   const min = "0.01"
   const max = "10"
   const [value, setValue] = useState("1.00000000")
