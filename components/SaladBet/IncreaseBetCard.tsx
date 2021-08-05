@@ -1,12 +1,21 @@
 import { useState } from "react"
-import { FullButton } from "../Button"
+import { FullButton, FullButtonSecondary } from "../Button"
 import { Slider } from "../Slider/Slider"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
 import styled from "styled-components"
-import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, FlexRow, Text } from "../Utils/Utility.style"
+import {
+  EtherFiatValue,
+  FlexWrapperCentered,
+  Flex,
+  EtherInput,
+  FlexRow,
+  Text,
+  SpanInfoPrimary,
+  SpanInfoSecondary,
+} from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
-import { RadioCaraousel } from "../Caraousel"
+import Image from "next/image"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -36,28 +45,69 @@ export const IncreaseBetCard = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
-      <TopCardSection height={"224px"} top={"12%"}>
-        <CaraouselWrapper>
-          <RadioCaraousel Img="/images/donuts/1.png">
-            <Text fontSize={32}>1</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/2.png">
-            <Text fontSize={32}>2</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/3.png">
-            <Text fontSize={32}>3</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/4.png">
-            <Text fontSize={32}>4</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/5.png">
-            <Text fontSize={32}>5</Text>
-          </RadioCaraousel>
-        </CaraouselWrapper>
+    <PrimaryCard width={"420px"} height={"671px"}>
+      <CardHeader>Bet which veggie* goes into the salad!</CardHeader>
+      <TopCardSection height={"200px"} top={"9%"}>
+        <Flex alignItems="center">
+          <Flex width={"40%"}>
+            <Flex
+              flexDirection="column"
+              size={[92, 192]}
+              p={2}
+              justifyContent="space-between"
+              borderRight="1px solid var(--border-gray);"
+            >
+              <Flex alignItems="center" justifyContent="center">
+                <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+              </Flex>
+              <Flex alignItems="center" justifyContent="center">
+                <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
+              </Flex>
+            </Flex>
+            <Flex
+              flexDirection="column"
+              size={[92, 191]}
+              p={2}
+              justifyContent="space-between"
+              backgroundImage="url('images/Rectangle.png')"
+              backgroundSize="cover"
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
+              borderRight="1px solid var(--border-gray);"
+            >
+              <Flex alignItems="center" justifyContent="center">
+                <Image src="/images/vegies/broccoli.png" width={60} height={100} alt="Brocolli " />
+              </Flex>
+              <Flex alignItems="center" justifyContent="center">
+                <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
+              </Flex>
+            </Flex>
+          </Flex>
+          <Flex width={"70%"} flexDirection="column" py={1} px={3} justifyContent={"space-between"} height={160}>
+            <Text color={"var(--light-gray)"} fontSize={18}>
+              Your current bet:
+              <Flex flexDirection="column" width={"50%"}>
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </Text>
+            <Text color={"var(--light-gray)"} fontSize={18}>
+              New bet amount:
+              <Flex flexDirection="column" width={"50%"}>
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </Text>
+          </Flex>
+        </Flex>
       </TopCardSection>
-      <BottomCardSection height={"304px"} bottom={"0%"}>
+      <BottomCardSection height={"385px"} bottom={"5%"}>
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column">
           <EtherInput
@@ -69,8 +119,15 @@ export const IncreaseBetCard = () => {
           ></EtherInput>
           <EtherFiatValue>~${formatNumber(+value * etherPrice, 2)}</EtherFiatValue>
         </Flex>
+        <Flex justifyContent="center" px={5}>
+          <Text textAlign="center" fontSize={14} color={"var(--light-gray)"}>
+            ** Bet more than the highest better to get a chance to win the jackpot!
+          </Text>
+        </Flex>
+        {/* size props to be added to the button  */}
+        <FullButtonSecondary>{`Next >>`}</FullButtonSecondary>
+        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
-      <FullButton>Create a Bet!</FullButton>
     </PrimaryCard>
   )
 }

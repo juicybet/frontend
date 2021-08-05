@@ -7,22 +7,19 @@ import {
   ModalWrapper,
 } from "../Utils/Utility.style"
 import { MainContent } from "../JellyBet/Bet.style"
-import { WinningCard } from "../JellyBet/WinningCard"
-import { LosingCard } from "../JellyBet/LosingCard"
-import { LoadingCard } from "../JellyBet/LoadingCard"
-import { PlaceBet } from "../SaladBet/PlaceBet"
+import { PlaceBet, IncreaseBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../SaladBet"
 
 export const Home = () => {
-  const [showLoadingModal, setShowLoadingModal] = useState(false)
-  const [showWinningModal, setShowWinningModal] = useState(false)
-  const [showLostModal, setShowLostModal] = useState(false)
+  const [showIncreaseBetCard, setShowIncreaseBetCard] = useState(false)
+  const [showPlaceBetCardOne, setShowPlaceBetCardOne] = useState(false)
+  const [showPlaceBetCardTwo, setShowPlaceBetCardTwo] = useState(false)
 
   const ModalDemo = () => {
     return (
       <div>
-        <button onClick={() => setShowLoadingModal(true)}>loading</button>
-        <button onClick={() => setShowWinningModal(true)}>Won</button>
-        <button onClick={() => setShowLostModal(true)}>lose</button>
+        <button onClick={() => setShowIncreaseBetCard(true)}>Increase</button>
+        <button onClick={() => setShowPlaceBetCardOne(true)}>PlaceBet one</button>
+        <button onClick={() => setShowPlaceBetCardTwo(true)}>PlaceBet two</button>
       </div>
     )
   }
@@ -36,27 +33,27 @@ export const Home = () => {
         </MainContent>
         <ModalDemo />
       </ContentWrapper>
-      {showLoadingModal && (
+      {showIncreaseBetCard && (
         <ModalWrapper>
-          <ModalOverlay onClick={() => setShowLoadingModal(false)} />
+          <ModalOverlay onClick={() => setShowIncreaseBetCard(false)} />
           <ModalContentWrapper>
-            <LoadingCard />
+            <IncreaseBetCard />
           </ModalContentWrapper>
         </ModalWrapper>
       )}
-      {showWinningModal && (
+      {showPlaceBetCardOne && (
         <ModalWrapper>
-          <ModalOverlay onClick={() => setShowWinningModal(false)} />
+          <ModalOverlay onClick={() => setShowPlaceBetCardOne(false)} />
           <ModalContentWrapper>
-            <WinningCard />
+            <PlaceBetCardOne />
           </ModalContentWrapper>
         </ModalWrapper>
       )}
-      {showLostModal && (
+      {showPlaceBetCardTwo && (
         <ModalWrapper>
-          <ModalOverlay onClick={() => setShowLostModal(false)} />
+          <ModalOverlay onClick={() => setShowPlaceBetCardTwo(false)} />
           <ModalContentWrapper>
-            <LosingCard />
+            <PlaceBetCardTwo />
           </ModalContentWrapper>
         </ModalWrapper>
       )}

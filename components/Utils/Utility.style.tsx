@@ -11,6 +11,10 @@ import {
   ColorProps,
   typography,
   TypographyProps,
+  background,
+  BackgroundProps,
+  border,
+  BorderProps,
 } from "styled-system"
 
 export const BackgroundWrapper = styled.div`
@@ -38,9 +42,10 @@ export const Rotatable = styled.div<{ angle: number }>`
   transition: 0.2s;
 `
 
-export const Box = styled.div<SpaceProps & LayoutProps>`
+export const Box = styled.div<SpaceProps & LayoutProps & BackgroundProps>`
   ${space}
   ${layout}
+  ${background}
 `
 
 export const Text = styled(Box)<ColorProps & TypographyProps>`
@@ -48,9 +53,11 @@ export const Text = styled(Box)<ColorProps & TypographyProps>`
   ${color}
 `
 
-export const Flex = styled(Box)<FlexboxProps>`
+export const Flex = styled(Box)<FlexboxProps & BackgroundProps & BorderProps>`
   display: flex;
+  ${background}
   ${flexbox}
+  ${border}
 `
 
 export const FlexRow = styled(Flex)`
@@ -141,9 +148,10 @@ export const SpanInfoflexEnd = styled(FlexWrapperCentered)`
   justify-content: flex-end;
   ${spanSecondaryStyle};
 `
-export const SpanLabel = styled.span<{ size: string }>`
+export const SpanLabel = styled.span<{ size: string; alignItems?: string }>`
   ${spanSecondaryStyle}
   font-size: ${(props) => props.size};
+  align-items: ${(props) => props.alignItems};
 `
 export const BetInfoWrapper = styled(FlexWrapperCentered)`
   height: 64px;

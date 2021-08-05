@@ -24,11 +24,9 @@ export const PlaceBet = () => {
     datasets: [
       {
         label: "# of Votes",
-        data: [3, 5, 3, 5, 2, 3, 3, 5, 3, 5, 2, 3, 3, 5, 3, 5, 2, 3],
+        data: [12, 19, 3, 5, 2, 3],
         backgroundColor: ["red", "blue", "yellow", "green", "purple", "orange"],
-        offset: 2,
-        spacing: 50,
-        cutout: 90,
+        cutout: 100,
       },
     ],
   }
