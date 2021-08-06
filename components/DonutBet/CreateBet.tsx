@@ -40,21 +40,14 @@ export const CreateBet = () => {
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
       <TopCardSection height={"224px"} top={"12%"}>
         <CaraouselWrapper>
-          <RadioCaraousel Img="/images/donuts/1.png" width={"100"} height={"100"}>
-            <Text fontSize={32}>1</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/2.png" width={"100"} height={"100"}>
-            <Text fontSize={32}>2</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/3.png" width={"100"} height={"100"}>
-            <Text fontSize={32}>3</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/4.png" width={"100"} height={"100"}>
-            <Text fontSize={32}>4</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/donuts/5.png" width={"100"} height={"100"}>
-            <Text fontSize={32}>5</Text>
-          </RadioCaraousel>
+          {new Array(16).fill('').map((_, i) => {
+            const hex = i.toString(16)
+            return (
+              <RadioCaraousel Img={`/images/donuts/${hex}.png`} width="100" height="100" key={i}>
+                <Text fontSize={32}>{hex.toUpperCase()}</Text>
+              </RadioCaraousel>
+            )
+          })}
         </CaraouselWrapper>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>
