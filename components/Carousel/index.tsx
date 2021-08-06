@@ -4,7 +4,7 @@ import { Flex } from "../Utils/Utility.style"
 import { Radio } from "../Radio/Radio"
 import { maxHeight } from "styled-system"
 
-export const RadioCaraousel = ({
+export const RadioCarousel = ({
   children,
   Img,
   width,

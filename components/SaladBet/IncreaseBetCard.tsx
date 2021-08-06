@@ -23,7 +23,7 @@ export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   width: 100%;
 `
 
-const CaraouselWrapper = styled(FlexRow)`
+const CarouselWrapper = styled(FlexRow)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;

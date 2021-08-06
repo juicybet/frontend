@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, FlexRow, Text } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
-import { RadioCaraousel } from "../Caraousel"
+import { RadioCarousel } from "../Carousel"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -14,7 +14,7 @@ export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   width: 100%;
 `
 
-const CaraouselWrapper = styled(FlexRow)`
+const CarouselWrapper = styled(FlexRow)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;
@@ -39,16 +39,16 @@ export const CreateBet = () => {
     <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
       <TopCardSection height={"224px"} top={"12%"}>
-        <CaraouselWrapper>
-          {new Array(16).fill('').map((_, i) => {
+        <CarouselWrapper>
+          {new Array(16).fill("").map((_, i) => {
             const hex = i.toString(16)
             return (
-              <RadioCaraousel Img={`/images/donuts/${hex}.png`} width="100" height="100" key={i}>
+              <RadioCarousel Img={`/images/donuts/${hex}.png`} width="100" height="100" key={i}>
                 <Text fontSize={32}>{hex.toUpperCase()}</Text>
-              </RadioCaraousel>
+              </RadioCarousel>
             )
           })}
-        </CaraouselWrapper>
+        </CarouselWrapper>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />

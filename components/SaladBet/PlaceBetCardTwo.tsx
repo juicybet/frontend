@@ -16,7 +16,7 @@ import {
 } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
-import { RadioCaraousel } from "../Caraousel"
+import { RadioCarousel } from "../Carousel"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -24,7 +24,7 @@ export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   width: 100%;
 `
 
-const CaraouselWrapper = styled(FlexRow)`
+const CarouselWrapper = styled(FlexRow)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;
@@ -53,26 +53,26 @@ export const PlaceBetCardTwo = () => {
     <PrimaryCard width={"420px"} height={"645px"}>
       <CardHeader>Bet which veggie* goes into the salad!</CardHeader>
       <TopCardSection height={"224px"} top={"9%"}>
-        <CaraouselWrapper>
-          <RadioCaraousel Img="/images/vegies/broccoli.png" width={"60"} height={"100"}>
+        <CarouselWrapper>
+          <RadioCarousel Img="/images/vegies/broccoli.png" width={"60"} height={"100"}>
             <Text fontSize={32}>1</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/vegies/carrot.png" width={"60"} height={"100"}>
+          </RadioCarousel>
+          <RadioCarousel Img="/images/vegies/carrot.png" width={"60"} height={"100"}>
             <Text fontSize={32}>2</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/vegies/corn.png" width={"60"} height={"100"}>
+          </RadioCarousel>
+          <RadioCarousel Img="/images/vegies/corn.png" width={"60"} height={"100"}>
             <Text fontSize={32}>3</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/vegies/cucumber.png" width={"60"} height={"100"}>
+          </RadioCarousel>
+          <RadioCarousel Img="/images/vegies/cucumber.png" width={"60"} height={"100"}>
             <Text fontSize={32}>4</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/vegies/onion.png" width={"60"} height={"100"}>
+          </RadioCarousel>
+          <RadioCarousel Img="/images/vegies/onion.png" width={"60"} height={"100"}>
             <Text fontSize={32}>5</Text>
-          </RadioCaraousel>
-          <RadioCaraousel Img="/images/vegies/pepper.png" width={"60"} height={"100"}>
+          </RadioCarousel>
+          <RadioCarousel Img="/images/vegies/pepper.png" width={"60"} height={"100"}>
             <Text fontSize={32}>5</Text>
-          </RadioCaraousel>
-        </CaraouselWrapper>
+          </RadioCarousel>
+        </CarouselWrapper>
         <Flex justifyContent="center" py={3}>
           <Text fontSize={12} color={"var(--light-gray)"}>
             * In each salad, Five veggies are picked, and one is thrown away.
