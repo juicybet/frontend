@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 import { currentTheme } from "../../core/theme"
 
@@ -39,7 +38,9 @@ const ReplacedInput = styled.span<{ color?: string }>`
   }
 `
 
-const HiddenInput = styled.input<{ color?: string }>`
+const HiddenInput = styled.input.attrs({
+  type: "radio",
+})<{ color?: string }>`
   position: absolute;
   visibility: hidden;
   display: none;
@@ -58,9 +59,21 @@ const HiddenInput = styled.input<{ color?: string }>`
     }
 `
 
-export const Radio = ({ name, children }: { name: string; children: string | JSX.Element }) => (
+export type RadioProps = {
+  name: string
+  children: JSX.Element | string
+  selected?: boolean
+  setSelected?(value: boolean): void
+}
+
+export const Radio = ({ name, children, selected = false, setSelected = () => {} }: RadioProps) => (
   <Label>
-    <HiddenInput name={name} type="radio" color={currentTheme().primary} />
+    <HiddenInput
+      name={name}
+      color={currentTheme().primary}
+      onChange={(e) => setSelected(e.target.checked)}
+      checked={selected}
+    />
     <ReplacedInput color={currentTheme().primary} />
     <span>{children}</span>
   </Label>

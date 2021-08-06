@@ -35,19 +35,37 @@ export const CreateBet = () => {
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
 
+  const numBets = 16
+  const [allBets, setAllBets] = useState(
+    new Array(numBets).fill("").map((_, i) => ({
+      bet: i.toString(numBets),
+      selected: false,
+    }))
+  )
+
+  const setSelected = (b: string, value: boolean) => {
+    setAllBets(allBets.map(({ bet }) => ({ bet, selected: bet === b ? value : false })))
+  }
+
   return (
     <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
       <TopCardSection height={"224px"} top={"12%"}>
         <CarouselWrapper>
-          {new Array(16).fill("").map((_, i) => {
-            const hex = i.toString(16)
-            return (
-              <RadioCarousel Img={`/images/donuts/${hex}.png`} width="100" height="100" key={i}>
-                <Text fontSize={32}>{hex.toUpperCase()}</Text>
-              </RadioCarousel>
-            )
-          })}
+          {allBets.map(({ bet, selected }) => (
+            <RadioCarousel
+              name="bet"
+              img={`/images/donuts/${bet}.png`}
+              alt={`Donut ${bet}`}
+              width="100"
+              height="100"
+              key={bet}
+              selected={selected}
+              setSelected={(value) => setSelected(bet, value)}
+            >
+              <Text fontSize={32}>{bet.toUpperCase()}</Text>
+            </RadioCarousel>
+          ))}
         </CarouselWrapper>
       </TopCardSection>
       <BottomCardSection height={"304px"} bottom={"0%"}>

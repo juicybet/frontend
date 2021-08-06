@@ -1,27 +1,33 @@
-import styled from "styled-components"
 import Image from "next/image"
 import { Flex } from "../Utils/Utility.style"
-import { Radio } from "../Radio/Radio"
-import { maxHeight } from "styled-system"
+import { Radio, RadioProps } from "../Radio/Radio"
 
-export const RadioCarousel = ({
-  children,
-  Img,
-  width,
-  height,
-}: {
+type RadioCarouselProps = RadioProps & {
+  img: string
   width: string
   height: string
-  Img: string
-  children: JSX.Element | string
-}) => {
+  alt: string
+}
+
+export const RadioCarousel = ({
+  name,
+  children,
+  img,
+  width,
+  height,
+  alt,
+  selected = false,
+  setSelected = () => {},
+}: RadioCarouselProps) => {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" onClick={() => setSelected(true)} cursor="pointer">
       <Flex alignItems="center" justifyContent="center" m={1} size={[64, 128]}>
-        <Image src={Img} width={width} height={height} alt="Donut " />
+        <Image src={img} width={width} height={height} alt={alt} />
       </Flex>
       <Flex alignItems="center" justifyContent="center">
-        <Radio name="bet">{children}</Radio>
+        <Radio name={name} selected={selected} setSelected={setSelected}>
+          {children}
+        </Radio>
       </Flex>
     </Flex>
   )

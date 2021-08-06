@@ -44,10 +44,20 @@ export const Rotatable = styled.div<{ angle: number }>`
   transition: 0.2s;
 `
 
-export const Box = styled.div<SpaceProps & LayoutProps & BackgroundProps>`
+type ExtraProps = {
+  cursor?: string
+}
+
+export const Box = styled.div<SpaceProps & LayoutProps & BackgroundProps & ExtraProps>`
   ${space}
   ${layout}
   ${background}
+
+  ${({ cursor }) =>
+    cursor &&
+    css`
+      cursor: ${cursor};
+    `}
 `
 
 export const Text = styled(Box)<ColorProps & TypographyProps>`

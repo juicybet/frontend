@@ -10,6 +10,7 @@ export const Button = styled.button<{ color: string }>`
   background: ${(props) => props.color};
   border-width: 0;
   border-radius: 80px;
+  cursor: pointer;
 `
 
 export const FullButtonBottomWrapper = styled.div`
