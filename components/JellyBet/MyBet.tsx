@@ -2,7 +2,6 @@ import Image from "next/image"
 import {
   FlexWrapperCentered,
   Flex,
-  FlexRow,
   FlexColumn,
   SpanInfoCentered,
   SpanInfoLight,
@@ -43,7 +42,7 @@ const ButtonWrapper = styled(FlexColumn)`
 
 export const MyBet = () => {
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>My Bet</CardHeader>
       <FullCardSection top={"10%"}>
         <SectionContentWrapper>

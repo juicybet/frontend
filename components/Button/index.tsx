@@ -12,7 +12,7 @@ export const Button = styled.button<{ color: string }>`
   border-radius: 80px;
 `
 
-export const FullButtonWrapper = styled.div`
+export const FullButtonBottomWrapper = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -21,6 +21,20 @@ export const FullButtonWrapper = styled.div`
 `
 
 export const FullButton = ({ children }: any) => {
+  return (
+    <FullButtonBottomWrapper>
+      <Button color={currentTheme().primary}>{children}</Button>
+    </FullButtonBottomWrapper>
+  )
+}
+
+// temporary
+
+export const FullButtonWrapper = styled.div`
+  width: 100%;
+  padding: 16px;
+`
+export const FullButtonSecondary = ({ children }: any) => {
   return (
     <FullButtonWrapper>
       <Button color={currentTheme().primary}>{children}</Button>

@@ -4,6 +4,7 @@ import { SiteType, SiteParams, setSite } from "../core/site"
 import { setEnvironment } from "../core/environment"
 import { Meta } from "../components/Utils/Meta"
 import { History as JellyHistory } from "../components/Jelly/History"
+import { PastSalads } from "../components/Salad/PastSalads"
 
 export { getServerSideProps } from "../core/site"
 
@@ -19,6 +20,9 @@ export default function Home({ site, env }: SiteParams) {
 
   const HistoryComponent = (() => {
     switch (site) {
+      case SiteType.Salad:
+        return PastSalads
+
       case SiteType.Jelly:
       default:
         return JellyHistory

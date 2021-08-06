@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, TopCardSection, InfoCard } from "../Card/Card"
+import { CardHeader, BottomCardSection, TopCardSection, PrimaryCard } from "../Card/Card"
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
@@ -10,7 +10,6 @@ import {
   RewardInfo,
   RewardSection,
   RewardSectionWrapper,
-  SpanInfoflexEnd,
   SpanInfoPrimary,
   SpanInfoSecondary,
   SpanInfoWhite,
@@ -58,7 +57,7 @@ const LabelWrapper = styled(FlexWrapperCentered)`
 `
 export const WaitingCard = () => {
   return (
-    <InfoCard>
+    <PrimaryCard width={"400px"} height={"664px"}>
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"256px"} top={"10%"}>
         <Flex flexDirection="row">
@@ -113,6 +112,6 @@ export const WaitingCard = () => {
         </RewardSectionWrapper>
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
-    </InfoCard>
+    </PrimaryCard>
   )
 }

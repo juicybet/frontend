@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { AcceptBet, CreateBet, WinningCard, LosingCard, LoadingCard } from "../JellyBet"
+import { MainContent } from "../JellyBet/Bet.style"
 import {
   BackgroundWrapper,
   ContentWrapper,
@@ -6,11 +8,6 @@ import {
   ModalOverlay,
   ModalWrapper,
 } from "../Utils/Utility.style"
-import { AcceptBet, CreateBet } from "../JellyBet"
-import { MainContent } from "../JellyBet/Bet.style"
-import { WinningCard } from "../JellyBet/WinningCard"
-import { LosingCard } from "../JellyBet/LosingCard"
-import { LoadingCard } from "../JellyBet/LoadingCard"
 
 export const Home = () => {
   const [showLoadingModal, setShowLoadingModal] = useState(false)

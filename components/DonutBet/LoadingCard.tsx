@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, TopCardSection, InfoCardSmall } from "../Card/Card"
+import { CardHeader, BottomCardSection, TopCardSection, PrimaryCard } from "../Card/Card"
 import {
   BetInfoWrapper,
   Flex,
@@ -21,7 +21,7 @@ const DonutWrapper = styled(FlexRow)`
 
 export const LoadingCard = () => {
   return (
-    <InfoCardSmall>
+    <PrimaryCard width={"400px"} height={"480px"}>
       <CardHeader>Bet #252 result</CardHeader>
       <TopCardSection height={"224px"} top={"10%"}>
         <Flex flexDirection="row">
@@ -45,6 +45,6 @@ export const LoadingCard = () => {
         </RewardSectionWrapper>
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
-    </InfoCardSmall>
+    </PrimaryCard>
   )
 }

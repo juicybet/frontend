@@ -19,6 +19,7 @@ import {
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { WinningRibbon } from "../Ribbon"
+import { FullButtonSecondary } from "../Button"
 
 const SharedWrapperStyle = css`
   width: 50%;
@@ -58,51 +59,60 @@ const LabelWrapper = styled(FlexWrapperCentered)`
 `
 export const WinningCard = () => {
   return (
-    <PrimaryCard width={"400px"} height={"664px"}>
+    <PrimaryCard width={"400px"} height={"695px"}>
       <CardHeader>My PNL</CardHeader>
       <TopCardSection height={"256px"} top={"10%"}>
         <Flex flexDirection="row">
-          <DonutWrapper>
-            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
-          </DonutWrapper>
-          <DonutDetailWrapper>
-            <SpanLabel size={"20px"}>Block Details :</SpanLabel>
-            <LabelWrapperGrid>
-              <SpanLabel size={"16px"}>Number: </SpanLabel>
-              <SpanInfoPrimary>123021</SpanInfoPrimary>
-            </LabelWrapperGrid>
-            <LabelWrapperGrid>
-              <SpanLabel size={"16px"}>Hash:</SpanLabel>
-              <SpanInfoPrimary>
-                35f…af7 <ExternalLink size={18} />
-              </SpanInfoPrimary>
-            </LabelWrapperGrid>
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
+          <Flex flexDirection="column" size={[92, 180]} p={2} justifyContent="space-between">
+            <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+          </Flex>
+          <Flex flexDirection="column" size={[92, 180]} p={2} justifyContent="space-between">
+            <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+          </Flex>
+          <Flex flexDirection="column" size={[92, 180]} p={2} justifyContent="space-between">
+            <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+            <Flex alignItems="center" justifyContent="center">
               <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
-            </div>
-          </DonutDetailWrapper>
+            </Flex>
+          </Flex>
+          <Flex flexDirection="column" size={[92, 180]} p={2} justifyContent="space-between">
+            <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+          </Flex>
+          <Flex flexDirection="column" size={[92, 180]} p={2} justifyContent="space-between">
+            <Image src="/images/vegies/pepper.png" width={60} height={100} alt="Pepper " />
+          </Flex>
+          <Flex
+            flexDirection="column"
+            size={[92, 180]}
+            p={2}
+            justifyContent="space-between"
+            backgroundImage="url('images/Rectangle.png')"
+            backgroundSize="cover"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+          >
+            <Flex alignItems="center" justifyContent="center">
+              <Image src="/images/vegies/broccoli.png" width={60} height={100} alt="Brocolli " />
+            </Flex>
+            <Flex alignItems="center" justifyContent="center">
+              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
+            </Flex>
+          </Flex>
         </Flex>
       </TopCardSection>
-      <BottomCardSection height={"416px"} bottom={"0"}>
+      <BottomCardSection height={"445px"} bottom={"0"}>
         <BetInfoWrapper>
-          <SpanLabel size={"18px"}>You Choose:</SpanLabel>
+          <SpanLabel size={"18px"}>Your Bet:</SpanLabel>
           <SpanInfoPrimary>
-            Donut 7
+            Onion Will be Picked
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
         <WinningRibbon bet={"donut"}>
           <SpanInfoWhite>You Win</SpanInfoWhite>
         </WinningRibbon>
-        <LabelWrapper>
-          <SpanLabel size={"18px"}>You’ve already claimed the reward.</SpanLabel>
-        </LabelWrapper>
         <RewardSectionWrapper>
           <RewardSection>
-            <SpanInfoflexEnd>
-              View on Bsc Secondary
-              <ExternalLink size={10} />
-            </SpanInfoflexEnd>
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
@@ -114,7 +124,9 @@ export const WinningCard = () => {
               </CoinWrapper>
             </RewardInfo>
           </RewardSection>
+          <FullButtonSecondary>Claim Reward</FullButtonSecondary>
         </RewardSectionWrapper>
+
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>
       </BottomCardSection>
     </PrimaryCard>

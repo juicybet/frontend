@@ -8,7 +8,7 @@ import { Flex, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style
 
 export const AcceptBet = () => {
   return (
-    <PrimaryCard>
+    <PrimaryCard width={"400px"} height={"592px"}>
       <CardHeader>Or accept an existing bet!</CardHeader>
       <FullCardSection top={"10%"}>
         <SectionContentWrapper>
