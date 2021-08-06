@@ -82,6 +82,7 @@ ul {
 
 .elementWrapper {
   overflow: hidden;
+  pointer-events: none;
   max-width: 50%;
   height: 7rem;
 }

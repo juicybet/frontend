@@ -94,7 +94,7 @@ export const PlaceBetCardTwo = () => {
         </Flex>
         {/* size props to be added to the button  */}
         <FullButtonSecondary>Place Bet</FullButtonSecondary>
-        <SpanInfoPrimary>{`<< Go Back`}</SpanInfoPrimary>
+        <SpanInfoPrimary>&laquo; Go Back</SpanInfoPrimary>
       </BottomCardSection>
     </PrimaryCard>
   )
