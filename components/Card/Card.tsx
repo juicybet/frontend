@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components"
 
 export const PrimaryCardWrapper = styled.div<{ width: string; height: string }>`
-  // width: 400px;
-  // height: 592px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   background-color: var(--primary-white);

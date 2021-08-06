@@ -15,6 +15,8 @@ import {
   BackgroundProps,
   border,
   BorderProps,
+  grid,
+  GridProps,
 } from "styled-system"
 
 export const BackgroundWrapper = styled.div`
@@ -51,6 +53,12 @@ export const Box = styled.div<SpaceProps & LayoutProps & BackgroundProps>`
 export const Text = styled(Box)<ColorProps & TypographyProps>`
   ${typography}
   ${color}
+`
+
+export const Grid = styled(Box)<GridProps & BorderProps>`
+  display: grid;
+  ${border}
+  ${grid}
 `
 
 export const Flex = styled(Box)<FlexboxProps & BackgroundProps & BorderProps>`
