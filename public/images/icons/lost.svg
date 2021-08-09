@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_lost</title>
+    <defs>
+        <circle id="path-1" cx="18" cy="18" r="18"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Jelly---Bet-Result-(Lost)" transform="translate(-668.000000, -538.000000)">
+            <g id="Group-9" transform="translate(476.000000, 268.000000)">
+                <g id="Group-2" transform="translate(34.000000, 0.000000)">
+                    <g id="Group-7" transform="translate(-0.500000, 64.500000)">
+                        <g id="Path-3" transform="translate(161.000000, 0.000000)">
+                            <g id="Group-8" transform="translate(0.000000, 208.000000)">
+                                <g id="Oval">
+                                    <circle stroke="#FFFFFF" stroke-width="3" stroke-linejoin="square" fill="#F42525" fill-rule="evenodd" cx="18" cy="18" r="16.5"></circle>
+                                    <circle stroke="#F42525" stroke-width="2" cx="18" cy="18" r="19"></circle>
+                                </g>
+                                <path d="M13.5863142,24 C13.1810709,24 12.7758276,23.8435903 12.466563,23.5272162 C11.844479,22.9015774 11.844479,21.8849145 12.466563,21.255721 L21.1401911,12.4718951 C21.762275,11.8427016 22.764719,11.8427016 23.3868029,12.4718951 C24.0053321,13.0975339 24.0053321,14.1177516 23.3868029,14.7433904 L14.7096201,23.5272162 C14.4003555,23.8435903 13.9951122,24 13.5863142,24 Z M22.263497,24 C21.8582537,24 21.4494557,23.8435903 21.1401911,23.5272162 L12.466563,14.7433904 C11.844479,14.1177516 11.844479,13.0975339 12.466563,12.4718951 C13.0850922,11.8427016 14.0910909,11.8427016 14.7096201,12.4718951 L23.3868029,21.255721 C24.0053321,21.8849145 24.0053321,22.9015774 23.3868029,23.5272162 C23.0775383,23.8435903 22.6687403,24 22.263497,24 Z" id="icon" fill="#FFFFFF" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

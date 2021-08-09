@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap);
+
+:root {
+  --primary-pink: #fb2261;
+  --secondary-pink: #c01a4a;
+  --primary-purple: #d32b9a;
+  --secondary-purple: #9a156d;
+  --shadow-pink: #7b0527;
+  --shadow-purple: #650a46;
+  --primary-white: #ffffff;
+  --dark-gray: #494f6d;
+  --darker-gray: #31364d;
+  --shadow-gray: #1d202b;
+  --border-gray: #eaeaea;
+  --light-gray: #929292;
+  --secondary-gray: #eaeaea;
+  --primary-green: #12cd72;
+  --primary-red: #f42525;
+  --bg-gray: #f2f2f2;
+  --pepper-red: #ff6b51;
+  --onion-purple: #d1b0ee;
+  --corn-yellow: #fed519;
+  --cucumber-green: #46cb8e;
+  --carrot-red: #f7941e;
+  --brocoli-green: #b1e772;
+}
+
+html,
+body,
+button,
+input {
+  padding: 0;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.p-top-1 {
+  padding-top: 16px;
+}
+.p-top-1-half {
+  padding-top: 24px;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.pos-absolute-l {
+  position: absolute;
+  left: 0;
+}
+
+.BetSelctionWrapper {
+  display: flex;
+}
+
+.flexWrapper {
+  display: flex;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.elementWrapper {
+  overflow: hidden;
+  pointer-events: none;
+  max-width: 50%;
+  height: 7rem;
+}
+
+.videoElement {
+  margin-top: -2rem;
+  margin-left: -4rem;
+}
