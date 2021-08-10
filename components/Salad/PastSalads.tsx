@@ -1,14 +1,7 @@
 import { useState } from "react"
-import {
-  BackgroundWrapper,
-  ContentWrapper,
-  Flex,
-  ModalContentWrapper,
-  ModalOverlay,
-  ModalWrapper,
-} from "../Utils/Utility.style"
-import { MainContent } from "../JellyBet/Bet.style"
+import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
 import { PlaceBet, LoadingCard, NoBetsCard, WinningCard, AlreadyWonCard, LosingCard } from "../SaladBet"
+import { ModalOverlay, ModalWrapper } from "../../components"
 
 export const PastSalads = () => {
   const [showLoadingCard, setShowLoadingCard] = useState(false)
@@ -37,43 +30,33 @@ export const PastSalads = () => {
         <ModalDemo />
       </Flex>
       {showLoadingCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowLoadingCard(false)} />
-          <ModalContentWrapper>
-            <LoadingCard />
-          </ModalContentWrapper>
+          <LoadingCard />
         </ModalWrapper>
       )}
       {showNoBetsCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowNoBetsCard(false)} />
-          <ModalContentWrapper>
-            <NoBetsCard />
-          </ModalContentWrapper>
+          <NoBetsCard />
         </ModalWrapper>
       )}
       {showWinningCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowWinningCard(false)} />
-          <ModalContentWrapper>
-            <WinningCard />
-          </ModalContentWrapper>
+          <WinningCard />
         </ModalWrapper>
       )}
       {showAlreadyWonCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowAlreadyWonCard(false)} />
-          <ModalContentWrapper>
-            <AlreadyWonCard />
-          </ModalContentWrapper>
+          <AlreadyWonCard />
         </ModalWrapper>
       )}
       {showLosingCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowLosingCard(false)} />
-          <ModalContentWrapper>
-            <LosingCard />
-          </ModalContentWrapper>
+          <LosingCard />
         </ModalWrapper>
       )}
     </main>

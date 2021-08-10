@@ -1,4 +1,3 @@
-import { AnyTypeAnnotation } from "@babel/types"
 import styled, { css } from "styled-components"
 import { ThemeProvider } from "styled-components"
 import { Flex } from "../Utils/Utility.style"

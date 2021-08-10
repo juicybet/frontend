@@ -1,13 +1,8 @@
 import { useState } from "react"
 import { MainContent } from "../JellyBet/Bet.style"
 import { WinningCard, WaitingCard, LosingCard, LoadingCard, BetHistory, CreateBet } from "../DonutBet"
-import {
-  BackgroundWrapper,
-  ContentWrapper,
-  ModalContentWrapper,
-  ModalOverlay,
-  ModalWrapper,
-} from "../Utils/Utility.style"
+import { BackgroundWrapper, ContentWrapper } from "../Utils/Utility.style"
+import { ModalOverlay, ModalWrapper } from "../../components"
 
 export const Home = () => {
   const [showLoadingModal, setShowLoadingModal] = useState(false)
@@ -38,35 +33,27 @@ export const Home = () => {
 
       <ModalDemo />
       {showLoadingModal && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowLoadingModal(false)} />
-          <ModalContentWrapper>
-            <LoadingCard />
-          </ModalContentWrapper>
+          <LoadingCard />
         </ModalWrapper>
       )}
       {showWinningModal && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowWinningModal(false)} />
-          <ModalContentWrapper>
-            <WinningCard />
-          </ModalContentWrapper>
+          <WinningCard />
         </ModalWrapper>
       )}
       {showLostModal && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowLostModal(false)} />
-          <ModalContentWrapper>
-            <LosingCard />
-          </ModalContentWrapper>
+          <LosingCard />
         </ModalWrapper>
       )}
       {showWaitingModal && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowWaitingModal(false)} />
-          <ModalContentWrapper>
-            <WaitingCard />
-          </ModalContentWrapper>
+          <WaitingCard />
         </ModalWrapper>
       )}
     </main>

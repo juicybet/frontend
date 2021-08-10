@@ -201,37 +201,37 @@ export const RewardInfo = styled(FlexColumn)<{ height: string; width: string }>`
   width: ${(props) => props.width};
 `
 
-export const ModalWrapper = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 9000;
-  overflow: auto;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-  padding: 64px;
-`
+// export const ModalWrapper = styled(Flex)`
+//   position: absolute;
+//   width: 100%;
+//   max-height: 900px;
+//   top: 0;
+//   left: 0;
+//   z-index: 9000;
+//   -webkit-transition: all 0.4s;
+//   -o-transition: all 0.4s;
+//   -moz-transition: all 0.4s;
+//   transition: all 0.4s;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 5rem;
+// `
 
-export const ModalOverlay = styled.div`
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.8;
-`
+// export const ModalOverlay = styled.div`
+//   position: fixed;
+//   z-index: -1;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   background: #000;
+//   opacity: 0.8;
+// `
 
-export const ModalContentWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  width: min-content;
-`
+// export const ModalContentWrapper = styled(Flex)`
+//   align-items: center;
+//   justify-content: center;
+//   margin: auto;
+//   width: min-content;
+// `
 // temporary styles

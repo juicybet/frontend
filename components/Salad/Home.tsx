@@ -1,16 +1,8 @@
 import { useState } from "react"
-import {
-  BackgroundWrapper,
-  Box,
-  ContentWrapper,
-  Flex,
-  ModalContentWrapper,
-  ModalOverlay,
-  ModalWrapper,
-  Text,
-} from "../Utils/Utility.style"
+import { BackgroundWrapper, Box, ContentWrapper, Flex, Text } from "../Utils/Utility.style"
 import { PlaceBet, IncreaseBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../SaladBet"
 import { currentTheme } from "../../core/theme"
+import { ModalOverlay, ModalWrapper } from "../../components"
 
 export const Home = () => {
   const [showIncreaseBetCard, setShowIncreaseBetCard] = useState(false)
@@ -56,27 +48,22 @@ export const Home = () => {
       </Flex>
 
       {showIncreaseBetCard && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowIncreaseBetCard(false)} />
-          <ModalContentWrapper>
-            <IncreaseBetCard />
-          </ModalContentWrapper>
+          <IncreaseBetCard />
         </ModalWrapper>
       )}
+
       {showPlaceBetCardOne && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowPlaceBetCardOne(false)} />
-          <ModalContentWrapper>
-            <PlaceBetCardOne />
-          </ModalContentWrapper>
+          <PlaceBetCardOne />
         </ModalWrapper>
       )}
       {showPlaceBetCardTwo && (
-        <ModalWrapper>
+        <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowPlaceBetCardTwo(false)} />
-          <ModalContentWrapper>
-            <PlaceBetCardTwo />
-          </ModalContentWrapper>
+          <PlaceBetCardTwo />
         </ModalWrapper>
       )}
     </main>
