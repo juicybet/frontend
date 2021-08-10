@@ -1,16 +1,8 @@
 import Image from "next/image"
 import { FullButtonSecondary } from "../Button"
-import { PrimaryCard } from "../Card/Card"
+import { Card } from "../Card/Card"
 import styled from "styled-components"
-import {
-  EtherFiatValue,
-  FlexWrapperCentered,
-  Flex,
-  Text,
-  Grid,
-  SpanInfoPrimary,
-  SpanInfoSecondary,
-} from "../Utils/Utility.style"
+import { FlexWrapperCentered, Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
 
 import { Doughnut } from "react-chartjs-2"
 
@@ -26,14 +18,19 @@ export const PlaceBet = () => {
       {
         label: "# of Votes",
         data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: ["red", "blue", "yellow", "green", "purple", "orange"],
+        backgroundColor: ["#ff6b51", "#d1b0ee", "#fed519", "#46cb8e", "#f7941e", "#b1e772"],
         cutout: 90,
       },
     ],
   }
 
+  const options = {
+    maintainAspectRatio: true,
+    responsive: true,
+  }
+
   return (
-    <PrimaryCard width={"830px"} height={"589px"}>
+    <Card width={[420, 830]} height={["auto", 589]}>
       <Flex flexDirection="column">
         <Flex
           justifyContent="space-between"
@@ -47,18 +44,18 @@ export const PlaceBet = () => {
             Salad #12 - Current Pool
           </Text>
         </Flex>
-        <Flex flexDirection="row" alignItems="center">
-          <Flex width="40%" p={4} justifyContent="center" alignItems="center" m="auto">
-            <Doughnut data={data} />
+        <Flex alignItems="center" flexDirection={["column", "row"]}>
+          <Flex width={["100%", "40%"]} p={4} justifyContent="center" alignItems="center" m="auto">
+            <Doughnut data={data} options={options} />
           </Flex>
-          <Flex width="60%" justifyContent="flex-end">
+          <Flex width={["100%", "60%"]} justifyContent="flex-end">
             <Grid gridTemplateColumns="auto auto">
               <Flex
                 flexDirection="row"
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -76,7 +73,7 @@ export const PlaceBet = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -94,7 +91,7 @@ export const PlaceBet = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -112,7 +109,7 @@ export const PlaceBet = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -130,7 +127,7 @@ export const PlaceBet = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -148,7 +145,7 @@ export const PlaceBet = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 height={128}
-                width={242}
+                width={[210, 242]}
                 border="1px solid var(--border-gray)"
               >
                 <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
@@ -167,23 +164,23 @@ export const PlaceBet = () => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          flexDirection="row"
+          flexDirection={["column", "row"]}
           borderTop="1px solid var(--border-gray)"
-          height={150}
+          height={["auto", 150]}
         >
-          <Flex width={"40%"} flexDirection="column">
-            <Text textAlign="left" fontSize={18} color={"var(--light-gray)"} px={4}>
+          <Flex width={["100%", "40%"]} flexDirection="column">
+            <Text textAlign={["center", "left"]} fontSize={18} color={"var(--light-gray)"} px={4}>
               Salad will be ready to serve in:
             </Text>
-            <Text textAlign="left" fontSize={24} color={"var(--dark-gray)"} px={4}>
+            <Text textAlign={["center", "left"]} fontSize={24} color={"var(--dark-gray)"} px={4}>
               8 hours and 23 minutes
             </Text>
           </Flex>
-          <Flex width={"60%"} px={4}>
+          <Flex width={["100%", "60%"]} px={4}>
             <FullButtonSecondary>Place A Bet</FullButtonSecondary>
           </Flex>
         </Flex>
       </Flex>
-    </PrimaryCard>
+    </Card>
   )
 }

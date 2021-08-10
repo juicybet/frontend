@@ -2,6 +2,7 @@ import { useState } from "react"
 import {
   BackgroundWrapper,
   ContentWrapper,
+  Flex,
   ModalContentWrapper,
   ModalOverlay,
   ModalWrapper,
@@ -31,12 +32,10 @@ export const PastSalads = () => {
   return (
     <main>
       <BackgroundWrapper />
-      <ContentWrapper>
-        <MainContent>
-          <PlaceBet />
-        </MainContent>
+      <Flex alignItems="center" justifyContent="center" marginTop="120px" flexDirection="column">
+        <PlaceBet />
         <ModalDemo />
-      </ContentWrapper>
+      </Flex>
       {showLoadingCard && (
         <ModalWrapper>
           <ModalOverlay onClick={() => setShowLoadingCard(false)} />

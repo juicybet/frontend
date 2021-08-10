@@ -1,4 +1,7 @@
+import { AnyTypeAnnotation } from "@babel/types"
 import styled, { css } from "styled-components"
+import { ThemeProvider } from "styled-components"
+import { Flex } from "../Utils/Utility.style"
 
 export const PrimaryCardWrapper = styled.div<{ width: string; height: string }>`
   width: ${(props) => props.width};
@@ -55,5 +58,27 @@ export const PrimaryCard = ({ children, width, height }: any) => {
     <PrimaryCardWrapper width={width} height={height}>
       {children}
     </PrimaryCardWrapper>
+  )
+}
+
+const theme = {
+  breakpoints: ["40em", "52em", "64em"],
+}
+
+export const Card = ({ children, width, height }: any) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Flex
+        flexDirection="column"
+        width={width}
+        height={height}
+        bg="var(--primary-white)"
+        boxShadow="0px 0px 10px rgba(0, 0, 0, 0.05)"
+        borderRadius="20px"
+        position="relative"
+      >
+        {children}
+      </Flex>
+    </ThemeProvider>
   )
 }

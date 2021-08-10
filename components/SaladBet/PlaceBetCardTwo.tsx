@@ -55,22 +55,22 @@ export const PlaceBetCardTwo = () => {
       <TopCardSection height={"224px"} top={"9%"}>
         <CarouselWrapper>
           <RadioCarousel name="bet" img="/images/vegies/broccoli.png" alt="Bet for Broccoli" width="60" height="100">
-            <Text fontSize={32}>Broccoli</Text>
+            <Text fontSize={18}>Broccoli</Text>
           </RadioCarousel>
           <RadioCarousel name="bet" img="/images/vegies/carrot.png" alt="Bet for Carrot" width="60" height="100">
-            <Text fontSize={32}>Carrot</Text>
+            <Text fontSize={18}>Carrot</Text>
           </RadioCarousel>
           <RadioCarousel name="bet" img="/images/vegies/corn.png" alt="Bet for Corn" width="60" height="100">
-            <Text fontSize={32}>Corn</Text>
+            <Text fontSize={18}>Corn</Text>
           </RadioCarousel>
           <RadioCarousel name="bet" img="/images/vegies/cucumber.png" alt="Bet for Cucumber" width="60" height="100">
-            <Text fontSize={32}>Cucumber</Text>
+            <Text fontSize={18}>Cucumber</Text>
           </RadioCarousel>
           <RadioCarousel name="bet" img="/images/vegies/onion.png" alt="Bet for Onion" width="60" height="100">
-            <Text fontSize={32}>Onion</Text>
+            <Text fontSize={18}>Onion</Text>
           </RadioCarousel>
           <RadioCarousel name="bet" img="/images/vegies/pepper.png" alt="Bet for Pepper" width="60" height="100">
-            <Text fontSize={32}>Pepper</Text>
+            <Text fontSize={18}>Pepper</Text>
           </RadioCarousel>
         </CarouselWrapper>
         <Flex justifyContent="center" py={3}>

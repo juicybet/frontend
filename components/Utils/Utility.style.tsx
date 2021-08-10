@@ -17,6 +17,10 @@ import {
   BorderProps,
   grid,
   GridProps,
+  shadow,
+  ShadowProps,
+  position,
+  PositionProps,
 } from "styled-system"
 
 export const BackgroundWrapper = styled.div`
@@ -48,10 +52,16 @@ type ExtraProps = {
   cursor?: string
 }
 
-export const Box = styled.div<SpaceProps & LayoutProps & BackgroundProps & ExtraProps>`
+export const Box = styled.div<
+  SpaceProps & LayoutProps & BackgroundProps & ExtraProps & ColorProps & ShadowProps & PositionProps & BorderProps
+>`
   ${space}
   ${layout}
   ${background}
+  ${color}
+  ${shadow}
+  ${position}
+  ${border}
 
   ${({ cursor }) =>
     cursor &&
@@ -224,3 +234,4 @@ export const ModalContentWrapper = styled.div`
   margin: auto;
   width: min-content;
 `
+// temporary styles
