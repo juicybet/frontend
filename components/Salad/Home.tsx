@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { BackgroundWrapper, Box, ContentWrapper, Flex, Text } from "../Utils/Utility.style"
-import { PlaceBet, IncreaseBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../SaladBet"
+import { BackgroundWrapper, Box, Flex, Text } from "../Utils/Utility.style"
+import { PlaceBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../SaladBet"
 import { currentTheme } from "../../core/theme"
 import { ModalOverlay, ModalWrapper } from "../../components"
 

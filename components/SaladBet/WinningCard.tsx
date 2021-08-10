@@ -19,7 +19,7 @@ import {
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { WinningRibbon } from "../Ribbon"
-import { FullButtonSecondary } from "../Button"
+import { Button } from "../Button"
 
 const SharedWrapperStyle = css`
   width: 50%;
@@ -124,7 +124,7 @@ export const WinningCard = () => {
               </CoinWrapper>
             </RewardInfo>
           </RewardSection>
-          <FullButtonSecondary>Claim Reward</FullButtonSecondary>
+          <Button>Claim Reward</Button>
         </RewardSectionWrapper>
 
         <SpanInfoPrimary>Close Window</SpanInfoPrimary>

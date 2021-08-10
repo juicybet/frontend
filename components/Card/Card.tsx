@@ -19,15 +19,15 @@ export const Wrapper = styled(PrimaryCardWrapper)`
 export const WrapperSmall = styled(PrimaryCardWrapper)`
   height: 480px;
 `
-export const CardHeader = styled.span`
-  font-style: normal;
-  font-weight: 600;
-  color: var(--dark-gray);
-  position: absolute;
-  left: 5%;
-  top: 3%;
-  right: 5%;
-`
+// export const CardHeader = styled.span`
+//   font-style: normal;
+//   font-weight: 600;
+//   color: var(--dark-gray);
+//   position: absolute;
+//   left: 5%;
+//   top: 3%;
+//   right: 5%;
+// `
 
 const CardSection = css`
   position: absolute;
@@ -79,5 +79,60 @@ export const Card = ({ children, width, height }: any) => {
         {children}
       </Flex>
     </ThemeProvider>
+  )
+}
+
+export const CardHeader = ({ children, px, py }: any) => {
+  return (
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      flexDirection="row"
+      px={px ? px : 20}
+      py={py ? py : 15}
+      borderBottom="1px solid var(--border-gray)"
+    >
+      {children}
+    </Flex>
+  )
+}
+
+export const CardBox = ({ children, width, height }: any) => {
+  return (
+    <Flex
+      flexDirection="row"
+      justifyContent="space-evenly"
+      alignItems="center"
+      height={height}
+      width={width}
+      border="1px solid var(--border-gray)"
+    >
+      {children}
+    </Flex>
+  )
+}
+
+export const CardUpperBody = styled(Flex)`
+  border-bottom: 1px solid var(--border-gray);
+  align-items: center;
+`
+
+export const CardLowerBody = styled(Flex)`
+  align-items: center;
+`
+
+export const PopUpCardVegies = ({ children, backgroundImage, backgroundSize }: any) => {
+  return (
+    <Flex
+      flexDirection="column"
+      size={[92, 192]}
+      p={2}
+      justifyContent="space-between"
+      borderRight="1px solid var(--border-gray);"
+      backgroundImage={backgroundImage}
+      backgroundSize={backgroundSize}
+    >
+      {children}
+    </Flex>
   )
 }

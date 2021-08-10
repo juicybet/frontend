@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { FullButtonSecondary } from "../Button"
-import { Card } from "../Card/Card"
+import { Button } from "../Button"
+import { Card, CardBox, CardHeader } from "../Card/Card"
 import styled from "styled-components"
 import { FlexWrapperCentered, Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
 
@@ -31,154 +31,103 @@ export const PlaceBet = () => {
 
   return (
     <Card width={[420, 830]} height={["auto", 589]}>
-      <Flex flexDirection="column">
-        <Flex
-          justifyContent="space-between"
-          alignItems="center"
-          flexDirection="row"
-          px={20}
-          py={15}
-          borderBottom="1px solid var(--border-gray)"
-        >
-          <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
-            Salad #12 - Current Pool
+      <CardHeader px={20} py={15}>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Salad #12 - Current Pool
+        </Text>
+      </CardHeader>
+      <Flex alignItems="center" flexDirection={["column", "row"]}>
+        <Flex width={["100%", "40%"]} p={4} justifyContent="center" alignItems="center" m="auto">
+          <Doughnut data={data} options={options} />
+        </Flex>
+        <Flex width={["100%", "60%"]} justifyContent="flex-end">
+          <Grid gridTemplateColumns="auto auto">
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+            <CardBox height={128} width={[210, 242]}>
+              <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot" />
+              <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
+              <Flex flexDirection="column">
+                <SpanInfoPrimary>
+                  0.123021
+                  <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
+                </SpanInfoPrimary>
+                <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
+              </Flex>
+            </CardBox>
+          </Grid>
+        </Flex>
+      </Flex>
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        flexDirection={["column", "row"]}
+        borderTop="1px solid var(--border-gray)"
+        height={["auto", 150]}
+      >
+        <Flex width={["100%", "40%"]} flexDirection="column">
+          <Text textAlign={["center", "left"]} fontSize={18} color={"var(--light-gray)"} px={4}>
+            Salad will be ready to serve in:
+          </Text>
+          <Text textAlign={["center", "left"]} fontSize={24} color={"var(--dark-gray)"} px={4}>
+            8 hours and 23 minutes
           </Text>
         </Flex>
-        <Flex alignItems="center" flexDirection={["column", "row"]}>
-          <Flex width={["100%", "40%"]} p={4} justifyContent="center" alignItems="center" m="auto">
-            <Doughnut data={data} options={options} />
-          </Flex>
-          <Flex width={["100%", "60%"]} justifyContent="flex-end">
-            <Grid gridTemplateColumns="auto auto">
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-              <Flex
-                flexDirection="row"
-                justifyContent="space-evenly"
-                alignItems="center"
-                height={128}
-                width={[210, 242]}
-                border="1px solid var(--border-gray)"
-              >
-                <Image src="images/Oval@2x.svg" width="25" height="25" alt="dot"></Image>
-                <Image src="/images/vegies/pepper.png" width={50} height={95} alt="Pepper " />
-                <Flex flexDirection="column">
-                  <SpanInfoPrimary>
-                    0.123021
-                    <Image src="/images/icons/coins/bnb.svg" width="20" height="20" alt="" />
-                  </SpanInfoPrimary>
-                  <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
-                </Flex>
-              </Flex>
-            </Grid>
-          </Flex>
-        </Flex>
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          flexDirection={["column", "row"]}
-          borderTop="1px solid var(--border-gray)"
-          height={["auto", 150]}
-        >
-          <Flex width={["100%", "40%"]} flexDirection="column">
-            <Text textAlign={["center", "left"]} fontSize={18} color={"var(--light-gray)"} px={4}>
-              Salad will be ready to serve in:
-            </Text>
-            <Text textAlign={["center", "left"]} fontSize={24} color={"var(--dark-gray)"} px={4}>
-              8 hours and 23 minutes
-            </Text>
-          </Flex>
-          <Flex width={["100%", "60%"]} px={4}>
-            <FullButtonSecondary>Place A Bet</FullButtonSecondary>
-          </Flex>
+        <Flex width={["100%", "60%"]} px={4}>
+          <Button>Place A Bet</Button>
         </Flex>
       </Flex>
     </Card>

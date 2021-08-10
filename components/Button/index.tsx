@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { currentTheme } from "../../core/theme"
+import { Box } from "../Utils/Utility.style"
 
-export const Button = styled.button<{ color: string }>`
+export const StyledButton = styled.button<{ color: string }>`
   width: 100%;
   height: 56px;
   padding: 16px;
@@ -24,21 +25,31 @@ export const FullButtonBottomWrapper = styled.div`
 export const FullButton = ({ children }: any) => {
   return (
     <FullButtonBottomWrapper>
-      <Button color={currentTheme().primary}>{children}</Button>
+      <StyledButton color={currentTheme().primary}>{children}</StyledButton>
     </FullButtonBottomWrapper>
   )
 }
 
 // temporary
 
-export const FullButtonWrapper = styled.div`
+export const StyledButtonSecondary = styled.button<{ color: string; height: string }>`
   width: 100%;
+  height: ${(props) => props.height};
   padding: 16px;
+  font-size: 18px;
+  color: var(--primary-white);
+  background: ${(props) => props.color};
+  border-width: 0;
+  border-radius: 80px;
+  cursor: pointer;
 `
-export const FullButtonSecondary = ({ children }: any) => {
+
+export const Button = ({ children, height, px, py }: any) => {
   return (
-    <FullButtonWrapper>
-      <Button color={currentTheme().primary}>{children}</Button>
-    </FullButtonWrapper>
+    <Box width={"100%"} px={px} py={py}>
+      <StyledButtonSecondary height={height} color={currentTheme().primary}>
+        {children}
+      </StyledButtonSecondary>
+    </Box>
   )
 }

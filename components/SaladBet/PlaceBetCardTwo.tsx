@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { FullButton, FullButtonSecondary } from "../Button"
+import { FullButton, Button } from "../Button"
 import { Slider } from "../Slider/Slider"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, Card, CardLowerBody } from "../Card/Card"
 import styled from "styled-components"
 import {
   EtherFiatValue,
@@ -17,6 +17,7 @@ import {
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 import { RadioCarousel } from "../Carousel"
+import Image from "next/image"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -39,10 +40,6 @@ const CarouselWrapper = styled(FlexRow)`
   }
 `
 
-const SpanWrapper = styled(FlexWrapperCentered)`
-  bottom: 0;
-`
-
 export const PlaceBetCardTwo = () => {
   const min = "0.01"
   const max = "10"
@@ -50,9 +47,14 @@ export const PlaceBetCardTwo = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard width={"420px"} height={"645px"}>
-      <CardHeader>Bet which veggie* goes into the salad!</CardHeader>
-      <TopCardSection height={"224px"} top={"9%"}>
+    <Card width={"420px"} height={"649px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet which veggie* will be thrown away!
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close" />
+      </CardHeader>
+      <Box borderBottom="1px solid var(--border-gray)">
         <CarouselWrapper>
           <RadioCarousel name="bet" img="/images/vegies/broccoli.png" alt="Bet for Broccoli" width="60" height="100">
             <Text fontSize={18}>Broccoli</Text>
@@ -78,24 +80,25 @@ export const PlaceBetCardTwo = () => {
             * In each salad, Five veggies are picked, and one is thrown away.
           </Text>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"350px"} bottom={"0%"}>
-        <Flex flexDirection="column" p={3} justifyContent="space-between" height={"60%"}>
-          <Text fontSize={14} color={"var(--light-gray)"}>
-            As the highest better, you get to place a second bet for a chance to win the jackpot.
-          </Text>
-          <Text fontSize={14} color={"var(--light-gray)"}>
-            If you are still the highest better when the salad is served, and both your bets are correct, you win the
-            jackpot, which is equal to the total pool size of the current salad.
-          </Text>
-          <Text fontSize={14} color={"var(--light-gray)"}>
-            If your second bet is wrong, you still win something if your first bet was correct.
-          </Text>
-        </Flex>
-        {/* size props to be added to the button  */}
-        <FullButtonSecondary>Place Bet</FullButtonSecondary>
-        <SpanInfoPrimary>&laquo; Go Back</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+      </Box>
+      <Flex flexDirection="column" p={3} justifyContent="space-between" height={"60%"}>
+        <Text fontSize={14} color={"var(--light-gray)"}>
+          As the highest better, you get to place a second bet for a chance to win the jackpot.
+        </Text>
+        <Text fontSize={14} color={"var(--light-gray)"}>
+          If you are still the highest better when the salad is served, and both your bets are correct, you win the
+          jackpot, which is equal to the total pool size of the current salad.
+        </Text>
+        <Text fontSize={14} color={"var(--light-gray)"}>
+          If your second bet is wrong, you still win something if your first bet was correct.
+        </Text>
+        <Button height={"64px"} px={13}>
+          Place Bet
+        </Button>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          &laquo; Go Back
+        </Text>
+      </Flex>
+    </Card>
   )
 }

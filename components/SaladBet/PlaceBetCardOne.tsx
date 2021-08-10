@@ -1,22 +1,13 @@
 import { useState } from "react"
-import { FullButton, FullButtonSecondary } from "../Button"
+import { Button } from "../Button"
 import { Slider } from "../Slider/Slider"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { CardHeader, Card } from "../Card/Card"
 import styled from "styled-components"
-import {
-  EtherFiatValue,
-  FlexWrapperCentered,
-  Flex,
-  EtherInput,
-  FlexRow,
-  Text,
-  SpanLabel,
-  SpanInfoPrimary,
-  Box,
-} from "../Utils/Utility.style"
+import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, FlexRow, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 import { RadioCarousel } from "../Carousel"
+import Image from "next/image"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -39,10 +30,6 @@ const CarouselWrapper = styled(FlexRow)`
   }
 `
 
-const SpanWrapper = styled(FlexWrapperCentered)`
-  bottom: 0;
-`
-
 export const PlaceBetCardOne = () => {
   const min = "0.01"
   const max = "10"
@@ -50,9 +37,14 @@ export const PlaceBetCardOne = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard width={"420px"} height={"704px"}>
-      <CardHeader>Bet which veggie* goes into the salad!</CardHeader>
-      <TopCardSection height={"224px"} top={"9%"}>
+    <Card width={"420px"} height={"704px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet which veggie* goes into the salad!
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close" />
+      </CardHeader>
+      <Box borderBottom="1px solid var(--border-gray)">
         <CarouselWrapper>
           <RadioCarousel name="bet" img="/images/vegies/broccoli.png" alt="Bet for Broccoli" width="60" height="100">
             <Text fontSize={"18px"}>Broccoli</Text>
@@ -78,10 +70,10 @@ export const PlaceBetCardOne = () => {
             * In each salad, Five veggies are picked, and one is thrown away.
           </Text>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"370px"} bottom={"5%"}>
+      </Box>
+      <Flex flexDirection="column" alignItems="center">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" width="100%">
           <EtherInput
             min={min}
             max={max}
@@ -96,10 +88,13 @@ export const PlaceBetCardOne = () => {
             ** Bet more than the highest better to get a chance to win the jackpot!
           </Text>
         </Flex>
-        {/* size props to be added to the button  */}
-        <FullButtonSecondary>Next &raquo;</FullButtonSecondary>
-        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+        <Button height={"64px"} px={16} py={3}>
+          Next &raquo;
+        </Button>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          Close Window
+        </Text>
+      </Flex>
+    </Card>
   )
 }

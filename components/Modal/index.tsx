@@ -1,4 +1,4 @@
-import { Box, Flex } from "../Utils/Utility.style"
+import { Flex } from "../Utils/Utility.style"
 import styled from "styled-components"
 
 export const ModalWrapper = styled(Flex)`
