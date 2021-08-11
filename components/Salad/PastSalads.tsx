@@ -2,6 +2,7 @@ import { useState } from "react"
 import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
 import { PlaceBet, LoadingCard, NoBetsCard, WinningCard, AlreadyWonCard, LosingCard } from "../SaladBet"
 import { ModalOverlay, ModalWrapper } from "../../components"
+import { CheckSalad } from "../SaladBet/CheckSalad"
 
 export const PastSalads = () => {
   const [showLoadingCard, setShowLoadingCard] = useState(false)
@@ -26,17 +27,17 @@ export const PastSalads = () => {
     <main>
       <BackgroundWrapper />
       <Flex alignItems="center" justifyContent="center" marginTop="120px" flexDirection="column">
-        <PlaceBet />
+        <CheckSalad />
         <ModalDemo />
       </Flex>
       {showLoadingCard && (
-        <ModalWrapper p={"5rem"}>
+        <ModalWrapper p={"10rem"}>
           <ModalOverlay onClick={() => setShowLoadingCard(false)} />
           <LoadingCard />
         </ModalWrapper>
       )}
       {showNoBetsCard && (
-        <ModalWrapper p={"5rem"}>
+        <ModalWrapper p={"10rem"}>
           <ModalOverlay onClick={() => setShowNoBetsCard(false)} />
           <NoBetsCard />
         </ModalWrapper>

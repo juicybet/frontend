@@ -3,19 +3,13 @@ import { Button } from "../Button"
 import { Slider } from "../Slider/Slider"
 import { CardHeader, Card } from "../Card/Card"
 import styled from "styled-components"
-import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, FlexRow, Text, Box } from "../Utils/Utility.style"
+import { EtherFiatValue, Flex, EtherInput, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 import { RadioCarousel } from "../Carousel"
 import Image from "next/image"
 
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
-
-const CarouselWrapper = styled(FlexRow)`
+const CarouselWrapper = styled(Flex)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;

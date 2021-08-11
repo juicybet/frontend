@@ -1,16 +1,9 @@
 import Image from "next/image"
 import { Button } from "../Button"
 import { Card, CardBox, CardHeader } from "../Card/Card"
-import styled from "styled-components"
-import { FlexWrapperCentered, Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
+import { Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
 
 import { Doughnut } from "react-chartjs-2"
-
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
 
 export const IncreaseBet = () => {
   const data = {

@@ -1,31 +1,13 @@
 import { useState } from "react"
-import { FullButton, Button } from "../Button"
-import { Slider } from "../Slider/Slider"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection, Card, CardLowerBody } from "../Card/Card"
+import { Button } from "../Button"
+import { CardHeader, Card } from "../Card/Card"
 import styled from "styled-components"
-import {
-  EtherFiatValue,
-  FlexWrapperCentered,
-  Flex,
-  EtherInput,
-  FlexRow,
-  Text,
-  SpanLabel,
-  SpanInfoPrimary,
-  Box,
-} from "../Utils/Utility.style"
+import { Flex, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
-import { formatNumber } from "../../utils/Common"
 import { RadioCarousel } from "../Carousel"
 import Image from "next/image"
 
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
-
-const CarouselWrapper = styled(FlexRow)`
+const CarouselWrapper = styled(Flex)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;

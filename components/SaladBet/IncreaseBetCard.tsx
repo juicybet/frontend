@@ -16,12 +16,6 @@ import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 import Image from "next/image"
 
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
-
 export const IncreaseBetCard = () => {
   const min = "0.01"
   const max = "10"

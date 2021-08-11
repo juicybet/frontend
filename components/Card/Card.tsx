@@ -97,7 +97,7 @@ export const CardHeader = ({ children, px, py }: any) => {
   )
 }
 
-export const CardBox = ({ children, width, height }: any) => {
+export const CardBox = ({ children, width, height, backgroundImage, backgroundSize }: any) => {
   return (
     <Flex
       flexDirection="row"
@@ -106,20 +106,13 @@ export const CardBox = ({ children, width, height }: any) => {
       height={height}
       width={width}
       border="1px solid var(--border-gray)"
+      backgroundImage={backgroundImage}
+      backgroundSize={backgroundSize}
     >
       {children}
     </Flex>
   )
 }
-
-export const CardUpperBody = styled(Flex)`
-  border-bottom: 1px solid var(--border-gray);
-  align-items: center;
-`
-
-export const CardLowerBody = styled(Flex)`
-  align-items: center;
-`
 
 export const PopUpCardVegies = ({ children, backgroundImage, backgroundSize }: any) => {
   return (
