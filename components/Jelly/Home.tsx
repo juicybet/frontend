@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { AcceptBet, CreateBet, WinningCard, LosingCard, LoadingCard } from "../JellyBet"
-import { MainContent } from "../JellyBet/Bet.style"
-import { BackgroundWrapper, ContentWrapper } from "../Utils/Utility.style"
+import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
 import { ModalOverlay, ModalWrapper } from "../../components"
 
 export const Home = () => {
@@ -21,14 +20,20 @@ export const Home = () => {
 
   return (
     <main>
-      <BackgroundWrapper />
-      <ContentWrapper>
-        <MainContent>
+      <BackgroundWrapper />\
+      <Flex alignItems="center" marginTop="120px" justifyContent="center" py={30}>
+        <Flex
+          alignItems="center"
+          justifyContent={["space-between", "space-between", "space-evenly"]}
+          flexDirection={["column", "column", "row"]}
+          width={["100%", "100%", "80%"]}
+          height={[1250, 1250, 600]}
+        >
           <CreateBet />
           <AcceptBet />
-        </MainContent>
-        <ModalDemo />
-      </ContentWrapper>
+        </Flex>
+      </Flex>
+      <ModalDemo />
       {showLoadingModal && (
         <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowLoadingModal(false)} />
