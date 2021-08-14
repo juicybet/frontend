@@ -1,15 +1,8 @@
 import Image from "next/image"
-import {
-  FlexWrapperCentered,
-  Flex,
-  SpanInfoCentered,
-  SpanInfoLight,
-  SpanInfoPrimary,
-  SpanInfoSecondary,
-} from "../Utils/Utility.style"
-import { FullCardSection, PrimaryCard, CardHeader } from "../Card/Card"
+import { FlexWrapperCentered, Flex, SpanInfoPrimary, SpanInfoSecondary, Text, Box } from "../Utils/Utility.style"
+import { Card, CardHeader } from "../Card/Card"
 import styled from "styled-components"
-import { PlacedBetsWrapper, SectionContentWrapper } from "./Bet.style"
+import { PlacedBetsWrapper } from "./Bet.style"
 
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
   gap: 16px;
@@ -20,10 +13,6 @@ export const WalletAddress = styled(SpanInfoPrimary)`
 `
 export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
-`
-
-export const RectangleWrapper = styled(SectionContentWrapper)`
-  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
@@ -38,11 +27,15 @@ export const CancelButton = styled.button`
 
 export const BetHistory = () => {
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>Bet History</CardHeader>
-      <FullCardSection top={"10%"}>
-        <RectangleWrapper>
-          <PlacedBetsWrapper>
+    <Card width={"420px"} height={"609px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet History
+        </Text>
+      </CardHeader>
+      <Flex flexDirection="column">
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
+          <Flex alignItems="center" justifyContent="space-between" width={"100%"} height={64}>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
               <Image src="/images/donuts/1.png" width="64" height="64" alt="Donut 1" />
@@ -61,9 +54,9 @@ export const BetHistory = () => {
               </Flex>
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
-          </PlacedBetsWrapper>
-        </RectangleWrapper>
-        <SectionContentWrapper>
+          </Flex>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)">
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -84,8 +77,8 @@ export const BetHistory = () => {
               <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
-        </SectionContentWrapper>
-        <RectangleWrapper>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -106,8 +99,8 @@ export const BetHistory = () => {
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
-        </RectangleWrapper>
-        <RectangleWrapper>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -128,8 +121,8 @@ export const BetHistory = () => {
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
-        </RectangleWrapper>
-        <RectangleWrapper>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
           <PlacedBetsWrapper>
             <PlacedBetdetails>
               <SpanInfoPrimary>A</SpanInfoPrimary>
@@ -150,8 +143,8 @@ export const BetHistory = () => {
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
           </PlacedBetsWrapper>
-        </RectangleWrapper>
-      </FullCardSection>
-    </PrimaryCard>
+        </Box>
+      </Flex>
+    </Card>
   )
 }

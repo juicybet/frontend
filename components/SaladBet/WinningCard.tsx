@@ -6,13 +6,12 @@ import {
   FlexWrapperCentered,
   Flex,
   RewardInfo,
-  RewardSection,
-  RewardSectionWrapper,
   SpanInfoPrimary,
   SpanInfoSecondary,
   SpanInfoWhite,
   SpanLabel,
   Text,
+  Box,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
@@ -87,8 +86,8 @@ export const WinningCard = () => {
         <WinningRibbon bet={"donut"}>
           <SpanInfoWhite>You Win</SpanInfoWhite>
         </WinningRibbon>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
@@ -99,11 +98,11 @@ export const WinningCard = () => {
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
-          </RewardSection>
+          </Box>
           <Button height={"64px"} px={16} py={3}>
             Claim Reward
           </Button>
-        </RewardSectionWrapper>
+        </Flex>
         <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
           Close Window
         </Text>

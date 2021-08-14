@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { MainContent } from "../JellyBet/Bet.style"
-import { WinningCard, WaitingCard, LosingCard, LoadingCard, BetHistory, CreateBet } from "../DonutBet"
-import { BackgroundWrapper, ContentWrapper } from "../Utils/Utility.style"
+import { AlreadyWonCard, WinningCard, LosingCard, LoadingCard, BetHistory, CreateBet } from "../DonutBet"
+import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
 import { ModalOverlay, ModalWrapper } from "../../components"
 
 export const Home = () => {
@@ -14,9 +13,9 @@ export const Home = () => {
     return (
       <div>
         <button onClick={() => setShowLoadingModal(true)}>loading</button>
-        <button onClick={() => setShowWinningModal(true)}>Won</button>
+        <button onClick={() => setShowWinningModal(true)}>AlreadyWon</button>
         <button onClick={() => setShowLostModal(true)}>lose</button>
-        <button onClick={() => setShowWaitingModal(true)}>Wait</button>
+        <button onClick={() => setShowWaitingModal(true)}>Win</button>
       </div>
     )
   }
@@ -24,12 +23,18 @@ export const Home = () => {
   return (
     <main>
       <BackgroundWrapper />
-      <ContentWrapper>
-        <MainContent>
+      <Flex alignItems="center" marginTop="120px" justifyContent="center" py={30}>
+        <Flex
+          alignItems="center"
+          justifyContent={["space-between", "space-between", "space-evenly"]}
+          flexDirection={["column", "column", "row"]}
+          width={["100%", "100%", "80%"]}
+          height={[1250, 1250, 700]}
+        >
           <CreateBet />
           <BetHistory />
-        </MainContent>
-      </ContentWrapper>
+        </Flex>
+      </Flex>
 
       <ModalDemo />
       {showLoadingModal && (
@@ -41,7 +46,7 @@ export const Home = () => {
       {showWinningModal && (
         <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowWinningModal(false)} />
-          <WinningCard />
+          <AlreadyWonCard />
         </ModalWrapper>
       )}
       {showLostModal && (
@@ -53,7 +58,7 @@ export const Home = () => {
       {showWaitingModal && (
         <ModalWrapper p={"5rem"}>
           <ModalOverlay onClick={() => setShowWaitingModal(false)} />
-          <WaitingCard />
+          <WinningCard />
         </ModalWrapper>
       )}
     </main>

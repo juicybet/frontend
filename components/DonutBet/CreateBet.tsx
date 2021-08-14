@@ -1,25 +1,18 @@
 import { useState } from "react"
-import { FullButton } from "../Button"
+import { Button } from "../Button"
 import { Slider } from "../Slider/Slider"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { CardHeader, Card } from "../Card/Card"
 import styled from "styled-components"
-import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, FlexRow, Text } from "../Utils/Utility.style"
+import { EtherFiatValue, Flex, EtherInput, FlexRow, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 import { RadioCarousel } from "../Carousel"
-
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
 
 const CarouselWrapper = styled(FlexRow)`
   overflow-x: auto;
   white-space: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1rem;
   overflow-x: auto;
   white-space: wrap;
   -ms-overflow-style: none;
@@ -35,10 +28,10 @@ export const CreateBet = () => {
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
 
-  const numBets = 16
+  const numberOfBets = 16
   const [allBets, setAllBets] = useState(
-    new Array(numBets).fill("").map((_, i) => ({
-      bet: i.toString(numBets),
+    new Array(numberOfBets).fill("").map((_, i) => ({
+      bet: i.toString(numberOfBets),
       selected: false,
     }))
   )
@@ -48,9 +41,13 @@ export const CreateBet = () => {
   }
 
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>Bet what the last digit of the current block’s hash will be to win a 15x reward!</CardHeader>
-      <TopCardSection height={"224px"} top={"12%"}>
+    <Card width={"420px"} height={"609px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet what the last digit of the current block’s hash will be to win a 15x reward!
+        </Text>
+      </CardHeader>
+      <Box borderBottom="1px solid var(--border-gray)" py={24}>
         <CarouselWrapper>
           {allBets.map(({ bet, selected }) => (
             <RadioCarousel
@@ -67,8 +64,8 @@ export const CreateBet = () => {
             </RadioCarousel>
           ))}
         </CarouselWrapper>
-      </TopCardSection>
-      <BottomCardSection height={"304px"} bottom={"0%"}>
+      </Box>
+      <Flex flexDirection="column">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column">
           <EtherInput
@@ -80,8 +77,10 @@ export const CreateBet = () => {
           ></EtherInput>
           <EtherFiatValue>~${formatNumber(+value * etherPrice, 2)}</EtherFiatValue>
         </Flex>
-      </BottomCardSection>
-      <FullButton>Create a Bet!</FullButton>
-    </PrimaryCard>
+      </Flex>
+      <Button height={"56px"} px={16} py={0}>
+        Create a bet
+      </Button>
+    </Card>
   )
 }

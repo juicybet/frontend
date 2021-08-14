@@ -6,14 +6,13 @@ import {
   FlexWrapperCentered,
   Flex,
   RewardInfo,
-  RewardSection,
-  RewardSectionWrapper,
   SpanInfoflexEnd,
   SpanInfoPrimary,
   SpanInfoSecondary,
   SpanInfoWhite,
   SpanLabel,
   Text,
+  Box,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
@@ -93,8 +92,8 @@ export const AlreadyWonCard = () => {
         <LabelWrapper>
           <SpanLabel size={"18px"}>You’ve already claimed the reward.</SpanLabel>
         </LabelWrapper>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
             <SpanInfoflexEnd>
               View on BscScan
               <ExternalLink size={10} />
@@ -109,8 +108,8 @@ export const AlreadyWonCard = () => {
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
-          </RewardSection>
-        </RewardSectionWrapper>
+          </Box>
+        </Flex>
         <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
           Close Window
         </Text>

@@ -1,36 +1,26 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, TopCardSection, PrimaryCard } from "../Card/Card"
-import {
-  BetInfoWrapper,
-  Flex,
-  FlexRow,
-  RewardSection,
-  RewardSectionWrapper,
-  SpanInfoPrimary,
-  SpanLabel,
-} from "../Utils/Utility.style"
+import { CardHeader, Card } from "../Card/Card"
+import { BetInfoWrapper, Box, Flex, FlexRow, SpanInfoPrimary, SpanLabel, Text } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
-
-const DonutWrapper = styled(FlexRow)`
-  width: 50%;
-  padding: 32px;
-  border-right: 1px solid var(--border-gray);
-`
+import { currentTheme } from "../../core/theme"
 
 export const LoadingCard = () => {
   return (
-    <PrimaryCard width={"400px"} height={"480px"}>
-      <CardHeader>Bet #252 result</CardHeader>
-      <TopCardSection height={"224px"} top={"10%"}>
-        <Flex flexDirection="row">
-          <DonutWrapper>
-            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
-          </DonutWrapper>
+    <Card width={"420px"} height={"448px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet #252 result
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close"></Image>
+      </CardHeader>
+      <Flex flexDirection="row" borderBottom="1px solid var(--border-gray)" alignItems="center">
+        <Flex borderRight="1px solid var(--border-gray)" p={24} width={"50%"} justifyContent="center">
+          <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"232px"} bottom={"0"}>
+      </Flex>
+      <Flex flexDirection="column">
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -38,13 +28,17 @@ export const LoadingCard = () => {
             <ExternalLink size={18} />
           </SpanInfoPrimary>
         </BetInfoWrapper>
-        <RewardSectionWrapper>
-          <RewardSection>
-            <SpanInfoPrimary>Loading..</SpanInfoPrimary>
-          </RewardSection>
-        </RewardSectionWrapper>
-        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box backgroundColor="var(--bg-gray)" padding={24} borderRadius={16}>
+            <Text textAlign="center" fontSize={18} color="var(--dark-gray)">
+              Loading...
+            </Text>
+          </Box>
+        </Flex>
+      </Flex>
+      <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+        Close Window
+      </Text>
+    </Card>
   )
 }

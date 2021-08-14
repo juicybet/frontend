@@ -32,14 +32,6 @@ export const BackgroundWrapper = styled.div`
   background-size: 320px 320px;
   z-index: -1;
 `
-export const ContentWrapper = styled.div`
-  margin-top: 120px;
-`
-
-export const RectangleWrapper = styled.div`
-  position: "absolute";
-  left: 0;
-`
 
 export const Rotatable = styled.div<{ angle: number }>`
   ${(props) => css`

@@ -3,10 +3,9 @@ import "react-circular-progressbar/dist/styles.css"
 import { CardHeader, Card } from "../Card/Card"
 import {
   BetInfoWrapper,
+  Box,
   Flex,
   RewardInfo,
-  RewardSection,
-  RewardSectionWrapper,
   SpanInfoPrimary,
   SpanInfoWhite,
   SpanLabel,
@@ -73,14 +72,14 @@ export const LosingCard = () => {
         <LosingRibbon>
           <SpanInfoWhite>You lost</SpanInfoWhite>
         </LosingRibbon>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
             <RewardInfo height={"96px"} width={"256px"}>
               <SpanInfoPrimary>No Reward For you</SpanInfoPrimary>
               <SpanInfoPrimary>(:</SpanInfoPrimary>
             </RewardInfo>
-          </RewardSection>
-        </RewardSectionWrapper>
+          </Box>
+        </Flex>
         <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
           Close Window
         </Text>

@@ -1,41 +1,23 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, TopCardSection, PrimaryCard } from "../Card/Card"
+import { CardHeader, Card } from "../Card/Card"
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
   Flex,
-  FlexRow,
-  FlexColumn,
   RewardInfo,
-  RewardSection,
-  RewardSectionWrapper,
+  SpanInfoflexEnd,
   SpanInfoPrimary,
   SpanInfoSecondary,
   SpanInfoWhite,
   SpanLabel,
+  Text,
+  Box,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { WinningRibbon } from "../Ribbon"
-
-const SharedWrapperStyle = css`
-  width: 50%;
-  padding: 32px;
-`
-
-const DonutWrapper = styled(FlexRow)`
-  ${SharedWrapperStyle}
-  border-right: 1px solid var(--border-gray);
-  position: relative;
-`
-
-const DonutDetailWrapper = styled(FlexColumn)`
-  position: relative;
-  padding: 48px 48px 0 16px;
-  width: 60%;
-  gap: 8px;
-`
+import { currentTheme } from "../../core/theme"
 
 const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -55,17 +37,31 @@ const LabelWrapperGrid = styled.div`
 const LabelWrapper = styled(FlexWrapperCentered)`
   padding: 16px 16px 0;
 `
-export const WaitingCard = () => {
+export const AlreadyWonCard = () => {
   return (
-    <PrimaryCard width={"400px"} height={"664px"}>
-      <CardHeader>Bet #252 result</CardHeader>
-      <TopCardSection height={"256px"} top={"10%"}>
-        <Flex flexDirection="row">
-          <DonutWrapper>
-            <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
-          </DonutWrapper>
-          <DonutDetailWrapper>
-            <SpanLabel size={"20px"}>Block Details :</SpanLabel>
+    <Card width={"420px"} height={"657px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet #252 result
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close"></Image>
+      </CardHeader>
+      <Flex flexDirection="row" borderBottom="1px solid var(--border-gray)" alignItems="center" height="192px">
+        <Flex borderRight="1px solid var(--border-gray)" py={32} width={"40%"} justifyContent="center" height="100%">
+          <Image src="/images/donuts/7.png" width="128" height="128" alt="" />
+        </Flex>
+        <Flex
+          flexDirection="column"
+          py={16}
+          paddingRight={80}
+          paddingLeft={16}
+          width={"60%"}
+          height="100%"
+          justifyContent="space-evenly"
+          position="relative"
+        >
+          <SpanLabel size={"20px"}>Block Details :</SpanLabel>
+          <Box>
             <LabelWrapperGrid>
               <SpanLabel size={"16px"}>Number: </SpanLabel>
               <SpanInfoPrimary>123021</SpanInfoPrimary>
@@ -76,13 +72,13 @@ export const WaitingCard = () => {
                 35f…af7 <ExternalLink size={18} />
               </SpanInfoPrimary>
             </LabelWrapperGrid>
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
-            </div>
-          </DonutDetailWrapper>
+          </Box>
+          <Box position="absolute" bottom={10} right={10}>
+            <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
+          </Box>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"416px"} bottom={"0"}>
+      </Flex>
+      <Flex flexDirection="column">
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -91,13 +87,17 @@ export const WaitingCard = () => {
           </SpanInfoPrimary>
         </BetInfoWrapper>
         <WinningRibbon bet={"donut"}>
-          <SpanInfoWhite>You Win</SpanInfoWhite>
+          <SpanInfoWhite>You Won!</SpanInfoWhite>
         </WinningRibbon>
         <LabelWrapper>
-          <SpanLabel size={"18px"}>Time left to claim reward: 09:59</SpanLabel>
+          <SpanLabel size={"18px"}>You’ve already claimed the reward.</SpanLabel>
         </LabelWrapper>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
+            <SpanInfoflexEnd>
+              View on Bsc Secondary
+              <ExternalLink size={10} />
+            </SpanInfoflexEnd>
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
@@ -108,10 +108,12 @@ export const WaitingCard = () => {
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
-          </RewardSection>
-        </RewardSectionWrapper>
-        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+          </Box>
+        </Flex>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          Close Window
+        </Text>
+      </Flex>
+    </Card>
   )
 }
