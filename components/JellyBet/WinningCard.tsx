@@ -1,41 +1,23 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, TopCardSection, PrimaryCard } from "../Card/Card"
+import { CardHeader, Card } from "../Card/Card"
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
   Flex,
-  FlexRow,
-  FlexColumn,
   RewardInfo,
-  RewardSection,
-  RewardSectionWrapper,
   SpanInfoflexEnd,
   SpanInfoPrimary,
   SpanInfoSecondary,
   SpanInfoWhite,
   SpanLabel,
+  Text,
+  Box,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { WinningRibbon } from "../Ribbon"
-
-const SharedWrapperStyle = css`
-  width: 50%;
-  padding: 32px;
-`
-
-const WatermelonWrapper = styled(FlexRow)`
-  ${SharedWrapperStyle}
-  border-right: 1px solid var(--border-gray);
-  background-image: url(/images/stripes_pattern.png);
-  position: relative;
-`
-
-const StrawberryWrapper = styled(FlexColumn)`
-  ${SharedWrapperStyle}
-  position: relative;
-`
+import { currentTheme } from "../../core/theme"
 
 const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -46,35 +28,39 @@ const CoinWrapper = styled(FlexWrapperCentered)`
   width: 100%;
   background-color: var(--primary-white);
 `
-const IconWrapper = styled.div`
-  position: absolute;
-  bottom: 10;
-  right: 10;
-`
 
 export const WinningCard = () => {
   return (
-    <PrimaryCard width={"400px"} height={"664px"}>
-      <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"224px"} top={"10%"}>
-        <Flex flexDirection="row">
-          <WatermelonWrapper>
-            <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
-            </div>
-          </WatermelonWrapper>
-          <StrawberryWrapper>
-            <Image src="/images/strawberry.png" width="120" height="150" alt="" />
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
-            </div>
-          </StrawberryWrapper>
+    <Card width={"420px"} height={"683px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet #2 result
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close"></Image>
+      </CardHeader>
+      <Flex flexDirection="row" borderBottom="1px solid var(--border-gray)">
+        <Flex
+          borderRight="1px solid var(--border-gray)"
+          p={48}
+          width={"50%"}
+          position="relative"
+          backgroundImage="url(/images/stripes_pattern.png)"
+        >
+          <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
+          <Box position="absolute" bottom={10} right={10}>
+            <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
+          </Box>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"384px"} bottom={"0"}>
+        <Flex p={48} width={"50%"} position="relative">
+          <Image src="/images/strawberry.png" width="120" height="150" alt="" />
+          <Box position="absolute" bottom={10} right={10}>
+            <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
+          </Box>
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column">
         <BetInfoWrapper>
-          <SpanLabel size={"18px"}>You Choose:</SpanLabel>
+          <SpanLabel size={"18px"}>You Picked:</SpanLabel>
           <SpanInfoPrimary>
             Strwaberry
             <ExternalLink size={18} />
@@ -83,8 +69,8 @@ export const WinningCard = () => {
         <WinningRibbon bet={"jelly"}>
           <SpanInfoWhite>You Win</SpanInfoWhite>
         </WinningRibbon>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
             <SpanInfoflexEnd>
               View on Bsc Secondary
               <ExternalLink size={10} />
@@ -99,10 +85,12 @@ export const WinningCard = () => {
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
-          </RewardSection>
-        </RewardSectionWrapper>
-        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+          </Box>
+        </Flex>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          Close Window
+        </Text>
+      </Flex>
+    </Card>
   )
 }

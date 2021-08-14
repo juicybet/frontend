@@ -7,10 +7,11 @@ import {
   SpanInfoLight,
   SpanInfoPrimary,
   SpanInfoSecondary,
+  Text,
+  Box,
 } from "../Utils/Utility.style"
-import { FullCardSection, PrimaryCard, CardHeader } from "../Card/Card"
+import { Card, CardHeader } from "../Card/Card"
 import styled from "styled-components"
-import { PlacedBetsWrapper, SectionContentWrapper } from "./Bet.style"
 
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
   gap: 16px;
@@ -21,10 +22,6 @@ export const WalletAddress = styled(SpanInfoPrimary)`
 `
 export const TimeOfBet = styled(SpanInfoSecondary)`
   justify-content: flex-end;
-`
-
-export const RectangleWrapper = styled(SectionContentWrapper)`
-  background-image: url(/images/stripes_pattern.png);
 `
 
 export const CancelButton = styled.button`
@@ -42,11 +39,15 @@ const ButtonWrapper = styled(FlexColumn)`
 
 export const MyBet = () => {
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>My Bet</CardHeader>
-      <FullCardSection top={"10%"}>
-        <SectionContentWrapper>
-          <PlacedBetsWrapper>
+    <Card width={"400px"} height={"592px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          My Bet
+        </Text>
+      </CardHeader>
+      <Flex flexDirection="column">
+        <Box p={16} borderBottom="1px solid var(--border-gray)">
+          <Flex alignItems="center" justifyContent="space-between" width={"100%"} height={64}>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
               <Flex flexDirection="column">
@@ -63,10 +64,10 @@ export const MyBet = () => {
                 <CancelButton>Cancel Bet</CancelButton>
               </ButtonWrapper>
             </PlacedBetdetails>
-          </PlacedBetsWrapper>
-        </SectionContentWrapper>
-        <SectionContentWrapper>
-          <PlacedBetsWrapper>
+          </Flex>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)">
+          <Flex alignItems="center" justifyContent="space-between" width={"100%"} height={64}>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
               <Flex flexDirection="column">
@@ -84,10 +85,10 @@ export const MyBet = () => {
               </Flex>
               <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
-          </PlacedBetsWrapper>
-        </SectionContentWrapper>
-        <RectangleWrapper>
-          <PlacedBetsWrapper>
+          </Flex>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
+          <Flex alignItems="center" justifyContent="space-between" width={"100%"} height={64}>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
               <Flex flexDirection="column">
@@ -105,10 +106,10 @@ export const MyBet = () => {
               </Flex>
               <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
             </PlacedBetdetails>
-          </PlacedBetsWrapper>
-        </RectangleWrapper>
-        <RectangleWrapper>
-          <PlacedBetsWrapper>
+          </Flex>
+        </Box>
+        <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
+          <Flex alignItems="center" justifyContent="space-between" width={"100%"} height={64}>
             <PlacedBetdetails>
               <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
               <Flex flexDirection="column">
@@ -125,9 +126,9 @@ export const MyBet = () => {
                 <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
               </Flex>
             </PlacedBetdetails>
-          </PlacedBetsWrapper>
-        </RectangleWrapper>
-      </FullCardSection>
-    </PrimaryCard>
+          </Flex>
+        </Box>
+      </Flex>
+    </Card>
   )
 }

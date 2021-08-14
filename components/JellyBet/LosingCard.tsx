@@ -1,6 +1,6 @@
 import Image from "next/image"
 import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { CardHeader, BottomCardSection, Card, TopCardSection } from "../Card/Card"
 import {
   BetInfoWrapper,
   Flex,
@@ -13,10 +13,13 @@ import {
   SpanInfoPrimary,
   SpanInfoWhite,
   SpanLabel,
+  Text,
+  Box,
 } from "../Utils/Utility.style"
 import styled, { css } from "styled-components"
 import { ExternalLink } from "react-feather"
 import { LosingRibbon } from "../Ribbon"
+import { currentTheme } from "../../core/theme"
 
 const SharedWrapperStyle = css`
   width: 50%;
@@ -37,25 +40,34 @@ const StrawberryWrapper = styled(FlexColumn)`
 
 export const LosingCard = () => {
   return (
-    <PrimaryCard width={"400px"} height={"664px"}>
-      <CardHeader>My PNL</CardHeader>
-      <TopCardSection height={"224px"} top={"10%"}>
-        <Flex flexDirection="row">
-          <WatermelonWrapper>
-            <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
-            </div>
-          </WatermelonWrapper>
-          <StrawberryWrapper>
-            <Image src="/images/strawberry.png" width="120" height="150" alt="" />
-            <div style={{ position: "absolute", bottom: 10, right: 10 }}>
-              <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
-            </div>
-          </StrawberryWrapper>
+    <Card width={"420px"} height={"664px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet #2 result
+        </Text>
+        <Image src="images/icons/close.svg" width="15" height="15" alt="close"></Image>
+      </CardHeader>
+      <Flex flexDirection="row" borderBottom="1px solid var(--border-gray)">
+        <Flex
+          borderRight="1px solid var(--border-gray)"
+          p={48}
+          width={"50%"}
+          position="relative"
+          backgroundImage="url(/images/stripes_pattern.png)"
+        >
+          <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
+          <Box position="absolute" bottom={10} right={10}>
+            <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
+          </Box>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"384px"} bottom={"0"}>
+        <Flex p={48} width={"50%"} position="relative">
+          <Image src="/images/strawberry.png" width="120" height="150" alt="" />
+          <Box position="absolute" bottom={10} right={10}>
+            <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
+          </Box>
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column">
         <BetInfoWrapper>
           <SpanLabel size={"18px"}>You Choose:</SpanLabel>
           <SpanInfoPrimary>
@@ -64,10 +76,10 @@ export const LosingCard = () => {
           </SpanInfoPrimary>
         </BetInfoWrapper>
         <LosingRibbon>
-          <SpanInfoWhite>You loose</SpanInfoWhite>
+          <SpanInfoWhite>You Lost</SpanInfoWhite>
         </LosingRibbon>
-        <RewardSectionWrapper>
-          <RewardSection>
+        <Flex flexDirection="column" justifyContent="flex-start" p={16}>
+          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
             <SpanInfoflexEnd>
               View on Bsc Secondary
               <ExternalLink size={10} />
@@ -76,10 +88,12 @@ export const LosingCard = () => {
               <SpanInfoPrimary>No Reward For you</SpanInfoPrimary>
               <SpanInfoPrimary>(:</SpanInfoPrimary>
             </RewardInfo>
-          </RewardSection>
-        </RewardSectionWrapper>
-        <SpanInfoPrimary>Close Window</SpanInfoPrimary>
-      </BottomCardSection>
-    </PrimaryCard>
+          </Box>
+        </Flex>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          Close Window
+        </Text>
+      </Flex>
+    </Card>
   )
 }

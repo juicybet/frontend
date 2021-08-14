@@ -1,11 +1,10 @@
-import Image from "next/image"
 import { useState } from "react"
-import { FullButton } from "../Button"
+import { Button } from "../Button"
 import { Radio } from "../Radio/Radio"
 import { Slider } from "../Slider/Slider"
-import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
+import { CardHeader, Card } from "../Card/Card"
 import styled from "styled-components"
-import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput } from "../Utils/Utility.style"
+import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
 
@@ -22,11 +21,15 @@ export const CreateBet = () => {
   const etherPrice = 2234.45
 
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>Bet which fruit will turn into jelly!</CardHeader>
-      <TopCardSection height={"224px"} top={"10%"}>
+    <Card width={"420px"} height={"609px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Bet which fruit will turn into jelly!
+        </Text>
+      </CardHeader>
+      <Box borderBottom="1px solid var(--border-gray)">
         <Flex alignItems="center" justifyContent="center" flexDirection="column" mx={4} my={2}>
-          {/* <Image src="/images/demo-image.png" width="200" height="100" alt="" /> */}
+          {/* to be fixed properly */}
           <div className="flexWrapper">
             <div className="elementWrapper">
               <video
@@ -54,8 +57,8 @@ export const CreateBet = () => {
             <Radio name="bet">Strawberry</Radio>
           </RadioButtonWrapper>
         </Flex>
-      </TopCardSection>
-      <BottomCardSection height={"304px"} bottom={"0%"}>
+      </Box>
+      <Flex flexDirection="column">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column">
           <EtherInput
@@ -67,8 +70,10 @@ export const CreateBet = () => {
           ></EtherInput>
           <EtherFiatValue>~${formatNumber(+value * etherPrice, 2)}</EtherFiatValue>
         </Flex>
-      </BottomCardSection>
-      <FullButton>Create a Bet!</FullButton>
-    </PrimaryCard>
+      </Flex>
+      <Button height={"56px"} px={16} py={0}>
+        Create a bet
+      </Button>
+    </Card>
   )
 }

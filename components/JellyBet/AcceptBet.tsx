@@ -1,19 +1,23 @@
 import { PlacedBetRadio } from "../Radio/Radio"
 import Image from "next/image"
-import { PlacedBetdetails, PlacedBetsWrapper, WalletAddress, SectionContentWrapper } from "./Bet.style"
+import { PlacedBetdetails, WalletAddress } from "./Bet.style"
 import { ExternalLink } from "react-feather"
-import { FullButton } from "../Button"
-import { PrimaryCard, CardHeader, FullCardSection } from "../Card/Card"
-import { Flex, SpanInfoPrimary, SpanInfoSecondary } from "../Utils/Utility.style"
+import { Button } from "../Button"
+import { Card, CardHeader } from "../Card/Card"
+import { Flex, SpanInfoPrimary, SpanInfoSecondary, Text, Box } from "../Utils/Utility.style"
 
 export const AcceptBet = () => {
   return (
-    <PrimaryCard width={"400px"} height={"592px"}>
-      <CardHeader>Or accept an existing bet!</CardHeader>
-      <FullCardSection top={"10%"}>
-        <SectionContentWrapper>
+    <Card width={"420px"} height={"609px"}>
+      <CardHeader>
+        <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
+          Or accept an existing bet!
+        </Text>
+      </CardHeader>
+      <Flex flexDirection="column" minHeight={475}>
+        <Box p={16} borderBottom="1px solid var(--border-gray)">
           <PlacedBetRadio name="bet">
-            <PlacedBetsWrapper>
+            <Flex justifyContent="space-between" width={"100%"} height={64} alignItems="center">
               <PlacedBetdetails>
                 <Image src="/images/smolwatermelon.png" width="50" height="70" alt="" />
                 <Flex flexDirection="column">
@@ -24,19 +28,21 @@ export const AcceptBet = () => {
                   <SpanInfoSecondary>~ $3.67 </SpanInfoSecondary>
                 </Flex>
               </PlacedBetdetails>
-              <div className="placedBetOwner">
+              <Box>
                 <Flex flexDirection="column">
                   <WalletAddress>
                     by 0xF2…25 <ExternalLink size={15} />
                   </WalletAddress>
                   <SpanInfoSecondary>10 minutes ago</SpanInfoSecondary>
                 </Flex>
-              </div>
-            </PlacedBetsWrapper>
+              </Box>
+            </Flex>
           </PlacedBetRadio>
-        </SectionContentWrapper>
-      </FullCardSection>
-      <FullButton>Accept Bet!</FullButton>
-    </PrimaryCard>
+        </Box>
+      </Flex>
+      <Button height={"56px"} px={16} py={0}>
+        Accept Bet!
+      </Button>
+    </Card>
   )
 }

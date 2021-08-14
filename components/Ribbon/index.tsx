@@ -3,7 +3,7 @@ import { currentTheme } from "../../core/theme"
 
 export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;
-  width: 400px;
+  width: 421px;
   height: 64px;
   display: flex;
   background-color: ${(props) => props.colorOne};
