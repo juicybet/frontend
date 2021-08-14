@@ -31,7 +31,7 @@ const CoinWrapper = styled(FlexWrapperCentered)`
 
 export const WinningCard = () => {
   return (
-    <Card width={"400px"} height={"692px"}>
+    <Card width={"420px"} height={"692px"}>
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Salad #12 - My Bet

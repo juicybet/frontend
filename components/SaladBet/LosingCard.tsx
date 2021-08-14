@@ -17,7 +17,7 @@ import { currentTheme } from "../../core/theme"
 
 export const LosingCard = () => {
   return (
-    <Card width={"400px"} height={"575px"}>
+    <Card width={"420px"} height={"575px"}>
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Salad #12 - My Bet

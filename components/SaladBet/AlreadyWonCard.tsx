@@ -34,7 +34,7 @@ const LabelWrapper = styled(FlexWrapperCentered)`
 `
 export const AlreadyWonCard = () => {
   return (
-    <Card width={"400px"} height={"664px"}>
+    <Card width={"420px"} height={"664px"}>
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Salad #12 - My Bet
