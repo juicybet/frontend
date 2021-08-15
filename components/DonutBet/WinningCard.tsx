@@ -113,7 +113,7 @@ export const WinningCard = () => {
           <SpanLabel size={"18px"}>Time left to claim reward: 09:59</SpanLabel>
         </LabelWrapper>
         <Flex flexDirection="column" justifyContent="flex-start" p={16}>
-          <Box p={16} backgroundColor="var(--bg-gray)" borderRadius={16}>
+          <Flex p={16} backgroundColor="var(--bg-gray)" borderRadius={16} height={"149px"}>
             <RewardInfo height={"128px"} width={"256px"}>
               <SpanInfoPrimary>your reward :</SpanInfoPrimary>
               <CoinWrapper>
@@ -124,14 +124,17 @@ export const WinningCard = () => {
                 <Image src="/images/icons/coins/bnb.svg" width="32" height="32" alt="" />
               </CoinWrapper>
             </RewardInfo>
-          </Box>
+            <Box paddingTop={4}>
+              <Image src="/images/icons/btn_trophy.svg" width="100" height="100" alt="skull" />
+            </Box>
+          </Flex>
           <Button height={"64px"} px={16} py={3}>
             Claim Reward
           </Button>
-          <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
-            Close Window
-          </Text>
         </Flex>
+        <Text textAlign="center" fontSize={18} color={currentTheme().primary}>
+          Close Window
+        </Text>
       </Flex>
     </Card>
   )

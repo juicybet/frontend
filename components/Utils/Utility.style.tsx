@@ -177,15 +177,7 @@ export const BetInfoWrapper = styled(FlexWrapperCentered)`
   height: 64px;
   gap: 16px;
 `
-export const RewardSectionWrapper = styled(FlexColumn)`
-  justify-content: flex-start;
-  padding: 16px;
-`
-export const RewardSection = styled.div`
-  padding: 16px;
-  background-color: var(--bg-gray);
-  border-radius: 16px;
-`
+
 export const RewardInfo = styled(FlexColumn)<{ height: string; width: string }>`
   align-items: flex-start;
   gap: 16px;

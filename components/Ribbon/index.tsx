@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components"
 import { currentTheme } from "../../core/theme"
+import Image from "next/image"
+import { Box, Flex } from "../Utils/Utility.style"
 
 export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;
@@ -95,8 +97,19 @@ export const RibbonContent = styled.div`
 
 export const WinningRibbon = ({ children, bet }: any) => (
   <RibbonContentWrapper colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDark}>
-    <RibbonLeftDecoration colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDarker} />
-    <RibbonContent>{children}</RibbonContent>
+    <RibbonLeftDecoration
+      colorOne={currentTheme().primary}
+      colorTwo={currentTheme().primaryDarker}
+    ></RibbonLeftDecoration>
+    <RibbonContent>
+      <Flex width="10%">
+        <Image src="/images/icons/btn_trophy.svg" width="40" height="40" alt="trophy" />
+      </Flex>
+      <Flex width="80%" justifyContent="center">
+        {children}
+      </Flex>
+      <Flex width="10%" />
+    </RibbonContent>
     <RibbonRightDecoration colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDarker} />
   </RibbonContentWrapper>
 )
@@ -104,7 +117,16 @@ export const WinningRibbon = ({ children, bet }: any) => (
 export const LosingRibbon = ({ children }: any) => (
   <RibbonContentWrapper colorOne="var(--dark-gray)" colorTwo="var(--darker-gray)">
     <RibbonLeftDecoration colorOne="var(--dark-gray)" colorTwo="var(--shadow-gray)" />
-    <RibbonContent>{children}</RibbonContent>
+    <RibbonContent>
+      {" "}
+      <Flex width="10%">
+        <Image src="/images/icons/skull.svg" width="40" height="40" alt="skull" />
+      </Flex>
+      <Flex width="80%" justifyContent="center">
+        {children}
+      </Flex>
+      <Flex width="10%" />
+    </RibbonContent>
     <RibbonRightDecoration colorOne="var(--dark-gray)" colorTwo="var(--shadow-gray)" />
   </RibbonContentWrapper>
 )
