@@ -1,7 +1,7 @@
 import { PrimaryCard } from "../Card/Card"
 import styled from "styled-components"
 import { FlexWrapperCentered, Flex, FlexRow, Text } from "../Utils/Utility.style"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 import Image from "next/image"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`

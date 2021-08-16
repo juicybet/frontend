@@ -13,8 +13,8 @@ import {
   SpanInfoPrimary,
   SpanInfoSecondary,
 } from "../Utils/Utility.style"
-import { currentTheme } from "../../core/theme"
-import { formatNumber } from "../../utils/Common"
+import { currentTheme } from "../../state/theme"
+import { formatNumber } from "../../utils"
 import Image from "next/image"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 
 export const RibbonContentWrapper = styled.div<{ colorOne: string; colorTwo: string }>`
   position: relative;

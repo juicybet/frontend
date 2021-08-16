@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 
 const Label = styled.label`
   display: grid;

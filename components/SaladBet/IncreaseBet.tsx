@@ -4,8 +4,8 @@ import { FullButton } from "../Button"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
 import styled from "styled-components"
 import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput } from "../Utils/Utility.style"
-import { currentTheme } from "../../core/theme"
-import { formatNumber } from "../../utils/Common"
+import { currentTheme } from "../../state/theme"
+import { formatNumber } from "../../utils"
 import { Doughnut } from "react-chartjs-2"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
