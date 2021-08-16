@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { getBackground } from "../../core/site"
+import { getBackground } from "../../state/site"
 import {
   flexbox,
   FlexboxProps,

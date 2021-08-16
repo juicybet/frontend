@@ -1,6 +1,6 @@
 import Head from "next/head"
 import React from "react"
-import { getTitle, getDescription, getFavicon } from "../../core/site"
+import { getTitle, getDescription, getFavicon } from "../../state/site"
 
 export const Meta = () => {
   return (

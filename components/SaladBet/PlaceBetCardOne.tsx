@@ -14,8 +14,8 @@ import {
   SpanInfoPrimary,
   Box,
 } from "../Utils/Utility.style"
-import { currentTheme } from "../../core/theme"
-import { formatNumber } from "../../utils/Common"
+import { currentTheme } from "../../state/theme"
+import { formatNumber } from "../../utils"
 import { RadioCarousel } from "../Carousel"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`

@@ -1,10 +1,10 @@
-import { MenuItemData } from "../../core/menuItems"
+import { MenuItemData } from "../../state/menuItems"
 import { MenuItem, Submenu, SubmenuItem } from "./Sidebar.style"
 import { Rotatable } from "../Utils/Utility.style"
 import { ChevronRight } from "react-feather"
-import { linkTo } from "../../core/site"
+import { linkTo } from "../../state/site"
 import Link from "next/link"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 
 export type MenuProps = MenuItemData & {
   setIsOpen(state: boolean): void

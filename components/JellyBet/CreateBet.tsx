@@ -6,8 +6,8 @@ import { Slider } from "../Slider/Slider"
 import { CardHeader, BottomCardSection, PrimaryCard, TopCardSection } from "../Card/Card"
 import styled from "styled-components"
 import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput } from "../Utils/Utility.style"
-import { currentTheme } from "../../core/theme"
-import { formatNumber } from "../../utils/Common"
+import { currentTheme } from "../../state/theme"
+import { formatNumber } from "../../utils"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;

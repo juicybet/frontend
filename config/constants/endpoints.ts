@@ -1,0 +1,5 @@
+export const salad = "https://api.thegraph.com/subgraphs/name/juicybet/salad"
+export const recipe = "https://api.thegraph.com/subgraphs/name/juicybet/recipe"
+export const jelly = "https://api.thegraph.com/subgraphs/name/juicybet/jelly"
+export const donut = "https://api.thegraph.com/subgraphs/name/juicybet/donut"
+export const vine = "https://api.thegraph.com/subgraphs/name/juicybet/vine"

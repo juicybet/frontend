@@ -1,9 +1,9 @@
 import { Header as StyledHeader, LogoContainer, MenuButton } from "./Header.style"
 import Image from "next/image"
-import { getLogoProps, getTitle } from "../../core/site"
+import { getLogoProps, getTitle } from "../../state/site"
 import { useState } from "react"
 import { Hamburger } from "../Utils/Hamburger"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 
 export const Header = ({ toggleSidebar: _toggleSidebar }: any) => {
   const [isActive, setIsActive] = useState(true)

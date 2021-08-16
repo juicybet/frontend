@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { currentTheme } from "../../core/theme"
+import { currentTheme } from "../../state/theme"
 import { Flex } from "../Utils/Utility.style"
 
 const RangeInput = styled.input.attrs({
