@@ -42,6 +42,7 @@ export const Rotatable = styled.div<{ angle: number }>`
 
 type ExtraProps = {
   cursor?: string
+  PointerEvent?: string
 }
 
 export const Box = styled.div<

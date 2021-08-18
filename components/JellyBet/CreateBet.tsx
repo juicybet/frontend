@@ -7,12 +7,24 @@ import styled from "styled-components"
 import { EtherFiatValue, FlexWrapperCentered, Flex, EtherInput, Text, Box } from "../Utils/Utility.style"
 import { currentTheme } from "../../core/theme"
 import { formatNumber } from "../../utils/Common"
+import { Video } from "../Video"
 
 export const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   margin: 32px;
   width: 100%;
 `
+
+const waterMelonVideos = [
+  "/videos/watermelon/idle_1.webm",
+  "/videos/watermelon/idle_2.webm",
+  "/videos/watermelon/idle_3.webm",
+]
+const strawBerryVideos = [
+  "/videos/strawberry/idle_1.webm",
+  "/videos/strawberry/idle_2.webm",
+  "/videos/strawberry/idle_3.webm",
+]
 
 export const CreateBet = () => {
   const min = "0.01"
@@ -30,28 +42,10 @@ export const CreateBet = () => {
       <Box borderBottom="1px solid var(--border-gray)">
         <Flex alignItems="center" justifyContent="center" flexDirection="column" mx={4} my={2}>
           {/* to be fixed properly */}
-          <div className="flexWrapper">
-            <div className="elementWrapper">
-              <video
-                src="/videos/watermelon/idle_1.webm"
-                width="300"
-                height="200"
-                autoPlay
-                loop
-                className="videoElement"
-              ></video>
-            </div>
-            <div className="elementWrapper">
-              <video
-                src="/videos/strawberry/idle_1.webm"
-                width="300"
-                height="200"
-                autoPlay
-                loop
-                className="videoElement"
-              ></video>
-            </div>
-          </div>
+          <Flex width={"100%"} overflow="hidden">
+            <Video videos={waterMelonVideos} />
+            <Video videos={strawBerryVideos} />
+          </Flex>
           <RadioButtonWrapper>
             <Radio name="bet">Watermelon</Radio>
             <Radio name="bet">Strawberry</Radio>

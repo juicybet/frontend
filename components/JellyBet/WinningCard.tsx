@@ -87,7 +87,7 @@ export const WinningCard = () => {
                 </CoinWrapper>
               </RewardInfo>
               <Box paddingTop={4}>
-                <Image src="/images/icons/btn_trophy.svg" width="100" height="100" alt="skull" />
+                <Image src="/images/icons/trophy.svg" width="100" height="100" alt="skull" />
               </Box>
             </Flex>
           </Flex>

@@ -103,7 +103,7 @@ export const WinningRibbon = ({ children, bet }: any) => (
     ></RibbonLeftDecoration>
     <RibbonContent>
       <Flex width="10%">
-        <Image src="/images/icons/btn_trophy.svg" width="40" height="40" alt="trophy" />
+        <Image src="/images/icons/trophy.svg" width="40" height="40" alt="trophy" />
       </Flex>
       <Flex width="80%" justifyContent="center">
         {children}
