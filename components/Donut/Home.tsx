@@ -2,6 +2,7 @@ import { useState } from "react"
 import { AlreadyWonCard, WinningCard, LosingCard, LoadingCard, BetHistory, CreateBet } from "../DonutBet"
 import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
 import { ModalOverlay, ModalWrapper } from "../../components"
+import { PageHeader } from "../PageHeader"
 
 export const Home = () => {
   const [showLoadingModal, setShowLoadingModal] = useState(false)
@@ -23,7 +24,8 @@ export const Home = () => {
   return (
     <main>
       <BackgroundWrapper />
-      <Flex alignItems="center" marginTop="120px" justifyContent="center" py={30}>
+      <Flex alignItems="center" marginTop="120px" justifyContent="center" py={30} flexDirection="column">
+        <PageHeader />
         <Flex
           alignItems="center"
           justifyContent={["space-between", "space-between", "space-evenly"]}

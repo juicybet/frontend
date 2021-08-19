@@ -3,6 +3,7 @@ import { BackgroundWrapper, Box, Flex, Text } from "../Utils/Utility.style"
 import { PlaceBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../SaladBet"
 import { currentTheme } from "../../core/theme"
 import { ModalOverlay, ModalWrapper } from "../../components"
+import { PageHeader } from "../PageHeader"
 
 export const Home = () => {
   const [showIncreaseBetCard, setShowIncreaseBetCard] = useState(false)
@@ -23,6 +24,7 @@ export const Home = () => {
     <main>
       <BackgroundWrapper />
       <Flex alignItems="center" justifyContent="center" marginTop="120px" flexDirection="column">
+        <PageHeader />
         <Flex
           bg="var(--primary-white)"
           justifyContent="space-between"

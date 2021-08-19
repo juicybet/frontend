@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { BackgroundWrapper, Flex } from "../Utils/Utility.style"
+import { BackgroundWrapper, Box, Flex } from "../Utils/Utility.style"
 import { PlaceBet, LoadingCard, NoBetsCard, WinningCard, AlreadyWonCard, LosingCard } from "../SaladBet"
 import { ModalOverlay, ModalWrapper } from "../../components"
 import { CheckSalad } from "../SaladBet/CheckSalad"
+import { PageHeader } from "../PageHeader"
 
 export const PastSalads = () => {
   const [showLoadingCard, setShowLoadingCard] = useState(false)
@@ -27,6 +28,10 @@ export const PastSalads = () => {
     <main>
       <BackgroundWrapper />
       <Flex alignItems="center" justifyContent="center" marginTop="120px" flexDirection="column">
+        <Box my={"3rem"}>
+          {" "}
+          <PageHeader />
+        </Box>
         <CheckSalad />
         <ModalDemo />
       </Flex>
