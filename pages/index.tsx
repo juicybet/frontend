@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Header, Sidebar } from "../components"
+import { Header, Sidebar } from "../components/Molecules"
 import { SiteType, setSite, SiteParams } from "../core/site"
 import { Meta } from "../components/Utils/Meta"
 import { setEnvironment } from "../core/environment"
-import { Home as JellyHome } from "../components/Jelly/Home"
-import { Home as DonutHome } from "../components/Donut/Home"
-import { Home as SaladHome } from "../components/Salad/Home"
+import { Home as JellyHome } from "../components/Templates/Jelly/Home"
+import { Home as DonutHome } from "../components/Templates/Donut/Home"
+import { Home as SaladHome } from "../components/Templates/Salad/Home"
 
 export { getServerSideProps } from "../core/site"
 

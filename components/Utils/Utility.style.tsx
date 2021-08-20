@@ -185,3 +185,12 @@ export const RewardInfo = styled(FlexColumn)<{ height: string; width: string }>`
   height: ${(props) => props.height};
   width: ${(props) => props.width};
 `
+
+export const SmallBlock = styled.div<{ color: string }>`
+  height: 32px;
+  width: 8px;
+  border-radius: 8px;
+  ${({ color }) => css`
+    background-color: ${color};
+  `}
+`
