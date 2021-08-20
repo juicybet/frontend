@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { BackgroundWrapper, Box, Flex } from "../../Utils/Utility.style"
+import { BackgroundWrapper, Box, Flex, ModalOverlay, ModalWrapper } from "../../Utils/Utility.style"
 import { LoadingCard, NoBetsCard, WinningCard, AlreadyWonCard, LosingCard } from "../../Organism/SaladBet"
 import { CheckSalad } from "../../Organism/SaladBet/CheckSalad"
-import { ModalOverlay, ModalWrapper, PageHeader } from "../../Molecules"
+import { PageHeader } from "../../Molecules"
 
 export const PastSalads = () => {
   const [showLoadingCard, setShowLoadingCard] = useState(false)

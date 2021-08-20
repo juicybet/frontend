@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { AcceptBet, CreateBet, WinningCard, LosingCard, LoadingCard } from "../../Organism/JellyBet"
-import { BackgroundWrapper, Flex } from "../../Utils/Utility.style"
-import { ModalOverlay, ModalWrapper, PageHeader } from "../../Molecules"
+import { BackgroundWrapper, Flex, ModalOverlay, ModalWrapper } from "../../Utils/Utility.style"
+import { PageHeader } from "../../Molecules"
 
 export const Home = () => {
   const [showLoadingModal, setShowLoadingModal] = useState(false)

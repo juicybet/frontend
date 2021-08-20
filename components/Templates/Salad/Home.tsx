@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { BackgroundWrapper, Box, Flex, Text } from "../../Utils/Utility.style"
+import { BackgroundWrapper, Box, Flex, Text, ModalOverlay, ModalWrapper } from "../../Utils/Utility.style"
 import { PlaceBet, IncreaseBetCard, PlaceBetCardOne, PlaceBetCardTwo } from "../../Organism/SaladBet"
 import { currentTheme } from "../../../core/theme"
-import { ModalOverlay, ModalWrapper, PageHeader } from "../../Molecules"
+import { PageHeader } from "../../Molecules"
 
 export const Home = () => {
   const [showIncreaseBetCard, setShowIncreaseBetCard] = useState(false)

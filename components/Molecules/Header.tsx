@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Image from "next/image"
 import { getLogoProps, getTitle } from "../../core/site"
 import { useState } from "react"
-import { Hamburger } from "../Utils/Hamburger"
+import { Hamburger } from "../Atoms"
 import { currentTheme } from "../../core/theme"
 
 const StyledHeader = styled.header`

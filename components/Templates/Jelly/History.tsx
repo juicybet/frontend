@@ -1,6 +1,6 @@
 import { MyPnl, MyBet } from "../../Organism/JellyBet"
 import { PageHeader } from "../../Molecules"
-import { BackgroundWrapper, Flex } from "../../Utils/Utility.style"
+import { BackgroundWrapper, Flex, ModalOverlay, ModalWrapper } from "../../Utils/Utility.style"
 
 export const History = () => {
   return (
