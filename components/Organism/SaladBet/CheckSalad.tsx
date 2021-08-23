@@ -39,8 +39,8 @@ export const CheckSalad = () => {
     responsive: true,
   }
 
-  return (
-    <Card width={[420, 830]} height={["auto", 589]}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader px={20} py={15}>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Salad #12 - Current Pool
@@ -60,6 +60,11 @@ export const CheckSalad = () => {
           </Box>
         </Flex>
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Flex alignItems="center" flexDirection={["column", "row"]}>
         <Flex width={["100%", "40%"]} p={4} justifyContent="center" alignItems="center" m="auto">
           <Doughnut data={data} options={options} />
@@ -146,6 +151,10 @@ export const CheckSalad = () => {
           </Grid>
         </Flex>
       </Flex>
+    )
+  }
+  const CardBodyLower = () => {
+    return (
       <Flex
         justifyContent="center"
         alignItems="center"
@@ -204,6 +213,13 @@ export const CheckSalad = () => {
           </Box>
         </Flex>
       </Flex>
+    )
+  }
+  return (
+    <Card width={[420, 830]} height={["auto", 589]}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

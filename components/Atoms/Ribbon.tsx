@@ -95,7 +95,7 @@ export const RibbonContent = styled.div`
   width: 98%;
 `
 
-export const WinningRibbon = ({ children, bet }: any) => (
+export const WinningRibbon = ({ children }: any) => (
   <RibbonContentWrapper colorOne={currentTheme().primary} colorTwo={currentTheme().primaryDark}>
     <RibbonLeftDecoration
       colorOne={currentTheme().primary}

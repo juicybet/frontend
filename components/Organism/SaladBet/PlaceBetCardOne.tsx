@@ -28,14 +28,19 @@ export const PlaceBetCardOne = () => {
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
 
-  return (
-    <Card width={"420px"} height={"704px"}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Bet which veggie* goes into the salad!
         </Text>
         <Image src="images/icons/close.svg" width="15" height="15" alt="close" />
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Box borderBottom="1px solid var(--border-gray)">
         <CarouselWrapper>
           <RadioCarousel name="bet" img="/images/vegies/broccoli.png" alt="Bet for Broccoli" width="60" height="100">
@@ -63,6 +68,11 @@ export const PlaceBetCardOne = () => {
           </Text>
         </Flex>
       </Box>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex flexDirection="column" alignItems="center">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column" width="100%">
@@ -87,6 +97,14 @@ export const PlaceBetCardOne = () => {
           Close Window
         </Text>
       </Flex>
+    )
+  }
+
+  return (
+    <Card width={"420px"} height={"704px"}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

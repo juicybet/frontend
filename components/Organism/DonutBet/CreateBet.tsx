@@ -37,14 +37,18 @@ export const CreateBet = () => {
   const setSelected = (b: string, value: boolean) => {
     setAllBets(allBets.map(({ bet }) => ({ bet, selected: bet === b ? value : false })))
   }
-
-  return (
-    <Card width={"420px"} height={"609px"}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Bet what the last digit of the current block’s hash will be to win a 15x reward!
         </Text>
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Box borderBottom="1px solid var(--border-gray)" py={24}>
         <CarouselWrapper>
           {allBets.map(({ bet, selected }) => (
@@ -63,6 +67,11 @@ export const CreateBet = () => {
           ))}
         </CarouselWrapper>
       </Box>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex flexDirection="column">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column">
@@ -75,10 +84,18 @@ export const CreateBet = () => {
           ></EtherInput>
           <EtherFiatValue>~${formatNumber(+value * etherPrice, 2)}</EtherFiatValue>
         </Flex>
+        <Button height={"56px"} px={16} py={0}>
+          Create a bet
+        </Button>
       </Flex>
-      <Button height={"56px"} px={16} py={0}>
-        Create a bet
-      </Button>
+    )
+  }
+
+  return (
+    <Card width={"420px"} height={"609px"}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

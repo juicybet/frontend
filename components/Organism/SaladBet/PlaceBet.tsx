@@ -1,17 +1,10 @@
 import Image from "next/image"
 import { Button } from "../../Atoms"
 import { Card, CardBox, CardHeader } from "../../Molecules/"
-import styled from "styled-components"
-import { FlexWrapperCentered, Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../../Utils/Utility.style"
+import { Flex, Text, Grid, SpanInfoPrimary, SpanInfoSecondary } from "../../Utils/Utility.style"
 import ProgressBar from "@ramonak/react-progress-bar"
 
 import { Doughnut } from "react-chartjs-2"
-
-const RadioButtonWrapper = styled(FlexWrapperCentered)`
-  justify-content: space-between;
-  margin: 32px;
-  width: 100%;
-`
 
 export const PlaceBet = () => {
   const data = {
@@ -30,13 +23,18 @@ export const PlaceBet = () => {
     responsive: true,
   }
 
-  return (
-    <Card width={[420, 830]} height={["auto", 589]}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader px={20} py={15}>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Salad #12 - Current Pool
         </Text>
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Flex alignItems="center" flexDirection={["column", "row"]}>
         <Flex width={["100%", "40%"]} p={4} justifyContent="center" alignItems="center" m="auto">
           <Doughnut data={data} options={options} />
@@ -118,6 +116,11 @@ export const PlaceBet = () => {
           </Grid>
         </Flex>
       </Flex>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex
         justifyContent="center"
         alignItems="center"
@@ -137,6 +140,14 @@ export const PlaceBet = () => {
           <Button>Place A Bet</Button>
         </Flex>
       </Flex>
+    )
+  }
+
+  return (
+    <Card width={[420, 830]} height={["auto", 589]}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

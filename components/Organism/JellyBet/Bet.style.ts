@@ -1,15 +1,6 @@
 import styled, { css } from "styled-components"
 import { FlexWrapperCentered, SpanInfoPrimary } from "../../Utils/Utility.style"
 
-export const MainContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 880px;
-  height: auto;
-  margin: auto;
-`
-
 export const SectionContentWrapper = styled.div`
   padding: 16px 16px 16px 0;
   border-bottom: 1px solid var(--border-gray);

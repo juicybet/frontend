@@ -13,14 +13,19 @@ export const IncreaseBetCard = () => {
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
 
-  return (
-    <Card width={"420px"} height={"671px"}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Increase your bet
         </Text>
         <Image src="images/icons/close.svg" width="15" height="15" alt="close" />
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Flex alignItems="center" border="1px solid var(--border-gray)">
         <Flex width={"40%"}>
           <PopUpCardVegies>
@@ -55,6 +60,11 @@ export const IncreaseBetCard = () => {
           </Text>
         </Flex>
       </Flex>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex flexDirection="column">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column" width="100%">
@@ -79,6 +89,14 @@ export const IncreaseBetCard = () => {
           Close Window
         </Text>
       </Flex>
+    )
+  }
+
+  return (
+    <Card width={"420px"} height={"671px"}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

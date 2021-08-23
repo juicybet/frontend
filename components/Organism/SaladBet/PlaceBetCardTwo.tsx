@@ -26,15 +26,19 @@ export const PlaceBetCardTwo = () => {
   const max = "10"
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
-
-  return (
-    <Card width={"420px"} height={"649px"}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Bet which veggie* will be thrown away!
         </Text>
         <Image src="images/icons/close.svg" width="15" height="15" alt="close" />
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Box borderBottom="1px solid var(--border-gray)">
         <CarouselWrapper>
           <RadioCarousel name="bet" img="/images/vegies/broccoli.png" alt="Bet for Broccoli" width="60" height="100">
@@ -62,6 +66,11 @@ export const PlaceBetCardTwo = () => {
           </Text>
         </Flex>
       </Box>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex flexDirection="column" p={3} justifyContent="space-between" height={"60%"}>
         <Text fontSize={14} color={"var(--light-gray)"}>
           As the highest better, you get to place a second bet for a chance to win the jackpot.
@@ -80,6 +89,13 @@ export const PlaceBetCardTwo = () => {
           &laquo; Go Back
         </Text>
       </Flex>
+    )
+  }
+  return (
+    <Card width={"420px"} height={"649px"}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }

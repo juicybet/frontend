@@ -29,13 +29,18 @@ export const CreateBet = () => {
   const [value, setValue] = useState("1.00000000")
   const etherPrice = 2234.45
 
-  return (
-    <Card width={"420px"} height={"609px"}>
+  const CardBodyHeader = () => {
+    return (
       <CardHeader>
         <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
           Bet which fruit will turn into jelly!
         </Text>
       </CardHeader>
+    )
+  }
+
+  const CardBodyUper = () => {
+    return (
       <Box borderBottom="1px solid var(--border-gray)">
         <Flex alignItems="center" justifyContent="center" flexDirection="column" mx={4} my={2}>
           {/* to be fixed properly */}
@@ -49,6 +54,11 @@ export const CreateBet = () => {
           </RadioButtonWrapper>
         </Flex>
       </Box>
+    )
+  }
+
+  const CardBodyLower = () => {
+    return (
       <Flex flexDirection="column">
         <Slider min={+min} max={+max} value={+value} setValue={(v) => setValue((+v).toFixed(8))} />
         <Flex flexDirection="column">
@@ -61,10 +71,18 @@ export const CreateBet = () => {
           ></EtherInput>
           <EtherFiatValue>~${formatNumber(+value * etherPrice, 2)}</EtherFiatValue>
         </Flex>
+        <Button height={"56px"} px={16} py={0}>
+          Create a bet
+        </Button>
       </Flex>
-      <Button height={"56px"} px={16} py={0}>
-        Create a bet
-      </Button>
+    )
+  }
+
+  return (
+    <Card width={"420px"} height={"609px"}>
+      <CardBodyHeader />
+      <CardBodyUper />
+      <CardBodyLower />
     </Card>
   )
 }
