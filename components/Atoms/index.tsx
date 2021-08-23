@@ -1,6 +1,4 @@
-import { Button } from "./Button"
-import { Radio, PlacedBetRadio } from "./Radio"
-import { WinningRibbon, LosingRibbon } from "./Ribbon"
-import { Hamburger } from "./Hamburger"
-
-export { Button, PlacedBetRadio, Radio, WinningRibbon, LosingRibbon, Hamburger }
+export * from "./Button"
+export * from "./Hamburger"
+export * from "./Radio"
+export * from "./Ribbon"

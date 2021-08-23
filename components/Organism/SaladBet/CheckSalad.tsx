@@ -16,7 +16,7 @@ import { Doughnut } from "react-chartjs-2"
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "react-feather"
 import { currentTheme } from "../../../core/theme"
 
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
+const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   margin: 32px;
   width: 100%;

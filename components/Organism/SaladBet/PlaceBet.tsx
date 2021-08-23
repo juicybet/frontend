@@ -7,7 +7,7 @@ import ProgressBar from "@ramonak/react-progress-bar"
 
 import { Doughnut } from "react-chartjs-2"
 
-export const RadioButtonWrapper = styled(FlexWrapperCentered)`
+const RadioButtonWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
   margin: 32px;
   width: 100%;
