@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Header, Sidebar } from "../components"
 import { SiteType, SiteParams, setSite } from "../core/site"
 import { setEnvironment } from "../core/environment"
 import { Meta } from "../components/Utils/Meta"
-import { History as JellyHistory } from "../components/Jelly/History"
-import { PastSalads } from "../components/Salad/PastSalads"
+import { History as JellyHistory } from "../components/Templates/Jelly/History"
+import { PastSalads } from "../components/Templates/Salad/PastSalads"
+import { Header, Sidebar } from "../components/Molecules"
 
 export { getServerSideProps } from "../core/site"
 
