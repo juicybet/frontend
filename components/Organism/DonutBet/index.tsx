@@ -1,5 +1,5 @@
 export * from "./AlreadyWonCard"
-export * from "./BetHistory"
+export * from "./BetHistoryCard"
 export * from "./CreateBet"
 export * from "./LoadingCard"
 export * from "./LosingCard"

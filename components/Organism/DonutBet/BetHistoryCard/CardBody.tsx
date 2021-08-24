@@ -1,40 +1,21 @@
 import Image from "next/image"
-import { FlexWrapperCentered, Flex, SpanInfoPrimary, SpanInfoSecondary, Text, Box } from "../../Utils/Utility.style"
-import { Card, CardHeader } from "../../Molecules"
+import { Box, Flex, FlexWrapperCentered, SpanInfoPrimary, SpanInfoSecondary } from "../../../Utils/Utility.style"
 import styled from "styled-components"
-import { PlacedBetsWrapper } from "./Bet.style"
 
-export const PlacedBetdetails = styled(FlexWrapperCentered)`
+const PlacedBetsWrapper = styled(FlexWrapperCentered)`
+  height: 64px;
+  width: 100%;
+  justify-content: space-between;
+`
+const PlacedBetdetails = styled(FlexWrapperCentered)`
   gap: 16px;
 `
-export const WalletAddress = styled(SpanInfoPrimary)`
+const WalletAddress = styled(SpanInfoPrimary)`
   color: var(--light-gray);
   font-size: 16px;
 `
-export const TimeOfBet = styled(SpanInfoSecondary)`
-  justify-content: flex-end;
-`
 
-export const CancelButton = styled.button`
-  width: 112px;
-  height: 40px;
-  font-weight: 600;
-  color: var(--primary-pink);
-  background: var(--primary-white);
-  border: 2px solid var(--primary-pink);
-  border-radius: 32px;
-`
-const CardBodyHeader = () => {
-  return (
-    <CardHeader>
-      <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
-        Bet History
-      </Text>
-    </CardHeader>
-  )
-}
-
-const CardBody = () => {
+export const CardBody = () => {
   return (
     <Flex flexDirection="column">
       <Box p={16} borderBottom="1px solid var(--border-gray)" backgroundImage="url(/images/stripes_pattern.png)">
@@ -148,14 +129,5 @@ const CardBody = () => {
         </PlacedBetsWrapper>
       </Box>
     </Flex>
-  )
-}
-
-export const BetHistory = () => {
-  return (
-    <Card width={"420px"} height={"609px"}>
-      <CardBodyHeader />
-      <CardBody />
-    </Card>
   )
 }
