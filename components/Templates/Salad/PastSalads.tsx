@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { BackgroundWrapper, Box, Flex, ModalOverlay, ModalWrapper } from "../../Utils/Utility.style"
 import { LoadingCard, NoBetsCard, WinningCard, AlreadyWonCard, LosingCard } from "../../Organism/SaladBet"
-import { CheckSalad } from "../../Organism/SaladBet/CheckSalad"
+import { CheckSalad } from "../../Organism/SaladBet/CheckSaladCard"
 import { PageHeader } from "../../Molecules"
 
 export const PastSalads = () => {

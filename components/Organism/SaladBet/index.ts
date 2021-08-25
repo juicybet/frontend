@@ -1,5 +1,5 @@
 export * from "./AlreadyWonCard"
-export * from "./CheckSalad"
+export * from "./CheckSaladCard"
 export * from "./IncreaseBet"
 export * from "./IncreaseBetCard"
 export * from "./LoadingCard"
