@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Card, CardHeader } from "../../Molecules"
 import styled from "styled-components"
 import {
   FlexWrapperCentered,
@@ -9,9 +8,8 @@ import {
   SpanInfoLight,
   SpanInfoPrimary,
   SpanInfoSecondary,
-  Text,
   Box,
-} from "../../Utils/Utility.style"
+} from "../../../Utils/Utility.style"
 
 export const PlacedBetdetails = styled(FlexWrapperCentered)`
   gap: 16px;
@@ -37,17 +35,7 @@ const ButtonWrapper = styled(FlexColumn)`
   gap: 8px;
 `
 
-const CardBodyHeader = () => {
-  return (
-    <CardHeader>
-      <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
-        My Bet
-      </Text>
-    </CardHeader>
-  )
-}
-
-const CardBody = () => {
+export const CardBody = () => {
   return (
     <Flex flexDirection="column">
       <Box p={16} borderBottom="1px solid var(--border-gray)">
@@ -133,14 +121,5 @@ const CardBody = () => {
         </Flex>
       </Box>
     </Flex>
-  )
-}
-
-export const MyBet = () => {
-  return (
-    <Card width={"400px"} height={"592px"}>
-      <CardBodyHeader />
-      <CardBody />
-    </Card>
   )
 }

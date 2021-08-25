@@ -1,6 +1,8 @@
 import Image from "next/image"
-import "react-circular-progressbar/dist/styles.css"
-import { CardHeader, Card } from "../../Molecules"
+import styled, { css } from "styled-components"
+import { ExternalLink } from "react-feather"
+import { WinningRibbon } from "../../../Atoms"
+import { currentTheme } from "../../../../core/theme"
 import {
   BetInfoWrapper,
   FlexWrapperCentered,
@@ -13,11 +15,7 @@ import {
   SpanLabel,
   Text,
   Box,
-} from "../../Utils/Utility.style"
-import styled, { css } from "styled-components"
-import { ExternalLink } from "react-feather"
-import { WinningRibbon } from "../../Atoms/"
-import { currentTheme } from "../../../core/theme"
+} from "../../../Utils/Utility.style"
 
 const CoinWrapper = styled(FlexWrapperCentered)`
   justify-content: space-between;
@@ -29,42 +27,7 @@ const CoinWrapper = styled(FlexWrapperCentered)`
   background-color: var(--primary-white);
 `
 
-const CardBodyHeader = () => {
-  return (
-    <CardHeader>
-      <Text textAlign="left" fontSize={18} color={"var(--dark-gray)"}>
-        Bet #2 result
-      </Text>
-      <Image src="images/icons/close.svg" width="15" height="15" alt="close"></Image>
-    </CardHeader>
-  )
-}
-
-const CardBodyUper = () => {
-  return (
-    <Flex flexDirection="row" borderBottom="1px solid var(--border-gray)">
-      <Flex
-        borderRight="1px solid var(--border-gray)"
-        p={48}
-        width={"50%"}
-        position="relative"
-        backgroundImage="url(/images/stripes_pattern.png)"
-      >
-        <Image src="/images/Watermelon.png" width="120" height="150" alt="" />
-        <Box position="absolute" bottom={10} right={10}>
-          <Image src="/images/icons/lost.svg" width="40" height="40" alt="" />
-        </Box>
-      </Flex>
-      <Flex p={48} width={"50%"} position="relative">
-        <Image src="/images/strawberry.png" width="120" height="150" alt="" />
-        <Box position="absolute" bottom={10} right={10}>
-          <Image src="/images/icons/won.svg" width="40" height="40" alt="" />
-        </Box>
-      </Flex>
-    </Flex>
-  )
-}
-const CardBodyLower = () => {
+export const CardBodyLower = () => {
   return (
     <Flex flexDirection="column">
       <BetInfoWrapper>
@@ -106,15 +69,5 @@ const CardBodyLower = () => {
         </Text>
       </Box>
     </Flex>
-  )
-}
-
-export const WinningCard = () => {
-  return (
-    <Card width={"420px"} height={"683px"}>
-      <CardBodyHeader />
-      <CardBodyUper />
-      <CardBodyLower />
-    </Card>
   )
 }
