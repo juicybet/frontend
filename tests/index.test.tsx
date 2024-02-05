@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "./test-utils"
 import userEvent from "@testing-library/user-event"
-import { Form } from "../components"
+import { Form } from "../components/Molecules"
 
 describe("Form", () => {
   it(" should renders a form with name, email , message , radio and submit button", () => {
